@@ -1,0 +1,18 @@
+{
+  "id": "chapter2",
+  "title": "第二回·暗号初步·长沙临时大学",
+  "scenes": [
+    {
+      "id": "ch2_scene",
+      "bgLabel": "",
+      "nodes": [
+        { "id": "ch2_intro", "type": "narration", "content": "你抵达长沙临时大学，开始寻找组织留下的暗号。", "nextNodeId": "ch2_choice" },
+        { "id": "ch2_choice", "type": "choice", "content": "你决定如何寻找线索？", "choices": [
+          { "text": "观察公告和出入路线", "effects": [{ "stat": "insight", "change": 1 }], "nextNodeId": "ch2_end" },
+          { "text": "主动打听熟悉的姓名", "effects": [{ "stat": "suspicion", "change": 1 }], "nextNodeId": "ch2_end" }
+        ] },
+        { "id": "ch2_end", "type": "ending", "endingType": "chapter_complete", "endingDescription": "模板章节结束：你获得了一条待补充的线索。" }
+      ]
+    }
+  ]
+}
