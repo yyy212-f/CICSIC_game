@@ -1,888 +1,1063 @@
 {
-    "id":  "prologue",
-    "title":  "序幕·入党与北平离校",
-    "scenes":  [
-                   {
-                       "id":  "prologue_scene1",
-                       "bgLabel":  "scene0_Marx",
-                       "nodes":  [
-                                     {
-                                         "id":  "prologue_s1_intro",
-                                         "type":  "narration",
-                                         "content":  "【场景】气象台地下室，煤油灯昏黄，墙上挂着简陋的马克思画像，窗外风声呜咽。",
-                                         "nextNodeId":  "prologue_s1_enter"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_enter",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（从阴影中探出半张脸，侧身让你闪入）进来。快。",
-                                         "nextNodeId":  "prologue_s1_table"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_table",
-                                         "type":  "narration",
-                                         "content":  "【他引你到桌前，从《三国演义》扉页中取出手写入党誓词】",
-                                         "nextNodeId":  "prologue_s1_announce"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_announce",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（神情肃穆）从今天起，你就是中国共产党的一员了。这不只是一种身份，更是千钧重担。你准备好了吗？",
-                                         "nextNodeId":  "prologue_s1_nod"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_nod",
-                                         "type":  "narration",
-                                         "content":  "[你坚定地点头]",
-                                         "nextNodeId":  "prologue_s1_oath"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_oath",
-                                         "type":  "narration",
-                                         "content":  "【领誓。举右拳，拳心朝前，手臂笔直】",
-                                         "nextNodeId":  "prologue_s1_oath_text"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_oath_text",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "跟我念。我志愿加入中国共产党——遵守纪律，严守秘密，牺牲个人，阶级斗争，努力革命，服从纪律，永不叛党。",
-                                         "nextNodeId":  "prologue_s1_follow"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_follow",
-                                         "type":  "narration",
-                                         "content":  "[你跟随宣誓，一字一句，掷地有声]",
-                                         "nextNodeId":  "prologue_s1_done"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_done",
-                                         "type":  "narration",
-                                         "content":  "【宣誓完毕，煤油灯噼啪声】",
-                                         "nextNodeId":  "prologue_s1_congrats"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_congrats",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（嘴角微扬，拍你肩膀）恭喜你，同志。",
-                                         "nextNodeId":  "prologue_s1_burn"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_burn",
-                                         "type":  "narration",
-                                         "content":  "【誓词投入灯罩，纸片成灰】",
-                                         "nextNodeId":  "prologue_s1_code"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_code",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "今天起，你的代号是\u0027渡鸦\u0027——机警，看得远，不声不响。……去吧。多听，少说。你是种子，要学着在土里生根。去吧。路还长。",
-                                         "nextNodeId":  "prologue_s1_ending"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_ending",
-                                         "type":  "narration",
-                                         "content":  "1936年12月，气象台地下室。那晚的煤油灯很暗，但举起的手很稳。\n入党之后，大学的日子照旧。只是看报时多了几分揣摩，走在路上会多留意几眼行人的神色。蒋南翔没有再找过我——这是规矩，单线联系，沉默是最好的保护。\n直到暑假前夕……",
-                                         "nextNodeId":  "prologue_s1_transition"
-                                     },
-                                     {
-                                         "id":  "prologue_s1_transition",
-                                         "type":  "narration",
-                                         "content":  "【黑屏转场，日历翻过半年→1937年6月下旬】",
-                                         "nextNodeId":  "prologue_s2_intro"
-                                     }
-                                 ]
-                   },
-                   {
-                       "id":  "prologue_scene2",
-                       "bgLabel":  "scene0_Marx",
-                       "nodes":  [
-                                     {
-                                         "id":  "prologue_s2_intro",
-                                         "type":  "narration",
-                                         "content":  "【场景】气象台地下室，灯芯短了一截，光线更暗。蒋南翔更瘦了，眼神更沉稳。",
-                                         "nextNodeId":  "prologue_s2_task"
-                                     },
-                                     {
-                                         "id":  "prologue_s2_task",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（坐在木凳上，点头示意你坐下）组织有令，让你回家探亲，相机了解社会动态。这是你的第一份任务。",
-                                         "nextNodeId":  "prologue_s2_three"
-                                     },
-                                     {
-                                         "id":  "prologue_s2_three",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（竖起三根手指）三件事：一、百姓的脸色——是愁苦，是麻木，还是藏着火？二、茶楼酒肆里的闲言——牢骚最见人心。三、\u0027灰皮\u0027的动静——军警宪特的调动，哪怕一个番号的变化，都要记在心里。",
-                                         "nextNodeId":  "prologue_s2_reminder"
-                                     },
-                                     {
-                                         "id":  "prologue_s2_reminder",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（站起身，握住你的手）记住：不到万不得已，绝不暴露身份。你是种子，不是爆竹。种子活着才能生根，爆竹炸了只剩一声响。",
-                                         "nextNodeId":  "prologue_s2_news"
-                                     },
-                                     {
-                                         "id":  "prologue_s2_news",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（转身看向窗外）这几天，丰台那边鬼子天天演习，街头军警戒严得比往常紧。校方和特务机关搞了\u0027暑期离校清查\u0027，整个园子都被翻过了。昨天隔壁院一个学生私藏左翼刊物，被扣下了，至今下落不明。",
-                                         "nextNodeId":  "prologue_s2_advice"
-                                     },
-                                     {
-                                         "id":  "prologue_s2_advice",
-                                         "type":  "dialogue",
-                                         "speaker":  "蒋南翔",
-                                         "figure":  { "id":  "jiang_nanxiang", "position":  "center" },
-                                         "content":  "（拍你肩膀）行李不要多。该处理的处理掉。路上小心应对。北平的天怕是要变了，你回去路上千万保重。",
-                                         "nextNodeId":  "prologue_s2_return"
-                                     },
-                                     {
-                                         "id":  "prologue_s2_return",
-                                         "type":  "narration",
-                                         "content":  "回到宿舍，你打开床下的旧皮箱，开始收拾行李。",
-                                         "nextNodeId":  "ch1_intro"
-                                     }
-                                 ]
-                   },
-                   {
-                       "id":  "ch1_scene",
-                       "bgLabel":  "scene0_dormitory",
-                       "nodes":  [
-                                     {
-                                         "id":  "ch1_intro",
-                                         "type":  "narration",
-                                         "content":  "你打开床下的旧皮箱，开始整理为数不多的行李。三样东西需要处理……",
-                                         "nextNodeId":  "ch1_item1"
-                                     },
-                                     {
-                                         "id":  "ch1_item1",
-                                         "type":  "choice",
-                                         "content":  "写有党组织紧急联系方式的纸条",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "撕碎冲进厕所",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  1
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_item2"
-                                                         },
-                                                         {
-                                                             "text":  "用隐形墨水抄写在日记本空白页",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  3
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_item2"
-                                                         },
-                                                         {
-                                                             "text":  "咽下去",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_item2"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_item2",
-                                         "type":  "choice",
-                                         "content":  "进步同学来信（\"希望我们都能为理想奋斗\"）",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "撕碎扔掉",
-                                                             "nextNodeId":  "ch1_item3"
-                                                         },
-                                                         {
-                                                             "text":  "保留作为纪念",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "inventoryChanges":  {
-                                                                                      "add":  [
-                                                                                                  "letter"
-                                                                                              ]
-                                                                                  },
-                                                             "nextNodeId":  "ch1_item3"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_item3",
-                                         "type":  "choice",
-                                         "content":  "《大众哲学》（被室友见过）",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "烧掉",
-                                                             "nextNodeId":  "ch1_burn_night"
-                                                         },
-                                                         {
-                                                             "text":  "送给室友李某",
-                                                             "nextNodeId":  "ch1_givebook"
-                                                         },
-                                                         {
-                                                             "text":  "撕掉封面夹在普通课本中",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_roommate"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_burn_night",
-                                         "type":  "narration",
-                                         "content":  "【三更。你赤脚落地，点燃《大众哲学》，灰烬冲入马桶】\n\n\"咚、咚、咚。\"",
-                                         "nextNodeId":  "ch1_burn_knock"
-                                     },
-                                     {
-                                         "id":  "ch1_burn_knock",
-                                         "type":  "dialogue",
-                                         "speaker":  "老吴（校工）",
-                                         "content":  "同学，开门。查房。",
-                                         "nextNodeId":  "ch1_burn_choice"
-                                     },
-                                     {
-                                         "id":  "ch1_burn_choice",
-                                         "type":  "choice",
-                                         "content":  "如何应对查房？",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "看了会儿书，点了洋火。",
-                                                             "nextNodeId":  "ch1_burn_q"
-                                                         },
-                                                         {
-                                                             "text":  "没、没有火光啊……",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  10
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_burn_settle"
-                                                         },
-                                                         {
-                                                             "text":  "塞过去几枚银元",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  6
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_burn_settle"
-                                                         },
-                                                         {
-                                                             "text":  "不开门",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  5
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_burn_settle"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_burn_q",
-                                         "type":  "dialogue",
-                                         "speaker":  "老吴",
-                                         "content":  "看了什么书？",
-                                         "nextNodeId":  "ch1_burn_a"
-                                     },
-                                     {
-                                         "id":  "ch1_burn_a",
-                                         "type":  "dialogue",
-                                         "speaker":  "你",
-                                         "content":  "看了会儿《水浒》。",
-                                         "nextNodeId":  "ch1_burn_pass"
-                                     },
-                                     {
-                                         "id":  "ch1_burn_pass",
-                                         "type":  "narration",
-                                         "content":  "老吴点头：\"早些歇息。\"转身走了。",
-                                         "nextNodeId":  "ch1_burn_settle"
-                                     },
-                                     {
-                                         "id":  "ch1_burn_settle",
-                                         "type":  "narration",
-                                         "content":  "【结算】你松了口气，将灰烬彻底冲净。",
-                                         "effects":  [
-                                                         {
-                                                             "stat":  "conviction",
-                                                             "change":  2
-                                                         }
-                                                     ],
-                                         "nextNodeId":  "ch1_burn_depart"
-                                     },
-                                     {
-                                         "id":  "ch1_burn_depart",
-                                         "type":  "narration",
-                                         "content":  "次日清晨，你提着皮箱走出宿舍楼。老吴直起腰：\"走了？\"\n你回答：\"走了。\""
-                                     },
-                                     {
-                                         "id":  "ch1_givebook",
-                                         "type":  "dialogue",
-                                         "speaker":  "张同学",
-                                         "content":  "（你递过《大众哲学》，张接过）你确定？",
-                                         "nextNodeId":  "ch1_givebook_choice"
-                                     },
-                                     {
-                                         "id":  "ch1_givebook_choice",
-                                         "type":  "choice",
-                                         "content":  "如何回应张同学？",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "拿着吧，比在我箱底有用。",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  2
-                                                                             },
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  -2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_givebook_eve"
-                                                         },
-                                                         {
-                                                             "text":  "路上解闷，别想多了。",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  1
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_givebook_eve"
-                                                         },
-                                                         {
-                                                             "text":  "（不说话，递书）",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  1
-                                                                             },
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  1
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_givebook_eve"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_givebook_eve",
-                                         "type":  "narration",
-                                         "content":  "离校前一天傍晚。张系紧包袱，低声说：\"我回广东后，可能不会再回来。那本书我会带到需要的地方去。\"",
-                                         "nextNodeId":  "ch1_givebook_eve_choice"
-                                     },
-                                     {
-                                         "id":  "ch1_givebook_eve_choice",
-                                         "type":  "choice",
-                                         "content":  "如何回应？",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "好。路上小心。",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  3
-                                                                             }
-                                                                         ],
-                                                             "inventoryChanges":  {
-                                                                                      "add":  [
-                                                                                                  "bookshop_contact"
-                                                                                              ]
-                                                                                  },
-                                                             "nextNodeId":  "ch1_givebook_depart"
-                                                         },
-                                                         {
-                                                             "text":  "你那边有人接应？",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_givebook_depart"
-                                                         },
-                                                         {
-                                                             "text":  "书你留着，别冒险。",
-                                                             "nextNodeId":  "ch1_givebook_depart"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_givebook_depart",
-                                         "type":  "narration",
-                                         "content":  "离校当天。擦肩时张低声道：\"后会有期。\"\n你没回头：\"后会有期。\""
-                                     },
-                                     {
-                                         "id":  "ch1_roommate",
-                                         "type":  "dialogue",
-                                         "speaker":  "室友李",
-                                         "content":  "（推门而入）带这么多书啊？",
-                                         "nextNodeId":  "ch1_roommate_choice"
-                                     },
-                                     {
-                                         "id":  "ch1_roommate_choice",
-                                         "type":  "choice",
-                                         "content":  "如何回应？",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "路上看看，你呢？",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_end"
-                                                         },
-                                                         {
-                                                             "text":  "（紧张合箱）啊，对……",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  3
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch1_end"
-                                                         },
-                                                         {
-                                                             "text":  "沉默继续收拾",
-                                                             "nextNodeId":  "ch1_end"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch1_end",
-                                         "type":  "narration",
-                                         "content":  "你合上皮箱，系紧带子。窗外天色已亮，离校的时刻到了。",
-                                         "nextNodeId":  "ch2_intro"
-                                     }
-                                 ]
-                   },
-                   {
-                       "id":  "ch2_scene",
-                       "bgLabel":  "scene1_university_gate",
-                       "nodes":  [
-                                     {
-                                         "id":  "ch2_intro",
-                                         "type":  "narration",
-                                         "content":  "大学西门。门卫靠在门框上，不远处树下有便衣看报。",
-                                         "nextNodeId":  "ch2_condition"
-                                     },
-                                     {
-                                         "id":  "ch2_condition",
-                                         "type":  "condition",
-                                         "condition":  {
-                                                           "stat":  "insight",
-                                                           "operator":  "\u003e=",
-                                                           "value":  3,
-                                                           "passNodeId":  "ch2_find",
-                                                           "failNodeId":  "ch2_choice"
-                                                       }
-                                     },
-                                     {
-                                         "id":  "ch2_find",
-                                         "type":  "narration",
-                                         "content":  "你注意到：便衣手中的报纸拿倒了，眼睛一直盯着学生队伍。",
-                                         "nextNodeId":  "ch2_choice"
-                                     },
-                                     {
-                                         "id":  "ch2_choice",
-                                         "type":  "choice",
-                                         "content":  "门卫打量着你：\"出校？\"",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "是，放暑假了。",
-                                                             "nextNodeId":  "ch2_end"
-                                                         },
-                                                         {
-                                                             "text":  "沉默点头，低头走路",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  3
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch2_end"
-                                                         },
-                                                         {
-                                                             "text":  "反问\"怎么了？\"",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch2_end"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch2_end",
-                                         "type":  "narration",
-                                         "content":  "你踏出西门，回头望了一眼，校园安静如常。",
-                                         "nextNodeId":  "ch3_intro"
-                                     }
-                                 ]
-                   },
-                   {
-                       "id":  "ch3_scene",
-                       "bgLabel":  "scene1_train_station",
-                       "nodes":  [
-                                     {
-                                         "id":  "ch3_intro",
-                                         "type":  "narration",
-                                         "content":  "清晨薄雾中，车站外聚满旅客。军警三步一岗，气氛比往常更加紧张。",
-                                         "nextNodeId":  "ch3_condition"
-                                     },
-                                     {
-                                         "id":  "ch3_condition",
-                                         "type":  "condition",
-                                         "condition":  {
-                                                           "stat":  "insight",
-                                                           "operator":  "\u003e=",
-                                                           "value":  5,
-                                                           "passNodeId":  "ch3_observe",
-                                                           "failNodeId":  "ch3_queue"
-                                                       }
-                                     },
-                                     {
-                                         "id":  "ch3_observe",
-                                         "type":  "narration",
-                                         "content":  "你敏锐地注意到三处异常：①柱旁扫视人群的中山装男子；②检票口左侧多了一名军警；③卖烟小贩的位置反常，正好卡在队列转弯处。",
-                                         "nextNodeId":  "ch3_queue"
-                                     },
-                                     {
-                                         "id":  "ch3_queue",
-                                         "type":  "choice",
-                                         "content":  "排队等待检查时，你：",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "观察前方检查流程",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_arrest"
-                                                         },
-                                                         {
-                                                             "text":  "与身边的旅客闲聊",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  2
-                                                                             },
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_gossip_1"
-                                                         },
-                                                         {
-                                                             "text":  "低头不语，尽快通过",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  -2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_arrest"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch3_gossip_1",
-                                         "type":  "dialogue",
-                                         "speaker":  "女学生",
-                                         "content":  "昨天有人带《新华日报》被扣了……你得留神行李。",
-                                         "effects":  [
-                                                         {
-                                                             "stat":  "insight",
-                                                             "change":  1
-                                                         },
-                                                         {
-                                                             "stat":  "suspicion",
-                                                             "change":  1
-                                                         }
-                                                     ],
-                                         "nextNodeId":  "ch3_gossip_2"
-                                     },
-                                     {
-                                         "id":  "ch3_gossip_2",
-                                         "type":  "dialogue",
-                                         "speaker":  "商人",
-                                         "content":  "现在风声紧，上海来的印刷品格外敏感。",
-                                         "nextNodeId":  "ch3_gossip_3"
-                                     },
-                                     {
-                                         "id":  "ch3_gossip_3",
-                                         "type":  "dialogue",
-                                         "speaker":  "妇女",
-                                         "content":  "我弟弟上个月被抓了，就因为几封信……",
-                                         "nextNodeId":  "ch3_arrest"
-                                     },
-                                     {
-                                         "id":  "ch3_arrest",
-                                         "type":  "narration",
-                                         "content":  "突然，队列前方一阵骚动。一个戴眼镜的青年被军警从队列中拉出，箱子翻倒，书籍散落一地。",
-                                         "nextNodeId":  "ch3_arrest_choice"
-                                     },
-                                     {
-                                         "id":  "ch3_arrest_choice",
-                                         "type":  "choice",
-                                         "content":  "你目睹了这一切：",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "低下头，不看",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  -2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage"
-                                                         },
-                                                         {
-                                                             "text":  "盯着看，记住这张脸",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  2
-                                                                             },
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  3
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage"
-                                                         },
-                                                         {
-                                                             "text":  "小声说\"太过分了\"",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  5
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage"
-                                                         },
-                                                         {
-                                                             "text":  "握紧拳头",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  3
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage"
-                                                         },
-                                                         {
-                                                             "text":  "挺身而出",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  15
-                                                                             },
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  5
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_caught"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch3_luggage",
-                                         "type":  "narration",
-                                         "content":  "轮到你了。军警示意你打开箱子。",
-                                         "nextNodeId":  "ch3_luggage_check"
-                                     },
-                                     {
-                                         "id":  "ch3_luggage_check",
-                                         "type":  "choice",
-                                         "content":  "军警翻看着你的行李：",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "就这些，路上看看。",
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "还有几本杂志在底下（主动说明）",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "悄悄塞几本书过去",
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "同学互相打气写的（提及那封信）",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  4
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "别人塞给我的，没看过",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  8
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "借同学的，可能是本小说",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "爹不让看闲书，包了个皮",
-                                                             "nextNodeId":  "ch3_luggage_after"
-                                                         },
-                                                         {
-                                                             "text":  "沉默，脸色发白",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  5
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_laosun"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch3_luggage_after",
-                                         "type":  "narration",
-                                         "content":  "军警合上箱子，挥了挥手。",
-                                         "nextNodeId":  "ch3_luggage_result"
-                                     },
-                                     {
-                                         "id":  "ch3_luggage_laosun",
-                                         "type":  "dialogue",
-                                         "speaker":  "老孙（便衣特务）",
-                                         "content":  "慢着。这本书，怎么回事？",
-                                         "nextNodeId":  "ch3_luggage_laosun_choice"
-                                     },
-                                     {
-                                         "id":  "ch3_luggage_laosun_choice",
-                                         "type":  "choice",
-                                         "content":  "如何回答？",
-                                         "choices":  [
-                                                         {
-                                                             "text":  "自己买的，写得有道理。",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "conviction",
-                                                                                 "change":  3
-                                                                             },
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  8
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_result"
-                                                         },
-                                                         {
-                                                             "text":  "旧书摊买的，不知道内容。",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  5
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_luggage_result"
-                                                         },
-                                                         {
-                                                             "text":  "沉默",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "suspicion",
-                                                                                 "change":  10
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "ch3_caught"
-                                                         }
-                                                     ]
-                                     },
-                                     {
-                                         "id":  "ch3_luggage_result",
-                                         "type":  "condition",
-                                         "condition":  {
-                                                           "stat":  "suspicion",
-                                                           "operator":  "\u003e=",
-                                                           "value":  30,
-                                                           "passNodeId":  "ch3_caught",
-                                                           "failNodeId":  "ch3_pass"
-                                                       }
-                                     },
-                                     {
-                                         "id":  "ch3_caught",
-                                         "type":  "ending",
-                                         "endingType":  "caught",
-                                         "endingDescription":  "出师未捷。你在火车站被捕，未能踏上征途。"
-                                     },
-                                     {
-                                         "id":  "ch3_pass",
-                                         "type":  "narration",
-                                         "content":  "【暗】你通过了检查，提起行李走向站台。列车已在等候。",
-                                         "nextNodeId":  "ch4_intro"
-                                     }
-                                 ]
-                   }
-               ]
+  "id": "prologue",
+  "title": "序幕·入党与北平往事",
+  "scenes": [
+    {
+      "id": "prologue_scene1",
+      "bgLabel": "scene0_Marx",
+      "nodes": [
+        {
+          "id": "prologue_s1_intro",
+          "type": "narration",
+          "content": "【场景】清华园气象台地下室，煤油灯昏黄，墙上挂着简陋的马克思画像。窗外风声呜咽，偶尔有枯枝折断的脆响。",
+          "nextNodeId": "prologue_s1_enter"
+        },
+        {
+          "id": "prologue_s1_enter",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "（从阴影中探出半张脸，确认来人后，侧身让你闪入）进来。快。（声音压得极低，几乎只有气声）",
+          "nextNodeId": "prologue_s1_player_enter"
+        },
+        {
+          "id": "prologue_s1_player_enter",
+          "type": "narration",
+          "content": "（你侧着身快速进入）",
+          "nextNodeId": "prologue_s1_table"
+        },
+        {
+          "id": "prologue_s1_table",
+          "type": "narration",
+          "content": "【他引你走到桌前，从怀中取出一本《三国演义》，翻开扉页——里面夹着一张手写的入党誓词，纸边微微卷起，显然被反复折叠过】",
+          "nextNodeId": "prologue_s1_announce"
+        },
+        {
+          "id": "prologue_s1_announce",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "（展开誓词，神情肃穆）从今天起，你就是中国共产党的一员了。这不只是一种身份，更是千钧重担。你准备好了吗？",
+          "nextNodeId": "prologue_s1_nod"
+        },
+        {
+          "id": "prologue_s1_nod",
+          "type": "narration",
+          "content": "（你坚定地点头）",
+          "nextNodeId": "prologue_s1_oath_lead"
+        },
+        {
+          "id": "prologue_s1_oath_lead",
+          "type": "narration",
+          "content": "【他领你面对墙上简陋的马克思画像，开始领誓，声音不高，但每一个字都咬得很清楚。】",
+          "nextNodeId": "prologue_s1_oath_text"
+        },
+        {
+          "id": "prologue_s1_oath_text",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "跟我念。（缓缓举起右拳，拳心朝前，举到太阳穴的高度。手臂笔直，没有一丝晃动。）我志愿加入中国共产党——遵守纪律，严守秘密，牺牲个人，阶级斗争，努力革命，服从纪律，永不叛党。",
+          "nextNodeId": "prologue_s1_follow"
+        },
+        {
+          "id": "prologue_s1_follow",
+          "type": "narration",
+          "content": "（你跟着举起拳头，一字一句跟读。）",
+          "nextNodeId": "prologue_s1_done"
+        },
+        {
+          "id": "prologue_s1_done",
+          "type": "narration",
+          "content": "【宣誓完毕，短暂的沉默。煤油灯发出轻微的\"噼啪\"声】",
+          "nextNodeId": "prologue_s1_congrats"
+        },
+        {
+          "id": "prologue_s1_congrats",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "（嘴角微微上扬，露出一丝难得的笑意，拍了拍你的肩膀）恭喜你，同志。从今天起，我们就是同一条战壕里的人。",
+          "nextNodeId": "prologue_s1_eyecontact"
+        },
+        {
+          "id": "prologue_s1_eyecontact",
+          "type": "narration",
+          "content": "（你感受肩上传来的重量，抬起头，与他相视一笑）",
+          "nextNodeId": "prologue_s1_burn"
+        },
+        {
+          "id": "prologue_s1_burn",
+          "type": "narration",
+          "content": "【蒋南翔迅速收起誓词，将其投入煤油灯罩内。纸片在火苗中卷曲、发黑、成灰。他的目光追随着那片火焰，直到它彻底熄灭】",
+          "nextNodeId": "prologue_s1_code"
+        },
+        {
+          "id": "prologue_s1_code",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "（转过身，神情重新变得郑重）今天起，你的代号是'渡鸦'——这种鸟，机警，看得远，不声不响。（凝视着你，像是在确认你记住了每一个字）去吧。从现在起，多看，多听，少说。你是种子，要学着在土里生根。（拉开门）",
+          "nextNodeId": "prologue_s1_lastword_narration"
+        },
+        {
+          "id": "prologue_s1_lastword_narration",
+          "type": "narration",
+          "content": "【冷风从屋外灌进来。你走出几步后，听到他在身后轻轻说了一句】",
+          "nextNodeId": "prologue_s1_lastword"
+        },
+        {
+          "id": "prologue_s1_lastword",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "（声音很低，像是在对自己说）去吧。路还长。",
+          "nextNodeId": "prologue_s1_unlock"
+        },
+        {
+          "id": "prologue_s1_unlock",
+          "type": "narration",
+          "content": "【称号解锁：渡鸦】\n【当前身份：清华学生、中国共产党党员】",
+          "nextNodeId": "prologue_s1_ending"
+        },
+        {
+          "id": "prologue_s1_ending",
+          "type": "narration",
+          "content": "1936年12月，清华园·气象台地下室。那晚的煤油灯很暗，但举起的手很稳。\n入党之后，清华园的日子照旧。上课，读书，如往常般在图书馆与宿舍之间往返。只是看报时多了几分揣摩，走在路上会多留意几眼行人的神色。蒋南翔没有再找过我。我知道，这是规矩——单线联系，沉默是最好的保护。\n直到暑假前夕……",
+          "nextNodeId": "prologue_s1_transition"
+        },
+        {
+          "id": "prologue_s1_transition",
+          "type": "narration",
+          "content": "【黑屏转场，日历翻过半年（1937年1月—6月）→1937年6月下旬】",
+          "nextNodeId": "prologue_s2_intro"
+        }
+      ]
+    },
+    {
+      "id": "prologue_scene2",
+      "bgLabel": "scene0_Marx",
+      "nodes": [
+        {
+          "id": "prologue_s2_intro",
+          "type": "narration",
+          "content": "【场景】清华园气象台地下室，仍是那盏煤油灯，灯芯短了一截，光线更暗了。墙上的马克思画像边角翘起，空气里多了一丝夏天的闷热。蒋南翔比半年前更瘦了，颧骨突出来，但眼神反而更沉、更稳。",
+          "nextNodeId": "prologue_s2_sit"
+        },
+        {
+          "id": "prologue_s2_sit",
+          "type": "narration",
+          "content": "【蒋南翔坐在木凳上，背靠着墙。看到你进来，没有起身，只是微微点头，拍了拍旁边的空凳】",
+          "nextNodeId": "prologue_s2_task"
+        },
+        {
+          "id": "prologue_s2_task",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "组织有令让你回家探亲，相机了解社会动态。这一路上的见闻，就是你的第一份任务。（竖起三根手指，语气平静得像在讲一堂课）三件事。一、百姓的脸色——是愁苦，是麻木，还是藏着火？二、茶楼酒肆里的闲言——牢骚最见人心。三、'灰皮'的动静——军警宪特的调动，哪怕一个番号的变化，都要记在心里。（站起身，握住你的手）记住：不到万不得已，绝不暴露身份。你是种子，不是爆竹。种子活着，才能生根发芽；爆竹炸了，就只剩一声响。",
+          "nextNodeId": "prologue_s2_handshake"
+        },
+        {
+          "id": "prologue_s2_handshake",
+          "type": "narration",
+          "content": "【这次的握手比半年前更沉。过了好一会儿，他松开手，转身看向窗外，目光掠过远处北平城的轮廓，眼底翻涌着担忧。指尖无意识地摩挲着裤缝，想起城内近况，语气重得像压了千斤石】",
+          "nextNodeId": "prologue_s2_news"
+        },
+        {
+          "id": "prologue_s2_news",
+          "type": "dialogue",
+          "speaker": "蒋南翔",
+          "figure": {
+            "id": "jiang_nanxiang",
+            "position": "center"
+          },
+          "content": "这几天，丰台那边鬼子天天演习，街头军警戒严得比往常紧。校方和特务机关还联合搞了什么'暑期离校清查'，整个园子都被翻过来了。昨天，隔壁院的一个学生因为私藏左翼刊物，还没出校就被扣下了，到现在下落不明。（他顿了顿，抬手拍了拍你的肩膀，力道沉稳而坚定）你出校的时候，行李不要多。相关的书和信件，该处理的处理掉。路上如果有人盘问，一定要小心应对。北平的天怕是要变了，你回去路上千万保重。",
+          "nextNodeId": "prologue_s2_atmosphere"
+        },
+        {
+          "id": "prologue_s2_atmosphere",
+          "type": "narration",
+          "content": "【煤油灯的火苗晃了晃，映得他眼底的光忽明忽暗。地下室的寂静里，只剩两人沉重的呼吸，和窗外隐约传来的、远处街头的零星叫卖声——那是北平最后的喧嚣。】",
+          "nextNodeId": "prologue_s2_return"
+        },
+        {
+          "id": "prologue_s2_return",
+          "type": "narration",
+          "content": "回到宿舍，你打开床下的旧皮箱，开始收拾行李。",
+          "nextNodeId": "ch1_intro"
+        }
+      ]
+    },
+    {
+      "id": "ch1_scene",
+      "bgLabel": "scene0_dormitory",
+      "nodes": [
+        {
+          "id": "ch1_intro",
+          "type": "narration",
+          "content": "你回到宿舍，打开床下的旧皮箱，开始收拾行李。你需要决定以下物品的去向：",
+          "nextNodeId": "ch1_item1"
+        },
+        {
+          "id": "ch1_item1",
+          "type": "choice",
+          "content": "物品1：一张写有与党组织紧急联系方式的纸条",
+          "choices": [
+            {
+              "text": "撕碎冲进厕所",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 1
+                }
+              ],
+              "nextNodeId": "ch1_item2"
+            },
+            {
+              "text": "用隐形墨水抄写在日记本空白页",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 3
+                }
+              ],
+              "nextNodeId": "ch1_item2"
+            },
+            {
+              "text": "咽下去",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch1_item2"
+            }
+          ]
+        },
+        {
+          "id": "ch1_item2",
+          "type": "choice",
+          "content": "物品2：一封进步同学来信（内容有\"希望我们都能为理想奋斗\"等模糊话语）",
+          "choices": [
+            {
+              "text": "撕碎扔掉",
+              "nextNodeId": "ch1_item3"
+            },
+            {
+              "text": "保留作为纪念",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 2
+                }
+              ],
+              "inventoryChanges": {
+                "add": [
+                  "letter"
+                ]
+              },
+              "nextNodeId": "ch1_item3"
+            }
+          ]
+        },
+        {
+          "id": "ch1_item3",
+          "type": "choice",
+          "content": "物品3：《大众哲学》——艾思奇著（封面普通，但内容进步，在宿舍内被室友见过）",
+          "choices": [
+            {
+              "text": "烧掉",
+              "nextNodeId": "ch1_burn_night"
+            },
+            {
+              "text": "送给室友张同学",
+              "nextNodeId": "ch1_givebook"
+            },
+            {
+              "text": "撕掉封面夹在普通课本中",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch1_roommate"
+            }
+          ]
+        },
+        {
+          "id": "ch1_burn_night",
+          "type": "narration",
+          "content": "【三更梆子响过。室友呼吸均匀，你从床上坐起，赤脚落地，小心翼翼地从床底拖出皮箱，找出《大众哲学》，用火柴点燃。火苗舔上书角，纸页卷曲、发黑，\"哲学\"二字扭曲变形。你捏着书脊，看火焰向内蔓延在铜盆中燃烧，直至全部成灰。最后，你把灰烬倒入马桶，冲了两遍。铜盆归位，皮箱锁好。空气中的焦糊味还在。于是，你推开窗缝，让夜风灌入。做完这一切，你躺回床上，心跳未平，以为事情过去了。】",
+          "nextNodeId": "ch1_burn_knock"
+        },
+        {
+          "id": "ch1_burn_knock",
+          "type": "dialogue",
+          "speaker": "老吴（校工）",
+          "content": "（提着油灯站在门口，目光越过你扫向房间，吸了吸鼻子）同学，开门。查房。这么晚还没睡？刚才看见你窗户有火光。",
+          "nextNodeId": "ch1_burn_choice"
+        },
+        {
+          "id": "ch1_burn_choice",
+          "type": "choice",
+          "content": "如何应对查房？",
+          "choices": [
+            {
+              "text": "睡不着，看了会儿书，点了洋火。",
+              "nextNodeId": "ch1_burn_q"
+            },
+            {
+              "text": "火光？什么火光？我没点火。",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 10
+                }
+              ],
+              "nextNodeId": "ch1_burn_deny"
+            },
+            {
+              "text": "（摸出几张毛票递过去）吴师傅辛苦，买点东西补补身子。",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 6
+                }
+              ],
+              "nextNodeId": "ch1_burn_money"
+            },
+            {
+              "text": "不开门，装睡",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 5
+                }
+              ],
+              "nextNodeId": "ch1_burn_noanswer"
+            }
+          ]
+        },
+        {
+          "id": "ch1_burn_q",
+          "type": "dialogue",
+          "speaker": "老吴",
+          "content": "看的什么书？",
+          "nextNodeId": "ch1_burn_a"
+        },
+        {
+          "id": "ch1_burn_a",
+          "type": "dialogue",
+          "speaker": "你",
+          "content": "《水浒》。换换脑子。",
+          "nextNodeId": "ch1_burn_pass"
+        },
+        {
+          "id": "ch1_burn_pass",
+          "type": "narration",
+          "content": "老吴看了你几秒，退后半步：\"早点睡。往后夜里别点火。\"他走了。你关上门，手心全是汗。",
+          "nextNodeId": "ch1_burn_settle"
+        },
+        {
+          "id": "ch1_burn_deny",
+          "type": "narration",
+          "content": "老吴沉默。又吸了吸鼻子：\"是吗。那我可能看岔了。\"（走时回头看了你一眼）",
+          "nextNodeId": "ch1_burn_settle"
+        },
+        {
+          "id": "ch1_burn_money",
+          "type": "narration",
+          "content": "老吴没接，把你的手按回去：\"收起来。我巡夜是分内的事。\"他走了。你攥着钱站在门口。",
+          "nextNodeId": "ch1_burn_settle"
+        },
+        {
+          "id": "ch1_burn_noanswer",
+          "type": "narration",
+          "content": "你没动，闭上眼睛。敲门声响了三轮，停了。脚步声远去。第二天出门，老吴正在扫地。他抬头看你一眼，没说话。",
+          "nextNodeId": "ch1_burn_settle"
+        },
+        {
+          "id": "ch1_burn_settle",
+          "type": "narration",
+          "content": "【烧书完成·信念值+2】\n离校当天，你提着皮箱走出宿舍楼。老吴直起腰：\"走了？\"你回答：\"走了。\"走出几步回头——他已弯腰扫地，像什么都没发生过。",
+          "effects": [
+            {
+              "stat": "conviction",
+              "change": 2
+            }
+          ],
+          "nextNodeId": "ch1_settlement"
+        },
+        {
+          "id": "ch1_givebook",
+          "type": "narration",
+          "content": "【你从箱底翻出《大众哲学》，在手里停了停。张同学正靠在床边系鞋带，抬头瞥了一眼，动作微微一顿。你把书递过去：\"这本给你。\"张接过，没翻，指尖在封面上轻轻叩了两下，低声问】",
+          "nextNodeId": "ch1_givebook_ask"
+        },
+        {
+          "id": "ch1_givebook_ask",
+          "type": "dialogue",
+          "speaker": "张同学",
+          "content": "你确定？",
+          "nextNodeId": "ch1_givebook_choice"
+        },
+        {
+          "id": "ch1_givebook_choice",
+          "type": "choice",
+          "content": "如何回应张同学？",
+          "choices": [
+            {
+              "text": "拿着吧，比在我箱底有用。",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 2
+                },
+                {
+                  "stat": "suspicion",
+                  "change": -2
+                }
+              ],
+              "nextNodeId": "ch1_givebook_eve"
+            },
+            {
+              "text": "路上解闷，别想多了。",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 1
+                }
+              ],
+              "nextNodeId": "ch1_givebook_eve"
+            },
+            {
+              "text": "（不说话，递书）",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 1
+                },
+                {
+                  "stat": "insight",
+                  "change": 1
+                }
+              ],
+              "nextNodeId": "ch1_givebook_eve"
+            }
+          ]
+        },
+        {
+          "id": "ch1_givebook_eve",
+          "type": "narration",
+          "content": "【离校前一天·傍晚】宿舍只剩你二人收拾行李。张把包袱系紧，忽然低声说：\"我回广东后，可能不会再回来。\"他顿了顿：\"那本书，我会带到需要的地方去。\"",
+          "nextNodeId": "ch1_givebook_eve_choice"
+        },
+        {
+          "id": "ch1_givebook_eve_choice",
+          "type": "choice",
+          "content": "如何回应？",
+          "choices": [
+            {
+              "text": "好。路上小心。",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 3
+                }
+              ],
+              "inventoryChanges": {
+                "add": [
+                  "wuchang_contact_note"
+                ]
+              },
+              "nextNodeId": "ch1_givebook_depart"
+            },
+            {
+              "text": "你那边有人接应？",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch1_givebook_depart"
+            },
+            {
+              "text": "书你留着，别冒险。",
+              "nextNodeId": "ch1_givebook_depart"
+            }
+          ]
+        },
+        {
+          "id": "ch1_givebook_depart",
+          "type": "narration",
+          "content": "【赠书完成·信念值+3】\n离校当天。你提着皮箱走出宿舍楼。张已经在校门口等着，手里提着包袱，那本书贴身放着。擦肩时他放慢脚步，极轻地说了一句：\"后会有期。\"你没回头，低声回：\"后会有期。\"两人各奔南北。晨光里，他的背影混入人流，很快看不见了。\n【后续若触发联络，可解锁\"粤北—武昌\"地下交通线剧情】",
+          "nextNodeId": "ch1_settlement"
+        },
+        {
+          "id": "ch1_roommate",
+          "type": "dialogue",
+          "speaker": "室友李",
+          "content": "（推门而入，看你正在收拾，凑过来）嘿，你也要走了？暑假回武昌是吧？带这么多书啊？",
+          "nextNodeId": "ch1_roommate_choice"
+        },
+        {
+          "id": "ch1_roommate_choice",
+          "type": "choice",
+          "content": "如何回应？",
+          "choices": [
+            {
+              "text": "路上看看，你呢？",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch1_roommate_a"
+            },
+            {
+              "text": "（紧张合箱）啊，对……",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 3
+                }
+              ],
+              "nextNodeId": "ch1_roommate_b"
+            },
+            {
+              "text": "沉默继续收拾",
+              "nextNodeId": "ch1_roommate_c"
+            }
+          ]
+        },
+        {
+          "id": "ch1_roommate_a",
+          "type": "narration",
+          "content": "李把包甩到床上，笑道：\"我也回，苏州。你倒好，轻装简行还带这么多，我就不行了，两件换洗衣服搞定。\"他随口聊起天气和暑假安排，未再留意你的箱子。话题自然转移。",
+          "nextNodeId": "ch1_end"
+        },
+        {
+          "id": "ch1_roommate_b",
+          "type": "narration",
+          "content": "李动作顿了一下，目光在你合箱的手上停了一秒，随即收回视线，语气仍带笑意：\"你紧张啥呀，我又不抢你的。\"但笑容淡了些，转身去整理自己的床铺。之后他借口打水出了门，回来后话比平时少，偶尔多看你一眼，但没再追问。",
+          "nextNodeId": "ch1_end"
+        },
+        {
+          "id": "ch1_roommate_c",
+          "type": "narration",
+          "content": "李见你没接话，耸耸肩：\"行吧，忙你的。\"自顾自坐到床边整理背包，哼了两句苏州小调。出门前随口说了句\"我明早的车，走的时候不喊你了啊\"，语气如常，但比平时少了几分热络。",
+          "nextNodeId": "ch1_end"
+        },
+        {
+          "id": "ch1_end",
+          "type": "narration",
+          "content": "你合上皮箱，系紧带子。窗外天色已亮，离校的时刻到了。",
+          "nextNodeId": "ch1_settlement"
+        },
+        {
+          "id": "ch1_settlement",
+          "type": "narration",
+          "content": "【结算节点1｜离校准备完成，离开宿舍强制弹窗结算】\n第一章阶段结算：离校收拾完毕\n信念值：{数值}｜洞察值：{数值}｜怀疑值：{数值}\n背包道具：{武昌联络纸条（若获得）}\n状态标记：{烧书被校工留意 / 赠书达成默契 / 改书皮室友起疑}\n⚠风险提示：当前怀疑值{X}；怀疑≥10，后续北平火车站检查难度上升",
+          "nextNodeId": "ch2_intro"
+        }
+      ]
+    },
+    {
+      "id": "ch2_scene",
+      "bgLabel": "scene1_university_gate",
+      "nodes": [
+        {
+          "id": "ch2_intro",
+          "type": "narration",
+          "content": "【清华西门】门卫只有一个，懒洋洋地靠在门框上。不远处有个穿便衣的人在树下看报，偶尔抬眼扫过出校的学生。你提着皮箱走向校门。",
+          "nextNodeId": "ch2_condition"
+        },
+        {
+          "id": "ch2_condition",
+          "type": "condition",
+          "condition": {
+            "stat": "insight",
+            "operator": ">=",
+            "value": 3,
+            "passNodeId": "ch2_find",
+            "failNodeId": "ch2_choice"
+          }
+        },
+        {
+          "id": "ch2_find",
+          "type": "narration",
+          "content": "【可选观察·洞察≥3自动触发】你发现他报纸拿倒了，但他浑然不觉，眼睛一直盯着学生队伍。你记住这张脸。\n【记忆档案解锁：西门便衣相貌记忆】",
+          "nextNodeId": "ch2_choice"
+        },
+        {
+          "id": "ch2_choice",
+          "type": "choice",
+          "content": "门卫（接过学生证扫了一眼，递还给你，随口问了一句）：\"回家啊？\"",
+          "choices": [
+            {
+              "text": "（语气轻快）是，放暑假了。",
+              "nextNodeId": "ch2_end_a"
+            },
+            {
+              "text": "（沉默点头，低头走路）",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 3
+                }
+              ],
+              "nextNodeId": "ch2_end_b"
+            },
+            {
+              "text": "（皱眉，警惕）怎么了？",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch2_end_d"
+            }
+          ]
+        },
+        {
+          "id": "ch2_end_a",
+          "type": "narration",
+          "content": "你接过学生证，语气轻快地应了一声。门卫点点头，往旁边挪了挪身子让你通过，目光又落回脚边的搪瓷杯里。不远处看报的便衣只是抬眼扫了下你的皮箱，便重新埋首进报纸，连眉头都没动一下。",
+          "nextNodeId": "ch2_end"
+        },
+        {
+          "id": "ch2_end_b",
+          "type": "narration",
+          "content": "你没说话，只是短促地点了下头，攥着学生证的指节微微泛白，脚步不自觉加快了些。门卫挑了挑眉，把到嘴边的话又咽了回去。树下的便衣忽然放下报纸，目光追着你的背影。",
+          "nextNodeId": "ch2_end"
+        },
+        {
+          "id": "ch2_end_d",
+          "type": "narration",
+          "content": "你皱了下眉，语气里带着几分警惕：\"怎么了？\"门卫愣了一下，似乎没料到你会反问，下意识地往后靠了靠门框。树下的便衣猛地抬起头，报纸被他捏得皱起一角，目光像探照灯一样扫过你的脸和皮箱，过了两秒才缓缓低下头。",
+          "nextNodeId": "ch2_end"
+        },
+        {
+          "id": "ch2_end",
+          "type": "narration",
+          "content": "【顺利出校】你提着箱子，踏出清华西门。回头望了一眼，校园安静如常。没有人追出来，没有人喊你的名字。但是你知道，真正的考验，才刚刚开始。",
+          "nextNodeId": "ch3_intro"
+        }
+      ]
+    },
+    {
+      "id": "ch3_scene",
+      "bgLabel": "scene1_train_station",
+      "nodes": [
+        {
+          "id": "ch3_intro",
+          "type": "narration",
+          "content": "【北平前门火车站·登车前30分钟】你提着旧皮箱，从黄包车上下来。清晨薄雾中，车站外已聚满旅客：有穿长衫的商人、扛行李的脚夫、携家带口的百姓、与你一样提着箱子的学生。军警三步一岗，表情紧绷。远处停着几辆黑色轿车，有人从车窗向外张望。",
+          "nextNodeId": "ch3_condition"
+        },
+        {
+          "id": "ch3_condition",
+          "type": "condition",
+          "condition": {
+            "stat": "insight",
+            "operator": ">=",
+            "value": 5,
+            "passNodeId": "ch3_observe",
+            "failNodeId": "ch3_queue"
+          }
+        },
+        {
+          "id": "ch3_observe",
+          "type": "narration",
+          "content": "【环境观察·洞察≥5自动触发】你注意到检票口附近有三个\"异常\"：①一个穿中山装的中年人并不排队，只是站在柱子旁扫视人群；②检票口左侧的军警比其他口多一人；③一个卖烟的小贩位置太靠近队伍，不像真做生意。\n【记忆档案解锁：火车站三处可疑人员】",
+          "nextNodeId": "ch3_queue"
+        },
+        {
+          "id": "ch3_queue",
+          "type": "choice",
+          "content": "检票口排着长队，你必须通过检查登上南下的火车。排队等待时，你选择：",
+          "choices": [
+            {
+              "text": "观察前方检查流程",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch3_observe_check"
+            },
+            {
+              "text": "与身边的旅客闲聊探听风声",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 2
+                },
+                {
+                  "stat": "insight",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch3_gossip_1"
+            },
+            {
+              "text": "低头不语，专注于自己的行李",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": -2
+                }
+              ],
+              "nextNodeId": "ch3_silent"
+            }
+          ]
+        },
+        {
+          "id": "ch3_observe_check",
+          "type": "narration",
+          "content": "你微微侧过头，目光越过前方旅客的肩头，落在检票口旁的检查桌上。一个穿蓝布衫的青年被叫到一旁，正俯身打开自己的书箱。军警翻了翻，抽出两本，在手里掂了掂，问他什么。你听不清他说了什么，只听见军警回了一句：\"课本？课本怎么印着上海的字号？\"青年低声解释，军警没再追问，但把那两本书扔进一个竹筐里，挥挥手让他走了。\n【记忆档案解锁：印刷品风险】军警对书籍来源尤其敏感，尤其是上海印行的出版物。若你箱中有类似书籍，建议提前准备应对说辞。",
+          "nextNodeId": "ch3_arrest"
+        },
+        {
+          "id": "ch3_gossip_1",
+          "type": "dialogue",
+          "speaker": "女学生",
+          "content": "（穿一件洗得发白的蓝布旗袍，手里攥着藤编书箱，书箱角贴着\"北师大\"标签）回湖南老家。听说北平这边，连报纸都查得紧了。昨天有人带了一份《救国时报》想上车，被当众扣了，人也被带走了。",
+          "effects": [
+            {
+              "stat": "insight",
+              "change": 1
+            },
+            {
+              "stat": "suspicion",
+              "change": 1
+            }
+          ],
+          "nextNodeId": "ch3_gossip_2"
+        },
+        {
+          "id": "ch3_gossip_2",
+          "type": "dialogue",
+          "speaker": "脚夫",
+          "content": "（灰布短衫打满补丁，脚边搁着扁担绳子）查得紧呗。昨儿个帮东家送一包袱货，到了卡子上，人家翻出来几本簿子，说'上海印的，不行'，当场撕了。东家骂了我半宿，说我没长眼。我哪知道什么上海不上海？那纸上的字我又不认得。",
+          "effects": [
+            {
+              "stat": "insight",
+              "change": 1
+            },
+            {
+              "stat": "suspicion",
+              "change": 1
+            }
+          ],
+          "nextNodeId": "ch3_gossip_3"
+        },
+        {
+          "id": "ch3_gossip_3",
+          "type": "dialogue",
+          "speaker": "带孩子的妇女",
+          "content": "（怀里抱着三四岁的孩子，背上背着布包袱，声音压得极低）我弟弟上个月被抓了……他给同学写了封信，信里说'国难当头，青年当奋起'——就这一句，被翻出来，人被带走，到现在都没音信。",
+          "effects": [
+            {
+              "stat": "insight",
+              "change": 1
+            },
+            {
+              "stat": "suspicion",
+              "change": 1
+            }
+          ],
+          "nextNodeId": "ch3_gossip_end"
+        },
+        {
+          "id": "ch3_gossip_end",
+          "type": "narration",
+          "content": "【系统提示】你选择了主动交谈，得到了多条有价值的情报，但也因此引起了周围便衣的注意。\n【记忆档案解锁：报纸风险】进步报刊是查扣重点，携带者可能被直接带走。\n【记忆档案更新：印刷品风险】上海来源的印刷品是重点查扣对象。\n【记忆档案解锁：信件风险】私人信件也会被拆检，字句稍有不慎即易惹祸。",
+          "nextNodeId": "ch3_arrest"
+        },
+        {
+          "id": "ch3_silent",
+          "type": "narration",
+          "content": "你收回所有注意力，只盯着眼前两尺见方的地面。皮箱的搭扣被你反复摸了摸——确认它锁好了。你听见前方有人被拦下，听见压低的争执声，听见身后有人在叹气。但你什么都没抬头，你把自己的存在，缩成这队伍里最不起眼的一粒沙。\n【系统提示】你没有获得任何额外情报。你也没有引起任何人的注意。\n内心独白：\"有时候，不看清，比看清更安全。\"",
+          "nextNodeId": "ch3_arrest"
+        },
+        {
+          "id": "ch3_arrest",
+          "type": "narration",
+          "content": "队伍又往前挪了几步。你离检票口越来越近。前方，一个戴眼镜的青年被两名军警从队列中拉了出来……他的箱子被翻了个底朝天，几本书散落在地上。青年脸色苍白，不停地说：\"我就是个学生……我什么都不知道……\"军警推搡着他向站外走去。周围的人都低下头，装作没看见。",
+          "nextNodeId": "ch3_arrest_choice"
+        },
+        {
+          "id": "ch3_arrest_choice",
+          "type": "choice",
+          "content": "你目睹了这一切，你的反应是：",
+          "choices": [
+            {
+              "text": "低下头，不看",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": -2
+                }
+              ],
+              "nextNodeId": "ch3_luggage"
+            },
+            {
+              "text": "盯着看，记住这张脸",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 2
+                },
+                {
+                  "stat": "suspicion",
+                  "change": 3
+                }
+              ],
+              "nextNodeId": "ch3_luggage"
+            },
+            {
+              "text": "小声说\"太过分了\"",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 5
+                }
+              ],
+              "nextNodeId": "ch3_luggage"
+            },
+            {
+              "text": "握紧拳头",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 3
+                }
+              ],
+              "nextNodeId": "ch3_luggage"
+            },
+            {
+              "text": "挺身而出",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 15
+                },
+                {
+                  "stat": "conviction",
+                  "change": 5
+                }
+              ],
+              "nextNodeId": "ch3_caught"
+            }
+          ]
+        },
+        {
+          "id": "ch3_luggage",
+          "type": "narration",
+          "content": "轮到你了。军警示意你打开箱子。你放下皮箱，打开搭扣。军警开始翻检你的箱子：\"这么多书？学生就是书多。\"",
+          "nextNodeId": "ch3_luggage_check"
+        },
+        {
+          "id": "ch3_luggage_check",
+          "type": "choice",
+          "content": "军警翻看着你的行李，你如何应对？",
+          "choices": [
+            {
+              "text": "就这些，路上看看。",
+              "nextNodeId": "ch3_luggage_after"
+            },
+            {
+              "text": "还有几本杂志在底下（主动说明）",
+              "effects": [
+                {
+                  "stat": "insight",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch3_luggage_after"
+            },
+            {
+              "text": "爹不让看闲书，包了个皮",
+              "nextNodeId": "ch3_luggage_after"
+            },
+            {
+              "text": "借同学的，可能是本小说",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 2
+                }
+              ],
+              "nextNodeId": "ch3_luggage_after"
+            },
+            {
+              "text": "同学互相打气写的（提及那封信）",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 4
+                }
+              ],
+              "nextNodeId": "ch3_luggage_after"
+            },
+            {
+              "text": "别人塞给我的，没看过",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 8
+                }
+              ],
+              "nextNodeId": "ch3_luggage_after"
+            },
+            {
+              "text": "（沉默，脸色发白）",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 5
+                }
+              ],
+              "nextNodeId": "ch3_luggage_laosun"
+            }
+          ]
+        },
+        {
+          "id": "ch3_luggage_after",
+          "type": "narration",
+          "content": "军警翻了几下，看到几本课本和小说，合上箱子：\"行了。走吧。下一位！\"",
+          "nextNodeId": "ch3_luggage_result"
+        },
+        {
+          "id": "ch3_luggage_laosun",
+          "type": "dialogue",
+          "speaker": "老孙（便衣特务）",
+          "content": "（走过来，拿起那本书，翻开内页，拇指摩挲着纸张，忽然笑了）《大众哲学》，撕了课本皮，塞在行李里头。（一边翻一边自言自语）你是觉得自己聪明，还是觉得我们蠢？同学，我再问你一次。这书谁给你的？你们学校还有谁在看这种书？",
+          "nextNodeId": "ch3_luggage_laosun_choice"
+        },
+        {
+          "id": "ch3_luggage_laosun_choice",
+          "type": "choice",
+          "content": "如何回答老孙？",
+          "choices": [
+            {
+              "text": "自己买的，写得有道理。",
+              "effects": [
+                {
+                  "stat": "conviction",
+                  "change": 3
+                },
+                {
+                  "stat": "suspicion",
+                  "change": 8
+                }
+              ],
+              "nextNodeId": "ch3_luggage_result"
+            },
+            {
+              "text": "旧书摊买的，不知道内容。",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 5
+                }
+              ],
+              "nextNodeId": "ch3_luggage_result"
+            },
+            {
+              "text": "（沉默不答）",
+              "effects": [
+                {
+                  "stat": "suspicion",
+                  "change": 10
+                }
+              ],
+              "nextNodeId": "ch3_caught"
+            }
+          ]
+        },
+        {
+          "id": "ch3_luggage_result",
+          "type": "condition",
+          "condition": {
+            "stat": "suspicion",
+            "operator": ">=",
+            "value": 15,
+            "passNodeId": "ch3_caught",
+            "failNodeId": "ch3_luggage_midcheck"
+          }
+        },
+        {
+          "id": "ch3_luggage_midcheck",
+          "type": "condition",
+          "condition": {
+            "stat": "suspicion",
+            "operator": ">=",
+            "value": 11,
+            "passNodeId": "ch3_tracked",
+            "failNodeId": "ch3_pass"
+          }
+        },
+        {
+          "id": "ch3_caught",
+          "type": "ending",
+          "endingType": "caught",
+          "endingDescription": "【游戏结束：出师未捷】便衣示意两个军警上前，一左一右扣住你的胳膊：\"跟我们走一趟。\"你被带离队伍，箱子被拎走。月台上有人投来同情的目光，但没有人说话。"
+        },
+        {
+          "id": "ch3_tracked",
+          "type": "narration",
+          "content": "【结局④：怀疑值过高·被便衣跟踪】军警合上箱子挥了挥手，你提着箱子穿过检票口。但你隐约察觉，身后有陌生人的目光反复落在你的身上。\n【系统提示：你被记下了，后续若在高敏区域活动，有概率触发盯梢】\n【临时状态：被便衣跟踪】",
+          "nextNodeId": "ch3_pass"
+        },
+        {
+          "id": "ch3_pass",
+          "type": "narration",
+          "content": "【结局③：安全通过】你提着箱子，穿过检票口，走上月台。身后，检票的队伍还在缓慢移动。你没有回头。汽笛声响起，绿皮火车喷着白雾，停在站台边。",
+          "nextNodeId": "ch3_settlement"
+        },
+        {
+          "id": "ch3_settlement",
+          "type": "narration",
+          "content": "【结算节点2｜北平登车完成，登上南下火车强制弹窗结算】\n阶段结算：北平登车完毕\n信念值：{数值}｜洞察值：{数值}｜怀疑值：{数值}\n记忆档案：{西门便衣相貌记忆、火车站三处可疑人员、报纸风险、印刷品风险、信件风险}（情报存入档案库永久查阅）\n背包道具：{武昌联络纸条（若持有）}\n⚠高危判定：若怀疑值≥15，直接死亡触发结局①：出师未捷；若14≥怀疑值≥11，触发临时状态：被便衣跟踪。",
+          "nextNodeId": "chapter1_start"
+        },
+        {
+          "id": "chapter1_start",
+          "type": "narration",
+          "content": "【序幕完，进入第一回：烽火骤起·失联】",
+          "nextNodeId": null
+        }
+      ]
+    }
+  ]
 }
