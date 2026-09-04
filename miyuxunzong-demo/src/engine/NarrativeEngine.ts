@@ -114,4 +114,39 @@ export class NarrativeEngine {
       }
     }
   }
+    /**
+ * 渲染文本，将 {字段名} 替换为真实属性值
+ * 支持：{suspicion} {insight} {conviction} {trust_father} {trust_org} {worry} {inventory} {status_tags}
+ */
+    renderText(text: string): string {
+        // 状态标记物品 -> 中文显示 的映射表
+        const tagMap: Record<string, string> = {
+            'tag_burned_book': '烧书被校工留意',
+            'tag_gave_book': '赠书达成默契',
+            'tag_rewrapped_book': '改书皮室友起疑',
+        }
+        return text.replace(/\{(\w+)\}/g, (match, key: string) => {
+            // 属性值替换
+            const statVal = (this.store.stats as Record<string, number>)[key]
+            if (statVal !== undefined) return String(statVal)
+            // 背包道具列表
+            if (key === 'inventory') {
+                const realItems = this.store.items.filter(i => !i.startsWith('tag_'))
+                return realItems.length > 0 ? realItems.join('、') : '无'
+            }
+            // 状态标记列表（自动扫描 tag_ 开头的物品，转换成中文）
+            if (key === 'status_tags') {
+                const tags = this.store.items
+                    .filter(i => i.startsWith('tag_'))
+                    .map(i => tagMap[i] || i)
+                return tags.length > 0 ? tags.join(' / ') : '无'
+            }
+            // 羽毛数量
+            if (key === 'feathers') return String(this.store.feathers)
+            // 不认识的变量，原样返回
+            return match
+        })
+    }
+
+
 }

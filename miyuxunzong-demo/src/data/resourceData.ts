@@ -20,6 +20,8 @@ export const characterCards: CharacterCard[] = [
   { id: 'li_wanqing', name: '李婉清', role: '清华在校学生', age: '19 岁', origin: '江苏苏州', identity: '平民', summary: '专心课业的普通学生，没有特殊任务。', clues: ['苏州口音与籍贯匹配', '只有读写形成的薄茧', '不监视、不试探他人'] },
   { id: 'wu_cuilian', name: '吴翠莲', role: '清华宿舍保洁女工', age: '43 岁', origin: '河北农村', identity: '国民党特务', summary: '利用自由进出宿舍的便利截取书信和进步书刊。', clues: ['情急时流露四川方言', '声称不识字却收集纸条', '指尖残留密写药水'] },
   { id: 'chen_xiuzhen', name: '陈秀珍', role: '逃难带娃的妇人', age: '34 岁', origin: '河南周口', identity: '我方潜伏人员', summary: '借逃难身份传递情报、观察沿途哨卡。', clues: ['口音偶有江南腔', '指尖有药水残留', '频繁打探交通和盘查规则'] },
+   { id: 'chen_xiuzhen', name: '陈秀珍', role: '逃难带娃的妇人', age: '34 岁', origin: '河南周口', identity: '我方潜伏人员', summary: '借逃难身份传递情报、观察沿途哨卡。', clues: ['口音偶有江南腔', '指尖有药水残留', '频繁打探交通和盘查规则'] },
+
 ]
 
 // Sample identity-case schema. Future cases should add one entry here and create
