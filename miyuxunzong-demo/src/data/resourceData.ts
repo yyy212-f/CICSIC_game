@@ -10,6 +10,11 @@ export const itemCatalog = [
   { id: 'revive_card', name: '原地复活卡', description: '失败结局时从当前章节检查点重试。', price: 12 },
   { id: 'rebound_card', name: '触底反弹卡', description: '怀疑值达到 10 后可使用，降低 5 点。', price: 10 },
   { id: 'explore_card', name: '探索卡', description: '解锁一次任意情报站任务。', price: 15 },
+  { id: 'mem_emergency_rule', name: '记忆档案·紧急联络规则', description: '白纸平安，十字撤离；南门外老渡口茶馆，二楼靠窗点龙井接头。', price: 0 },
+  { id: 'mem_baban_code', name: '记忆档案·八办接头暗号', description: '“请问这里有《群众》周刊吗？”——“你要哪一期的？”——“创刊号那期。”', price: 0 },
+  { id: 'item_baban_route', name: '八办路线纸条', description: '途经武汉时，前往八路军办事处找蒋南翔的路线（汉口旧日租界 89 号）。', price: 0 },
+  { id: 'item_backup_teahouse', name: '【状态】听雨轩备用联络点', description: '长沙第二处可用联络点，已激活（在南门老渡口茶馆之外）。', price: 0 },
+  { id: 'item_idle_piece', name: '【状态】闲棋冷子', description: '与组织关系为隐蔽待命：不去延安，以普通学生身份混入服务团。', price: 0 },
 ]
 
 export const characterCards: CharacterCard[] = [

@@ -1,22 +1,10 @@
 import manifest from './scripts/tempered_1937/manifest.json'
 import prologue from './scripts/tempered_1937/01_序幕-入党与离校.json'
 import firstRound from './scripts/tempered_1937/02_第一回-烽火骤起.json'
+import secondRound from './scripts/tempered_1937/03_第二回-暗号初步.json'
 import type { Node, Script } from '../types'
 
-const chapterFiles = [prologue, firstRound,
-  {
-    id: 'chapter2', title: '第二回·棋劫初布·长沙临时大学', scenes: [
-      { id:'ch2_scene', bgLabel:'', nodes:[
-        { id:'ch2_intro', type:'narration', content:'长沙临时大学的校园里，流亡学生彼此擦肩。你必须在陌生人群中寻找组织留下的暗号。', nextNodeId:'ch2_choice' },
-        { id:'ch2_choice', type:'choice', content:'你选择如何寻找线索？', choices:[
-          { text:'先观察校园公告和出入路线', effects:[{stat:'insight',change:2}], nextNodeId:'ch2_end' },
-          { text:'主动向学生打听熟悉的姓名', effects:[{stat:'suspicion',change:2},{stat:'insight',change:1}], nextNodeId:'ch2_end' },
-          { text:'夜间前往图书馆等待接头', effects:[{stat:'conviction',change:2}], nextNodeId:'ch2_end' }
-        ] },
-        { id:'ch2_end', type:'ending', endingType:'chapter_complete', endingDescription:'你在长沙临时大学站稳脚跟，接到前往茶馆的暗号。' }
-      ] }
-    ]
-  },
+const chapterFiles = [prologue, firstRound, secondRound,
   {
     id: 'chapter3', title: '第三回·报名服务团·伪装身份', scenes: [
       { id:'ch3_scene', bgLabel:'', nodes:[
