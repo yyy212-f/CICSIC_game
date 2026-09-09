@@ -1,18 +1,268 @@
 {
-  "id": "chapter3",
-  "title": "第三回·报名服务团·伪装身份",
-  "scenes": [
-    {
-      "id": "ch3_scene",
-      "bgLabel": "",
-      "nodes": [
-        { "id": "ch3_intro", "type": "narration", "content": "服务团报名点人声嘈杂，你需要填写一份新的身份资料。", "nextNodeId": "ch3_choice" },
-        { "id": "ch3_choice", "type": "choice", "content": "你如何填写报名经历？", "choices": [
-          { "text": "如实填写求学经历", "effects": [{ "stat": "conviction", "change": 1 }], "nextNodeId": "ch3_end" },
-          { "text": "只保留普通信息", "effects": [{ "stat": "suspicion", "change": -1 }], "nextNodeId": "ch3_end" }
-        ] },
-        { "id": "ch3_end", "type": "ending", "endingType": "chapter_complete", "endingDescription": "模板章节结束：你的服务团身份等待后续剧情接续。" }
-      ]
-    }
-  ]
+    "id": "chapter3",
+    "title": "第三回·报名服务团·伪装身份",
+    "scenes": [
+                  {
+                      "id": "ch3_scene1",
+                      "bgLabel": "scene3_changsha_registration",
+                      "nodes": [
+                        {
+                          "id": "ch3_intro",
+                          "type": "narration",
+                          "content": "1937年12月下旬。长沙某中学操场，临时设为湖南青年战地服务团报名点。挂着青天白日旗，几张课桌拼成的登记台。",
+                          "nextNodeId": "ch3_turn_to_you"
+                        },
+                        {
+                          "id": "ch3_turn_to_you",
+                          "type": "narration",
+                          "content": "终于轮到你上前登记。",
+                          "nextNodeId": "ch3_q1_dialogue"
+                        }
+                      ]
+                  },
+                  {
+                      "id": "ch3_scene2",
+                      "bgLabel": "scene3_registration_form",
+                      "nodes":[
+                        {
+                          "id": "ch3_q1_dialogue",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "（抬头看你一眼，拿起毛笔蘸墨，语气平淡却带着审视的惯性）姓名，籍贯，学历。这些纸上都有。我只有一个问题——你放着书不读，跑来这里，图什么？前线可不是学堂，死人是真死，疼是真疼。(放下笔，往后靠了靠，目光不紧不慢地落在你脸上，等你开口。)",
+                          "nextNodeId": "ch3_choice_q1"
+                        }
+                      ]
+                  },
+                  {
+                      "id": "ch3_scene3",
+                      "bgLabel": "scene3_changsha_registration",
+                      "nodes":[
+                        {
+                          "id": "ch3_choice_q1",
+                          "type": "choice",
+                          "content": "这是一个开放式的回答机会。你的每一句话，都在帮他判断：你是热血青年、投机分子，还是别的什么。请选择你的回答方式：",
+                          "choices": [
+                            {
+                              "text": "我在北平念书时，看过日本兵在城外把炮口对着城墙。那时我就想，读书固然要紧，但国都快没了，书也读不安稳。",
+                              "effects": [],
+                              "nextNodeId": "ch3_opt_a_pass"
+                            },
+                            {
+                              "text": "我觉得，中国之所以挨打，就是因为老百姓各顾各的，没有组织起来。如果中国人都能动员起来，日本人再多也不怕。",
+                              "effects": [],
+                              "nextNodeId": "ch3_opt_b_followup"
+                            },
+                            {
+                              "text": "我不怕死，只要能上前线，让我干什么都行。我不在乎怎么死，就怕窝囊死在家里。抗战就是革命，革命就要流血，我流得起。",
+                              "effects": [],
+                              "nextNodeId": "ch3_opt_c_followup"
+                            },
+                            {
+                              "text": "我没什么大志向，就是想离开家，出来见见世面。听说服务团管吃管住，还能去西安、兰州看看，比窝在老家强。上前线嘛，别人能干，我也能干。",
+                              "effects": [
+                                {
+                                  "stat": "suspicion",
+                                  "change": 4
+                                }
+                              ],
+                              "nextNodeId": "ch3_opt_d_failure"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ch3_opt_a_pass",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {
+                            "id": "recruit_officer","position": "center"
+                          },
+                          "content": "（点点头，在表格上写“踏实可用”。没有追问，盖章通过。）",
+                          "nextNodeId": "ch3_ending1_receive_card"
+                        },
+                        {
+                          "id": "ch3_opt_b_followup",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {
+                            "id": "recruit_officer","position": "center"
+                          },
+                          "content": "（笔顿了一下，抬头看你）你刚才说‘组织起来’，是怎么个组织法？",
+                          "nextNodeId": "ch3_choice_b_sub"
+                        },
+                        {
+                          "id": "ch3_choice_b_sub",
+                          "type": "choice",
+                          "content": "如何回答军官的追问？",
+                          "choices": [
+                            {
+                              "text": "就是……大家团结一心，互相帮助的意思。我觉得前线应该也差不多吧，把人拢到一起，力气往一处使就行了。",
+                              "effects": [
+                                {
+                                  "stat": "suspicion",
+                                  "change": 1
+                                }
+                              ],
+                              "nextNodeId": "ch3_b_sub_ok"
+                            },
+                            {
+                              "text": "北平那边有些青年圈子，我们会私下碰头，分头去接触做工的人，听听他们的处境。",
+                              "effects": [
+                                {
+                                  "stat": "suspicion",
+                                  "change": 50
+                                }
+                              ],
+                              "nextNodeId": "ch3_ending2_arrest_expose"
+                            },
+                            {
+                              "text": "我在北平时参加过读书会，大家轮流讲时局，讨论怎么唤起民众。",
+                              "effects": [
+                                {
+                                  "stat": "suspicion",
+                                  "change": 3
+                                }
+                              ],
+                              "nextNodeId": "ch3_b_sub_warn"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ch3_b_sub_ok",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "行，有这想法不算坏事。到了团里，听指挥就行。（低头在表格上写了几笔。）",
+                          "nextNodeId": "ch3_ending1_receive_card"
+                        },
+                        {
+                          "id": "ch3_b_sub_warn",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "（眉头微微一皱，目光审视着你，低头在表格写下备注“接触过进步书刊社团”）读书归读书，别被外头那些激进言论带偏，军中不比北平城里。",
+                          "nextNodeId": "ch3_ending1_receive_card"
+                        },
+                        {
+                          "id": "ch3_ending2_arrest_expose",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "（神色骤然变冷，不再问话，直接呼叫卫兵）拿下！",
+                          "nextNodeId": "ch3_ending_caught"
+                        },
+                        {
+                          "id": "ch3_opt_c_followup",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "（抬眼打量你）你这话像演说稿。你平时经常听演讲？",
+                          "nextNodeId": "ch3_choice_c_sub"
+                        },
+                        {
+                          "id": "ch3_choice_c_sub",
+                          "type": "choice",
+                          "content": "面对军官的质疑，你如何应答？",
+                          "choices": [
+                            {
+                              "text": "我在长沙临时大学听过一位先生的讲座，里面提到革命精神，我觉得有道理，就记下来了。",
+                              "effects": [
+                                {
+                                  "stat": "suspicion",
+                                  "change": 3
+                                }
+                              ],
+                            "nextNodeId": "ch3_c_sub_ok"
+                            },
+                            {
+                              "text": "没听过演讲，我就是自己这么想的。国家都这样了，谁不着急？",
+                              "effects": [
+                                {
+                                  "stat": "suspicion",
+                                  "change": 5
+                                }
+                              ],
+                              "nextNodeId": "ch3_c_sub_suspicious"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ch3_c_sub_ok",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "长沙临时大学的讲座……行，那不算野路子。（神色稍微松动了一点）",
+                          "nextNodeId": "ch3_ending1_receive_card"
+                        },
+                        {
+                          "id": "ch3_c_sub_suspicious",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "（沉默了片刻，语气比刚才冷了一分）自己想的？那你倒是个天生的演说家。一个学生，没听过演讲，张嘴就是‘革命流血’，你觉得我信吗？（在表格上重重画了一个圈，备注“刻意回避，疑点突出”。）",
+                          "nextNodeId": "ch3_ending1_receive_card"
+                        },
+                        {
+                          "id": "ch3_opt_d_failure",
+                          "type": "dialogue",
+                          "speaker": "登记军官",
+                          "figure": {"id": "recruit_officer","position": "center"},
+                          "content": "（皱了皱眉，但没追问，只在备注栏写“动机轻浮”。没有等你回答，低头在表格上写了几笔，然后抬起头，目光越过你，看向你身后排队的人。）行了下一位。",
+                          "nextNodeId": "ch3_ending3_frivolous_fail"
+                        },
+                        {
+                          "id": "ch3_ending1_receive_card",
+                          "type": "narration",
+                          "content": "军官在表格上盖章，将一张纸递给你。\n【获得道具：湖南青年战地服务团团员证】",
+                          "inventoryChanges": {
+                            "add": [
+                              "service_group_card"
+                            ]
+                          },
+                          "nextNodeId": "ch3_cond_suspicion_judge"
+                        },
+                        {
+                          "id": "ch3_cond_suspicion_judge",
+                          "type": "condition",
+                          "condition": {
+                            "stat": "suspicion",
+                            "operator": ">=",
+                            "value": 18,
+                            "passNodeId": "ch3_ending_fail",
+                            "failNodeId": "ch3_ending_pass"
+                          }
+                        },
+                        {
+                          "id": "ch3_ending_pass",
+                          "type": "narration",
+                          "content": "【系统提示】\n获得道具：湖南青年战地服务团团员证。\n登记军官写下的备注标签将带入下一章剧情，会间接影响后续胡宗南对你的初始印象。\n组织关系状态：隐蔽待命。\n报名已经完成，等待三天后火车站集合，即将踏上北上征途。",
+                          "nextNodeId": "ch3_ending_normal"
+                        },
+                        {
+                          "id": "ch3_ending_normal",
+                          "type": "ending",
+                          "endingType": "chapter_complete",
+                          "endingDescription": "本章结束：报名服务团完成，等待集合，准备跟随队伍出发。"
+                        },
+                        {
+                          "id": "ch3_ending_caught",
+                          "type": "ending",
+                          "endingType": "caught",
+                          "endingDescription": "出师未捷：言多必失，你在报名现场当场败露被捕，游戏结束。"
+                        },
+                        {
+                          "id": "ch3_ending3_frivolous_fail",
+                          "type": "ending",
+                          "endingType": "chapter_fail",
+                          "endingDescription": "初心虚浮·拒之局外：军官判定你动机轻浮。就算勉强通过报名，后续会被分配边缘杂务，无法接近核心情报圈，潜伏任务失败。"
+                        },
+                        {
+                          "id": "ch3_ending_fail",
+                          "type": "ending",
+                          "endingType": "chapter_fail",
+                          "endingDescription": "暗礁倾覆·疑重难容：你的累计怀疑值已经达到临界点。军官不予录用，移交清查，潜伏任务失败。"
+                        }
+                      ]
+                  }
+    ]
 }
