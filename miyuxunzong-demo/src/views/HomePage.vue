@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <section class="home-visual"><div class="home-eagle">🦅</div><span>情报鹰 · 任务引导</span></section>
+    <section class="home-visual"><img class="home-eagle" src="/assets/eagle.png" alt="情报鹰" /><span>情报鹰 · 任务引导</span></section>
     <section class="home-content">
       <p class="eyebrow">沉浸式国家安全教育</p>
       <h1 class="title">密羽寻踪</h1>
