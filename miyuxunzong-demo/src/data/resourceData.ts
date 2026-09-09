@@ -25,26 +25,89 @@ export const characterCards: CharacterCard[] = [
   { id: 'li_wanqing', name: '李婉清', role: '清华在校学生', age: '19 岁', origin: '江苏苏州', identity: '平民', summary: '专心课业的普通学生，没有特殊任务。', clues: ['苏州口音与籍贯匹配', '只有读写形成的薄茧', '不监视、不试探他人'] },
   { id: 'wu_cuilian', name: '吴翠莲', role: '清华宿舍保洁女工', age: '43 岁', origin: '河北农村', identity: '国民党特务', summary: '利用自由进出宿舍的便利截取书信和进步书刊。', clues: ['情急时流露四川方言', '声称不识字却收集纸条', '指尖残留密写药水'] },
   { id: 'chen_xiuzhen', name: '陈秀珍', role: '逃难带娃的妇人', age: '34 岁', origin: '河南周口', identity: '我方潜伏人员', summary: '借逃难身份传递情报、观察沿途哨卡。', clues: ['口音偶有江南腔', '指尖有药水残留', '频繁打探交通和盘查规则'] },
-   { id: 'chen_xiuzhen', name: '陈秀珍', role: '逃难带娃的妇人', age: '34 岁', origin: '河南周口', identity: '我方潜伏人员', summary: '借逃难身份传递情报、观察沿途哨卡。', clues: ['口音偶有江南腔', '指尖有药水残留', '频繁打探交通和盘查规则'] },
-
 ]
 
-// Sample identity-case schema. Future cases should add one entry here and create
-// matching fragment ids in the acquisition flow; no image assets are required.
-export const identityCases = [
+// 身份鉴别案例：free=true 的前 3 个案例线索直接给出无需付费；free=false 的案例每条线索需羽毛解锁
+export interface IdentityCase {
+  id: string; name: string; title: string; free: boolean; price?: number
+  answer: string; explanation: string
+  clues: { id: string; label: string; content: string }[]
+}
+
+export const identityCases: IdentityCase[] = [
+  // ========== 前 3 个：免费直出 ==========
   {
-    id: 'zhang_shoutian',
-    name: '张守田',
-    title: '门卫身份档案',
+    id: 'zhang_shoutian', name: '张守田', title: '门卫身份档案', free: true,
     answer: '平民',
-    explanation: '籍贯、口音、履历与手部特征彼此印证，且没有监视、试探或情报传递行为。他只是为养家而工作的校园门卫。',
+    explanation: '籍贯、经历、身体痕迹、言谈思想全部统一，无任何政治背景与特殊使命，是依靠体力工作维持家用的普通底层百姓。',
     clues: [
-      { id: 'identity:zhang_shoutian:origin', label: '籍贯与口音', content: '河北新城人，说一口地道的新城乡土话。' },
-      { id: 'identity:zhang_shoutian:work', label: '履历与手部特征', content: '务农二十三年、看门三年，双手布满长期体力劳动留下的厚茧。' },
-      { id: 'identity:zhang_shoutian:conduct', label: '日常言行', content: '只关心家计，从不打探学生动向，也不搜查书籍和信件。' },
+      { id: 'identity:zhang_shoutian:origin',  label: '籍贯与口音', content: '籍贯河北新城，日常全程使用地道的新城乡土口音，无外来方言或刻意改口音的矛盾。' },
+      { id: 'identity:zhang_shoutian:work',    label: '履历与手部特征', content: '务农二十三年、入校当门卫三年，长期干体力活，双手布满厚茧，无枪械、密写等特殊痕迹。' },
+      { id: 'identity:zhang_shoutian:conduct', label: '日常言行', content: '从不主动打探学生动向，不搜查书籍信件，只关心温饱生计，无监视、试探等异常行为。' },
     ],
   },
-] as const
+  {
+    id: 'su_wenbin', name: '苏文彬', title: '便衣身份档案', free: true,
+    answer: '我方潜伏人员',
+    explanation: '主动打入国民党校园特务队伍收集情报。三处疑点虽有破绽，但均可依靠伪装身份编造说辞化解，无国民党特务那种多处无法解释的硬伤，且区别于毫无疑点的平民。',
+    clues: [
+      { id: 'identity:su_wenbin:origin',  label: '籍贯与口音疑点', content: '对外称自幼生长北平从没去过南方，但情绪慌乱时会不自觉冒出福建方言，说辞勉强。' },
+      { id: 'identity:su_wenbin:hand',    label: '手部痕迹疑点', content: '对外登记只跟踪学生行踪无需配枪，但其虎口有长期握持短枪形成的厚茧，与宣传工作冲突。' },
+      { id: 'identity:su_wenbin:conduct', label: '立场言论疑点', content: '在军官、校方面前积极搜查进步书刊、检举学生，完全贴合国民党管控要求。' },
+    ],
+  },
+  {
+    id: 'zhang_huiru', name: '张慧茹', title: '进步学生身份档案', free: true,
+    answer: '国民党特务',
+    explanation: '伪装成追求救国理想的广东进步学生，实际是安插在清华校内的国民党特务。三处核心信息互相冲突，伪装目的性极强，核心任务为监视、搜集进步学生情报。',
+    clues: [
+      { id: 'identity:zhang_huiru:origin', label: '籍贯口音矛盾', content: '自述籍贯广东韶关，激动时脱口而出地道北平口语，只能含糊搪塞年少在北平寄养，说辞生硬。' },
+      { id: 'identity:zhang_huiru:hand',   label: '手部痕迹矛盾', content: '对外称只写读书笔记，正常学生只有握笔薄茧，但指尖残留专用密写印泥痕迹，无法合理辩解。' },
+      { id: 'identity:zhang_huiru:conduct',label: '言行目的矛盾', content: '表面和进步学生交好、借阅红色书籍，私下记录学生交友与深夜外出名单，说辞无法掩盖反常举动。' },
+    ],
+  },
+  // ========== 后 4 个：需羽毛解锁 ==========
+  {
+    id: 'li_wanqing', name: '李婉清', title: '在校学生身份档案', free: false, price: 8,
+    answer: '平民',
+    explanation: '履历、身体特征、言谈举止完全统一，不存在特务、地下潜伏人员的伪装破绽。只是专心读书、心思单纯的普通学生。',
+    clues: [
+      { id: 'identity:li_wanqing:origin',  label: '籍贯与口音', content: '籍贯苏州，日常说话一直是普通话夹带苏州软音，无刻意改口音或漏外地腔调。' },
+      { id: 'identity:li_wanqing:hand',    label: '手部痕迹', content: '平日只读书写字，仅有笔尖磨出的薄茧，无枪械、密写、外勤劳作等特殊痕迹。' },
+      { id: 'identity:li_wanqing:conduct', label: '言行表现', content: '只关心学业与家乡琐事，谈论时局仅抒发学生朴素忧国情绪，不私下盯人或记录他人行踪。' },
+    ],
+  },
+  {
+    id: 'wu_cuilian', name: '吴翠莲', title: '宿舍保洁身份档案', free: false, price: 8,
+    answer: '国民党特务',
+    explanation: '以宿舍保洁校工为掩护，利用自由进出宿舍的便利搜查进步书刊、截取书信、记录进步学生动向。三处核心破绽无法合理掩盖，与平民、我方潜伏人员有明显区分。',
+    clues: [
+      { id: 'identity:wu_cuilian:origin', label: '籍贯口音疑点', content: '对外称土生土长河北乡下妇女，情急时常不受控制冒出四川方言，远亲寄养的说辞逻辑生硬。' },
+      { id: 'identity:wu_cuilian:hand',   label: '识字行为与口述矛盾', content: '反复对外说一字不识，可打扫时专门翻看学生书本、拆开丢弃信件、悄悄收好纸条留存，与自述严重冲突。' },
+      { id: 'identity:wu_cuilian:conduct',label: '手部痕迹疑点', content: '本职仅扫地洗衣，本应只有做家务的薄茧，但指尖长期残留密写药水痕迹，保洁女工无合理接触理由。' },
+    ],
+  },
+  {
+    id: 'chen_xiuzhen', name: '陈秀珍', title: '逃难妇人身份档案', free: false, price: 8,
+    answer: '我方潜伏人员',
+    explanation: '真实身份为地下党潜伏交通员，利用妇女、孩童的弱势外表降低防备，借逃难掩护传递情报。三处疑点虽有破绽，但都能依靠逃难妇人的伪装临时圆场，没有国民党特务那种逻辑完全崩塌的硬漏洞。',
+    clues: [
+      { id: 'identity:chen_xiuzhen:origin', label: '籍贯口音矛盾', content: '自述土生土长河南周口人，放松警惕时会下意识说出江南口音，只能牵强说年少随亲戚暂住江南。' },
+      { id: 'identity:chen_xiuzhen:hand',   label: '手部痕迹矛盾', content: '对外身份是普通农村妇女，手上仅有家务薄茧，但指尖留存密写药水印记，无合理缘由。' },
+      { id: 'identity:chen_xiuzhen:conduct',label: '行为目的矛盾', content: '嘴上说只想安稳赶路躲避战乱，却频繁打探学生去向、军警盘查规则、南下交通路线，频率远超普通逃难百姓。' },
+    ],
+  },
+  {
+    id: 'gu_yongchang', name: '顾永昌', title: '杂货商人身份档案', free: false, price: 8,
+    answer: '国民党特务',
+    explanation: '以南北杂货商人为掩护身份，真实是国民党外勤特务，借经商流动便利在车站市井监视搜集爱国学生与地下活动线索。三处难以圆谎的核心漏洞，和无异常平民、仅有少量可解释疑点的我方潜伏人员有明显区分。',
+    clues: [
+      { id: 'identity:gu_yongchang:origin', label: '籍贯口音矛盾', content: '自述从小在安徽阜阳长大，情绪慌乱时会脱口说出江浙方言，说辞前后矛盾。' },
+      { id: 'identity:gu_yongchang:hand',   label: '手部痕迹矛盾', content: '杂货商人日常只记账理货，应有笔尖薄茧，但其虎口有长期握持短枪的厚重硬茧，难以托词掩盖。' },
+      { id: 'identity:gu_yongchang:conduct',label: '行为动机矛盾', content: '极少谈论商品价格货源，反而主动打听流亡学生去向、军警哨卡布防，打探情报目的性极强。' },
+    ],
+  },
+]
 
 export const quizBank: Quiz[] = [
   { id:'q1', sourceType:'knowledge', type:'single', question:'国家秘密载体应当如何管理？', options:['随身公开携带','严格保密并按规定流转','拍照上传网络','交给陌生人保管'], answer:'严格保密并按规定流转', explanation:'国家秘密载体必须依法依规管理。', rewards:{feathers:3} },

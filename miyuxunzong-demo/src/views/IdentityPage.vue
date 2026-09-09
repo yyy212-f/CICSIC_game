@@ -15,26 +15,44 @@
   </main>
 </template>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { identityCases } from '../data/resourceData'
 import { useGameStore } from '../stores/gameStore'
 import { autoSave } from '../engine/SaveManager'
 
 const router = useRouter()
+const route = useRoute()
 const store = useGameStore()
-const identityCase = identityCases[0]
+
+// 通过路由参数 caseId 查找对应案例，兼容没有参数的情况
+const identityCase = computed(() => {
+  const caseId = route.params.caseId as string
+  return identityCases.find(c => c.id === caseId) ?? identityCases[0]
+})
+
+// 如果案例是免费的，进入页面时确保线索已自动解锁
+onMounted(() => {
+  const ic = identityCase.value
+  if (ic?.free) {
+    ic.clues.forEach(c => store.addFragment(c.id))
+  }
+})
 const options = ['平民', '我方潜伏人员', '国民党特务']
 const selected = ref('')
 const result = ref('')
-const passed = computed(() => store.fragments.includes(`identity:${identityCase.id}:passed`))
-const collectedClues = computed(() => identityCase.clues.filter(clue => store.fragments.includes(clue.id)))
-const isComplete = computed(() => collectedClues.value.length === identityCase.clues.length)
+const passed = computed(() => store.fragments.includes(`identity:${identityCase.value.id}:passed`))
+const collectedClues = computed(() => {
+  const ic = identityCase.value
+  return ic.clues.filter(clue => ic.free || store.fragments.includes(clue.id))
+})
+const isComplete = computed(() => collectedClues.value.length === identityCase.value.clues.length)
 async function judge() {
-  if (selected.value === identityCase.answer) {
-    store.addFragment(`identity:${identityCase.id}:passed`)
-    store.unlockCharacter(identityCase.id)
-    result.value = `判定正确：${identityCase.explanation}`
+  const ic = identityCase.value
+  if (selected.value === ic.answer) {
+    store.addFragment(`identity:${ic.id}:passed`)
+    store.unlockCharacter(ic.id)
+    result.value = `判定正确：${ic.explanation}`
     await autoSave()
   } else result.value = '判定不正确。请重新核对已收集线索之间是否存在矛盾。'
 }
