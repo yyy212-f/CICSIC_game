@@ -3,15 +3,90 @@
   "title": "第四回·暗流试锋·西北征途",
   "scenes": [
     {
-      "id": "ch4_scene",
-      "bgLabel": "",
+      "id": "ch4_scene1_platform",
+      "bgLabel": "scene4_changsha_platform",
       "nodes": [
-        { "id": "ch4_intro", "type": "narration", "content": "列车向西北驶去，陌生人的盘问成为新的考验。", "nextNodeId": "ch4_choice" },
-        { "id": "ch4_choice", "type": "choice", "content": "面对试探，你如何应对？", "choices": [
-          { "text": "保持沉默并观察", "effects": [{ "stat": "insight", "change": 1 }], "nextNodeId": "ch4_end" },
-          { "text": "用服务团身份自然回答", "effects": [{ "stat": "trust_org", "change": 1 }], "nextNodeId": "ch4_end" }
+        { "id": "ch4_platform_intro", "type": "narration", "content": "1937年12月下旬，长沙火车站。站台上挤满送别的亲人、整装待发的士兵和扛着器材的服务团成员；一面“湖南青年战地服务团”的旗帜在寒风中飘动。", "nextNodeId": "ch4_platform_dialogue" },
+        { "id": "ch4_platform_dialogue", "type": "dialogue", "speaker": "团员甲", "figure": { "id": "service_member_a", "position": "left" }, "content": "听说我们要去西安！胡宗南的部队！", "nextNodeId": "ch4_platform_worry" },
+        { "id": "ch4_platform_worry", "type": "dialogue", "speaker": "团员乙", "figure": { "id": "service_member_b", "position": "right" }, "content": "不知道前线什么样……你怕不怕？", "nextNodeId": "ch4_platform_choice" },
+        { "id": "ch4_platform_choice", "type": "choice", "content": "汽笛长鸣。提起行李、随着队伍登车前，你最后望了一眼长沙。", "choices": [
+          { "text": "为了这片土地，我愿走入黑暗。", "effects": [{ "stat": "conviction", "change": 3 }], "nextNodeId": "ch4_train_intro" },
+          { "text": "希望还能活着回来……", "effects": [{ "stat": "conviction", "change": 1 }], "nextNodeId": "ch4_train_intro" },
+          { "text": "总有一天，我会光明正大地回来。", "effects": [{ "stat": "conviction", "change": 2 }], "nextNodeId": "ch4_train_intro" }
+        ] }
+      ]
+    },
+    {
+      "id": "ch4_scene2_train",
+      "bgLabel": "scene4_train_carriage",
+      "nodes": [
+        { "id": "ch4_train_intro", "type": "narration", "content": "火车缓缓启动，驶向武昌。车厢摇晃，窗外的长沙退成一线暗影。服务团团长李芳兰从车厢另一头走来，在你身旁停下。", "nextNodeId": "ch4_train_test" },
+        { "id": "ch4_train_test", "type": "dialogue", "speaker": "李芳兰", "figure": { "id": "li_fanglan", "position": "center" }, "content": "服务团有几个CP？", "nextNodeId": "ch4_train_response" },
+        { "id": "ch4_train_response", "type": "choice", "content": "你心中一惊。她所谓的“CP”，指的是共产党。", "choices": [
+          { "text": "反问她：“去第一军的服务团会有共产党？”", "effects": [{ "stat": "insight", "change": 2 }, { "stat": "suspicion", "change": -1 }], "nextNodeId": "ch4_train_safe" },
+          { "text": "说：“你弄错了。我是民先队员，公开的抗日团体。”", "effects": [{ "stat": "suspicion", "change": 3 }], "nextNodeId": "ch4_train_explain" },
+          { "text": "沉默不答，转头望向窗外。", "effects": [{ "stat": "suspicion", "change": 5 }], "nextNodeId": "ch4_train_silent" }
         ] },
-        { "id": "ch4_end", "type": "ending", "endingType": "chapter_complete", "endingDescription": "模板章节结束：西北征途将在后续版本展开。" }
+        { "id": "ch4_train_safe", "type": "dialogue", "speaker": "李芳兰", "figure": { "id": "li_fanglan", "position": "center" }, "content": "你不要瞒我。我和郭见恩是老相识，昨晚谈了大半夜，她让我找你。", "nextNodeId": "ch4_train_counter" },
+        { "id": "ch4_train_counter", "type": "dialogue", "speaker": "玩家", "content": "你要参加共产党，来找我？我马上告诉陈指导员，请他查清楚。", "nextNodeId": "ch4_train_leave" },
+        { "id": "ch4_train_explain", "type": "narration", "content": "李芳兰没有再追问，却把你的名字默默记在本子上。公开身份暂时挡住了话锋，也留下了一点余波。", "nextNodeId": "ch4_train_arrive" },
+        { "id": "ch4_train_silent", "type": "narration", "content": "她望着你的侧脸，没再说话。车轮碾过铁轨的声音格外刺耳；刻意的沉默，本身也会成为答案。", "nextNodeId": "ch4_train_arrive" },
+        { "id": "ch4_train_leave", "type": "narration", "content": "李芳兰慌忙退开。你望着她离去的背影，手心全是汗。她未必完全相信你，但这一关暂且过去了。", "nextNodeId": "ch4_train_arrive" },
+        { "id": "ch4_train_arrive", "type": "narration", "content": "数日后，队伍抵达武昌小朝街湖滨的第1军办事处。服务团成员被分批带上二楼会客室，等待军长接见。", "nextNodeId": "ch4_interview_intro" }
+      ]
+    },
+    {
+      "id": "ch4_scene3_interview",
+      "bgLabel": "scene4_first_army_office",
+      "nodes": [
+        { "id": "ch4_interview_intro", "type": "narration", "content": "侍从副官唐西园按名册安排众人坐下。胡宗南走进会客室，手中名册上已画着许多圈：大多数人一个，少数人两个，至多三个。轮到你时，你没有按惯例起立，只举起右手：“我就是。”", "nextNodeId": "ch4_interview_age" },
+        { "id": "ch4_interview_age", "type": "dialogue", "speaker": "胡宗南", "figure": { "id": "hu_zongnan", "position": "center" }, "content": "贵庚？", "nextNodeId": "ch4_interview_age_reply" },
+        { "id": "ch4_interview_age_reply", "type": "dialogue", "speaker": "玩家", "content": "再过三个月零四天，满十九周岁。", "nextNodeId": "ch4_interview_why" },
+        { "id": "ch4_interview_why", "type": "dialogue", "speaker": "胡宗南", "figure": { "id": "hu_zongnan", "position": "center" }, "content": "为什么到本军来？", "nextNodeId": "ch4_interview_reply" },
+        { "id": "ch4_interview_reply", "type": "choice", "content": "这不是普通面试。你的回答将决定他在名册上画下几道印记。", "choices": [
+          { "text": "“参加革命。”并以孙中山遗嘱解释：抗日就是今日的革命。", "effects": [{ "stat": "conviction", "change": 2 }, { "stat": "insight", "change": 1 }], "nextNodeId": "ch4_interview_revolution" },
+          { "text": "“愿随军抗日，为国家尽一份力。”", "effects": [{ "stat": "conviction", "change": 1 }], "nextNodeId": "ch4_interview_ordinary" },
+          { "text": "含糊地说自己只是想历练、看看前线。", "effects": [{ "stat": "suspicion", "change": 3 }], "nextNodeId": "ch4_interview_evasive" }
+        ] },
+        { "id": "ch4_interview_revolution", "type": "dialogue", "speaker": "胡宗南", "figure": { "id": "hu_zongnan", "position": "center" }, "content": "怎样才是革命？不愿抗日、反对抗日的算什么？", "nextNodeId": "ch4_interview_revolution_reply" },
+        { "id": "ch4_interview_revolution_reply", "type": "dialogue", "speaker": "玩家", "content": "积极抗日的是真革命，消极抗日的是假革命，不愿抗日的是不革命，反对抗日的是反革命。", "nextNodeId": "ch4_interview_final_question" },
+        { "id": "ch4_interview_final_question", "type": "dialogue", "speaker": "胡宗南", "figure": { "id": "hu_zongnan", "position": "center" }, "content": "对反革命怎么办？", "nextNodeId": "ch4_interview_final_choice" },
+        { "id": "ch4_interview_final_choice", "type": "choice", "content": "会客室里静得能听见呼吸。", "choices": [
+          { "text": "脱口而出：“杀。”", "effects": [{ "stat": "conviction", "change": 2 }, { "stat": "trust_org", "change": 1 }], "nextNodeId": "ch4_four_circles" },
+          { "text": "“以军法严惩，绝不姑息。”", "effects": [{ "stat": "conviction", "change": 1 }], "nextNodeId": "ch4_three_circles" },
+          { "text": "先沉默，再说“应当查明再作处置”。", "effects": [{ "stat": "suspicion", "change": 2 }], "nextNodeId": "ch4_two_circles" }
+        ] },
+        { "id": "ch4_four_circles", "type": "narration", "content": "胡宗南盯着你看了很久，低头在你的名字旁画下四个圈。当天傍晚，唐西园来传话：今天画了四个圈的，只有你一个。\n【永久状态解锁：四圈之才——胡宗南初见即破格赏识】", "inventoryChanges": { "add": ["tag_four_circle_talent"] }, "nextNodeId": "ch4_interview_private" },
+        { "id": "ch4_three_circles", "type": "narration", "content": "胡宗南轻轻点头，在名册上画了三个圈。你通过了考验，却还没有得到破格的青眼。", "nextNodeId": "ch4_interview_private" },
+        { "id": "ch4_two_circles", "type": "narration", "content": "胡宗南的目光停留得格外久，最终只画了两个圈。你的谨慎没有出错，却也暴露了犹疑。", "nextNodeId": "ch4_interview_private" },
+        { "id": "ch4_interview_ordinary", "type": "narration", "content": "胡宗南在名册上画了两个圈，示意下一位。平稳的回答让你留在队伍中，却没有引起更多注意。", "nextNodeId": "ch4_office_intro" },
+        { "id": "ch4_interview_evasive", "type": "narration", "content": "胡宗南皱了皱眉，在名册上画了一个圈。你被编入服务团，然而这份含糊的答卷会留在他的记忆里。", "nextNodeId": "ch4_office_intro" },
+        { "id": "ch4_interview_private", "type": "narration", "content": "个别谈话中，胡宗南详细问及家庭、读书经历、北平学潮和你对共产党的看法。你一一应对，不卑不亢。临别时，他说：“在战场上，只有枪能回答问题。笔杆子再硬，也硬不过子弹。”", "nextNodeId": "ch4_office_intro" }
+      ]
+    },
+    {
+      "id": "ch4_scene4_baban",
+      "bgLabel": "scene4_baban_office",
+      "nodes": [
+        { "id": "ch4_office_intro", "type": "narration", "content": "1938年1月上旬某夜。你与池际尚、许焕国乘渡轮过江，来到汉口旧日租界89号的八路军办事处。蒋南翔不在，董必武让另外两人在楼下等候，单独把你叫上楼。", "nextNodeId": "ch4_dong_question" },
+        { "id": "ch4_dong_question", "type": "dialogue", "speaker": "董必武", "figure": { "id": "dong_biwu", "position": "center" }, "content": "你的情况，南翔汇报过了。胡宗南接见你时，表现如何？", "nextNodeId": "ch4_dong_report" },
+        { "id": "ch4_dong_report", "type": "narration", "content": "你如实汇报面试经过。董必武展开周恩来写给胡宗南的亲笔信，随即又收起：国共合作共同抗日是大局，但也要未雨绸缪。你不是去混口饭吃，而是去当一颗“闲棋冷子”。", "nextNodeId": "ch4_dong_order1" },
+        { "id": "ch4_dong_order1", "type": "dialogue", "speaker": "董必武", "figure": { "id": "dong_biwu", "position": "center" }, "content": "第一，不要急于找党。在重新取得联系前，遇事要独立决定。", "nextNodeId": "ch4_dong_order2" },
+        { "id": "ch4_dong_order2", "type": "dialogue", "speaker": "董必武", "figure": { "id": "dong_biwu", "position": "center" }, "content": "第二，隐蔽党员身份，不发展党员，不参与服务团领导工作。在国民党里，对人可以略骄，宁亢勿卑。", "nextNodeId": "ch4_dong_order3" },
+        { "id": "ch4_dong_order3", "type": "dialogue", "speaker": "董必武", "figure": { "id": "dong_biwu", "position": "center" }, "content": "第三，要适应环境，同流而不合污，出污泥而不染。记住：不入虎穴，焉得虎子。", "nextNodeId": "ch4_dong_accept" },
+        { "id": "ch4_dong_accept", "type": "choice", "content": "这三条指示，将决定你今后十二年如何在暗处行走。", "choices": [
+          { "text": "郑重点头：“我记住了。”", "effects": [{ "stat": "conviction", "change": 2 }, { "stat": "trust_org", "change": 2 }], "inventoryChanges": { "add": ["tag_cold_piece_mission"] }, "nextNodeId": "ch4_west_intro" },
+          { "text": "追问：“若有紧急情况，怎样判断轻重？”", "effects": [{ "stat": "insight", "change": 2 }, { "stat": "trust_org", "change": 1 }], "inventoryChanges": { "add": ["tag_cold_piece_mission"] }, "nextNodeId": "ch4_west_intro" }
+        ] }
+      ]
+    },
+    {
+      "id": "ch4_scene5_westward",
+      "bgLabel": "scene4_westward_train",
+      "nodes": [
+        { "id": "ch4_west_intro", "type": "narration", "content": "在武昌停留约一个月后，服务团接到通知向西北进发。1938年1月30日，除夕，队伍抵达西安，随后将前往凤翔。你以湖南青年战地服务团团员的身份踏上征途。未来十二年，你将在胡宗南部开始一段漫长而危险的潜伏生涯。", "nextNodeId": "ch4_final_settlement" },
+        { "id": "ch4_final_settlement", "type": "narration", "content": "【结算节点6｜第一章完整最终结算】\n第一章《入局·潜伏之路》总结算\n基础属性：信念值 {conviction}｜洞察值 {insight}｜怀疑值 {suspicion}｜家庭信任度 {trust_father}｜牵挂值 {worry}\n已解锁称号：渡鸦\n激活状态：父母的牵挂、闲棋冷子、四圈之才（若本回获得）、{status_tags}\n背包道具：{inventory}\n记忆档案：西门便衣相貌记忆、火车站三处可疑人员、报纸/印刷品/信件风险档案、紧急联络规则、八办接头暗号\n当前身份：湖南青年战地服务团团员\n组织关系：隐蔽待命，已知联络方式。", "nextNodeId": "ch4_ending" },
+        { "id": "ch4_ending", "type": "ending", "endingType": "chapter_complete", "endingDescription": "第一章完：你已踏上西北征途，潜伏任务正式开始。" }
       ]
     }
   ]

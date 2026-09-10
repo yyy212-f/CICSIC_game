@@ -124,6 +124,8 @@ export class NarrativeEngine {
             'tag_burned_book': '烧书被校工留意',
             'tag_gave_book': '赠书达成默契',
             'tag_rewrapped_book': '改书皮室友起疑',
+            'tag_four_circle_talent': '四圈之才',
+            'tag_cold_piece_mission': '闲棋冷子任务',
         }
         return text.replace(/\{(\w+)\}/g, (match, key: string) => {
             // 属性值替换
