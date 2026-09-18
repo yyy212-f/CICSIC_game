@@ -1,20 +1,59 @@
 import type { CharacterCard, MorseChallenge, Quiz } from '../types'
 
-export const itemCatalog = [
-  { id: 'wuchang_note', name: '武昌联络纸条', description: '指向武昌联络点的紧急纸条。', price: 0 },
-  { id: 'classmate_letter', name: '无名同学来信', description: '指向长沙临时大学的匿名来信。', price: 0 },
-  { id: 'silver_coin', name: '银元', description: '旅途中可使用的硬通货。', price: 0 },
-  { id: 'ration', name: '干粮', description: '一次远行所需的干粮。', price: 0 },
-  { id: 'quinine', name: '奎宁药片', description: '治疗疟疾和水土不服。', price: 0 },
-  { id: 'amulet', name: '护身符', description: '怀疑值达到 12 时可降低 2 点怀疑。', price: 8 },
-  { id: 'revive_card', name: '原地复活卡', description: '失败结局时从当前章节检查点重试。', price: 12 },
-  { id: 'rebound_card', name: '触底反弹卡', description: '怀疑值达到 10 后可使用，降低 5 点。', price: 10 },
-  { id: 'explore_card', name: '探索卡', description: '解锁一次任意情报站任务。', price: 15 },
+export interface ShopItem {
+  id: string
+  name: string
+  description: string
+  detail?: string
+  image?: string
+  emoji?: string
+  price: number
+}
+
+export const itemCatalog: ShopItem[] = [
+  { id: 'wuchang_note', name: '武昌联络纸条', description: '指向武昌联络点的紧急纸条。', detail: '纸条上用暗写墨水标记了联络点的街道与门牌号，仅在紫外灯下显现。', emoji: '📜', price: 0 },
+  { id: 'classmate_letter', name: '无名同学来信', description: '指向长沙临时大学的匿名来信。', detail: '信中夹带一片梧桐叶，暗示接应地点在岳麓山下的梧桐小径。', emoji: '✉️', price: 0 },
+  { id: 'silver_coin', name: '银元', description: '旅途中可使用的硬通货。', detail: '民国年间流通的袁大头，在战乱年代比纸币更易被接受。', emoji: '🪙', price: 0 },
+  { id: 'ration', name: '干粮', description: '一次远行所需的干粮。', detail: '粗面饼干与腌萝卜干，携带方便，可维持数日。', emoji: '🍞', price: 0 },
+  { id: 'quinine', name: '奎宁药片', description: '治疗疟疾和水土不服。', detail: '热带地区的救命药，副作用是耳鸣，但能对抗疟疾。', emoji: '💊', price: 0 },
+  { id: 'amulet', name: '护身符', description: '怀疑值达到 12 时可降低 2 点怀疑。', detail: '据说由北平白云观道士开光，戴上后行事更为谨慎，旁人少生疑心。', emoji: '🧿', price: 8 },
+  { id: 'revive_card', name: '原地复活卡', description: '失败结局时从当前章节检查点重试。', detail: '在身份暴露或任务失败时使用，回到本章节最近一次检查点继续，避免从头再来。', emoji: '🪦', price: 12 },
+  { id: 'rebound_card', name: '触底反弹卡', description: '怀疑值达到 10 后可使用，降低 5 点。', detail: '危急关头扭转局面，让原本对你高度怀疑的对象暂时放下戒备。', emoji: '🏓', price: 10 },
+  { id: 'explore_card', name: '探索卡', description: '解锁一次任意情报站任务。', detail: '获得一小时自由探索权限，可以前往情报站执行额外任务获取奖励。', emoji: '🗺️', price: 15 },
   { id: 'mem_emergency_rule', name: '记忆档案·紧急联络规则', description: '白纸平安，十字撤离；南门外老渡口茶馆，二楼靠窗点龙井接头。', price: 0 },
   { id: 'mem_baban_code', name: '记忆档案·八办接头暗号', description: '“请问这里有《群众》周刊吗？”——“你要哪一期的？”——“创刊号那期。”', price: 0 },
   { id: 'item_baban_route', name: '八办路线纸条', description: '途经武汉时，前往八路军办事处找蒋南翔的路线（汉口旧日租界 89 号）。', price: 0 },
   { id: 'item_backup_teahouse', name: '【状态】听雨轩备用联络点', description: '长沙第二处可用联络点，已激活（在南门老渡口茶馆之外）。', price: 0 },
   { id: 'item_idle_piece', name: '【状态】闲棋冷子', description: '与组织关系为隐蔽待命：不去延安，以普通学生身份混入服务团。', price: 0 },
+  // ========== 可兑换商品 ==========
+  { id: 'p_smoking_pipe', name: '烟斗', description: '民国时期常见的吸烟器具，木质与铜制结合。', detail: '无', image: '/assets/goods/yandou.png', price: 8 },
+  { id: 'p_black_cloth_shoes', name: '黑色布鞋', description: '传统手工制作的布鞋，隐蔽性好。', detail: '无', image: '/assets/goods/heisebuxie.png', price: 12 },
+  { id: 'p_scarf', name: '围巾', description: '冬日里御寒的必需品，也是伪装工具。', detail: '无', image: '/assets/goods/weijin.png', price: 10 },
+  { id: 'p_pocket_watch', name: '怀表', description: '精准计时的老式怀表，掌握每一次接头时刻。', detail: '无', image: '/assets/goods/huaibiao.png', price: 14 },
+  { id: 'p_red_star_cap', name: '红星军帽', description: '象征着信仰的红星军帽，佩戴者身份特殊。', detail: '无', image: '/assets/goods/hongxingjunmao.png', price: 16 },
+  { id: 'p_canteen', name: '水壶', description: '普通民用水壶，日常出行必备。', detail: '无', image: '/assets/goods/shuihu.png', price: 9 },
+  { id: 'p_thermos', name: '暖水壶', description: '能保温数小时的暖水壶，长途跋涉的好伙伴。', detail: '无', image: '/assets/goods/nuanshuihu.png', price: 11 },
+  { id: 'p_matches', name: '火柴', description: '小小一根火柴，点燃夜色中的希望。', detail: '无', image: '/assets/goods/huochai.png', price: 4 },
+  { id: 'p_enamel_cup', name: '搪瓷杯子', description: '搪瓷材质的口杯，轻便耐用。', detail: '无', image: '/assets/goods/beizi.png', price: 7 },
+  { id: 'p_iron_box', name: '铁制收纳盒', description: '坚硬的铁盒，可存放秘密文件或密信。', detail: '无', image: '/assets/goods/tiezhishounahe.png', price: 13 },
+  { id: 'p_kerosene_lamp', name: '煤油马灯', description: '风雨中的光明指引，不易被风吹灭。', detail: '无', image: '/assets/goods/meiyoumadeng.png', price: 12 },
+  { id: 'p_cigarette', name: '中华香烟', description: '社交场合的硬通货，也可作为暗号道具。', detail: '无', image: '/assets/goods/zhonghuaxiangyan.png', price: 6 },
+  { id: 'p_xinhua_daily', name: '新华日报', description: '在国统区秘密传播的红色报纸。', detail: '无', image: '/assets/goods/baozhi.png', price: 5 },
+  { id: 'p_old_photo', name: '老照片', description: '可能暗藏秘密的珍贵影像。', detail: '无', image: '/assets/goods/zhaopian.png', price: 7 },
+  { id: 'p_letter', name: '信件', description: '通过秘密渠道传递的重要信件。', detail: '无', image: '/assets/goods/xinjian.png', price: 6 },
+  { id: 'p_diary', name: '日记本', description: '记录秘密行动的笔记本，需小心保管。', detail: '无', image: '/assets/goods/riji.png', price: 9 },
+  { id: 'p_dagger', name: '匕首', description: '近身防身利器，小巧易隐藏。', detail: '无', image: '/assets/goods/bishou.png', price: 15 },
+  { id: 'p_rifle', name: '步枪', description: '制式步枪，火力强大。', detail: '无', image: '/assets/goods/buqiang.png', price: 19 },
+  { id: 'p_ammo_box', name: '子弹盒', description: '随身携带的弹药补给。', detail: '无', image: '/assets/goods/zidan.png', price: 10 },
+  { id: 'p_helmet', name: '军用头盔', description: '保护头部免受弹片伤害。', detail: '无', image: '/assets/goods/junyongtoukui.png', price: 17 },
+  { id: 'p_backpack', name: '背包', description: '大容量军用背包，可携带大量物资。', detail: '无', image: '/assets/goods/beibao.png', price: 14 },
+  { id: 'p_compass', name: '指南针', description: '战乱中不迷路的重要工具。', detail: '无', image: '/assets/goods/zhinanzhen.png', price: 13 },
+  { id: 'p_military_canteen', name: '军用水壶', description: '制式军用水壶，密封性好、容量大。', detail: '无', image: '/assets/goods/junyongshuihu.png', price: 11 },
+  { id: 'p_map', name: '地图', description: '公开出版的标准地图。', detail: '无', image: '/assets/goods/ditu.png', price: 12 },
+  { id: 'p_binoculars', name: '望远镜', description: '远距离侦察敌情的必备装备。', detail: '无', image: '/assets/goods/wangyuanjing.png', price: 16 },
+  { id: 'p_iodine', name: '碘酒', description: '简易伤口消毒药水。', detail: '无', image: '/assets/goods/dianjiu.png', price: 8 },
+  { id: 'p_medical_kit', name: '医疗包', description: '战地急救包，可处理常见伤势。', detail: '无', image: '/assets/goods/yiliaobao.png', price: 15 },
+  { id: 'p_medical_crate', name: '医疗箱', description: '完整的医疗工具箱，药品器械齐全。', detail: '无', image: '/assets/goods/yiliaoxiang.png', price: 18 },
 ]
 
 export const characterCards: CharacterCard[] = [
