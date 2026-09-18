@@ -2,7 +2,7 @@
   <main class="page feature-page fragment-page">
     <header class="topbar">
       <div><p class="eyebrow">情报站 · 拼图档案</p><h1>情报碎片</h1></div>
-      <button @click="router.back()">← 地图</button>
+      <button @click="router.push(`/map/${route.params.worldId}`)">← 地图</button>
     </header>
     <p class="notice">羽毛：{{ store.feathers }} · 身份线索 {{ cluePrice }} 羽毛 / 英雄碎片 {{ price }} 羽毛</p>
 
@@ -37,13 +37,14 @@
 </template>
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useGameStore } from '../stores/gameStore'
 import source from '../../public/data/fragments/tempered_1937.json'
 import { identityCases } from '../data/resourceData'
 import { autoSave } from '../engine/SaveManager'
 
 const router = useRouter()
+const route = useRoute()
 const store = useGameStore()
 const price = 10          // 英雄碎片价格
 const cluePrice = 8       // 身份线索默认价格

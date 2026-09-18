@@ -1,6 +1,6 @@
 <template>
   <main class="page feature-page">
-    <header class="topbar"><div><p class="eyebrow">情报站 · 身份鉴别样例</p><h1>{{ identityCase.name }}</h1></div><button @click="router.push('/fragments/tempered_1937')">← 情报碎片</button></header>
+    <header class="topbar"><div><p class="eyebrow">情报站 · 身份鉴别样例</p><h1>{{ identityCase.name }}</h1></div><button @click="router.back()">← 情报碎片</button></header>
     <section class="feature-card identity-file">
       <p class="muted">{{ identityCase.title }} · 已收集 {{ collectedClues.length }} / {{ identityCase.clues.length }} 条线索</p>
       <div v-for="clue in collectedClues" :key="clue.id" class="inventory-row"><strong>{{ clue.label }}</strong><span>{{ clue.content }}</span></div>
