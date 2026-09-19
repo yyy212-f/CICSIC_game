@@ -61,15 +61,15 @@
         return { name: '蒋南翔', position: figure.position ?? 'center', src: `${import.meta.env.BASE_URL}assets/figure/${encodeURIComponent('蒋南翔_透明.png')}` }
     })
 
-    const chapterTitle = computed(() => temperedScript.chapters.find(c => c.id === chapterForNode(nodeId.value))?.title ?? '淬火 1937')
-    const currentChapterId = computed(() => chapterForNode(nodeId.value) ?? String(route.params.chapterId))
+    const chapterTitle = computed(() => temperedScript.chapters.find(c => c.id === chapterForNode(nodeId.value, String(route.params.chapterId)))?.title ?? '淬火 1937')
+    const currentChapterId = computed(() => chapterForNode(nodeId.value, String(route.params.chapterId)) ?? String(route.params.chapterId))
     const nextChapter = computed(() => {
         const index = temperedScript.chapters.findIndex(chapter => chapter.id === currentChapterId.value)
         return index >= 0 ? temperedScript.chapters[index + 1] : undefined
     })
 
     const sceneStyle = computed(() => {
-        const bgLabel = sceneForNode(nodeId.value)?.bgLabel
+        const bgLabel = sceneForNode(nodeId.value, String(route.params.chapterId))?.bgLabel
         if (!bgLabel) return {}
         const extension = ['scene0_Marx', 'scene0_dormitory'].includes(bgLabel) ? 'jpg' : 'png'
         const pageUrl = window.location.href.split('#', 1)[0]
@@ -91,7 +91,7 @@
         const id = String(params[0])
         const requestedNode = typeof params[1] === 'string' ? params[1] : ''
         const first = firstNodeForChapter(id)?.id || ''
-        const savedBelongsToChapter = !!store.currentNodeId && chapterForNode(store.currentNodeId) === id
+        const savedBelongsToChapter = !!store.currentNodeId && chapterForNode(store.currentNodeId, id) === id
         const saved = !requestedNode && store.currentChapter === id && savedBelongsToChapter && store.currentNodeId !== first && !store.completedChapters.includes(id) ? store.currentNodeId : ''
         if (saved) {
             pendingChapter.value = id
@@ -115,7 +115,7 @@
             store.unlockCharacter(characterId)
             characterCard.value = characterCards.find(card => card.id === characterId) ?? null
         }
-        if (value) store.setProgress(chapterForNode(value.id) ?? String(route.params.chapterId), value.id)
+        if (value) store.setProgress(chapterForNode(value.id, String(route.params.chapterId)) ?? String(route.params.chapterId), value.id)
     })
 
     // 【关键2】applyEffects 函数（没有变化时清空提示）
@@ -173,7 +173,7 @@
     }
 
     function finish() {
-        const chapter = chapterForNode(nodeId.value)
+        const chapter = chapterForNode(nodeId.value, String(route.params.chapterId))
         if (chapter) store.completeChapter(chapter)
         void autoSave()
         if (nextChapter.value) router.push(`/narrative/${nextChapter.value.id}`)
@@ -181,7 +181,7 @@
     }
 
     function retryChapter() {
-        const chapter = chapterForNode(nodeId.value) ?? String(route.params.chapterId)
+        const chapter = chapterForNode(nodeId.value, String(route.params.chapterId)) ?? String(route.params.chapterId)
         const first = firstNodeForChapter(chapter)?.id ?? ''
         nodeId.value = first
         store.setProgress(chapter, first)
@@ -189,7 +189,7 @@
     }
 
     function revive() {
-        const chapter = chapterForNode(nodeId.value) ?? String(route.params.chapterId)
+        const chapter = chapterForNode(nodeId.value, String(route.params.chapterId)) ?? String(route.params.chapterId)
         const retryNode = store.retryNodeId
         const target = retryNode && chapterForNode(retryNode) === chapter ? retryNode : store.chapterCheckpoints[chapter] ?? firstNodeForChapter(chapter)?.id ?? ''
         if (store.useItem('revive_card')) {

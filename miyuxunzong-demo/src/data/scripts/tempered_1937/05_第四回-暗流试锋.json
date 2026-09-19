@@ -1,17 +1,259 @@
-{
+﻿{
   "id": "chapter4",
   "title": "第四回·暗流试锋·西北征途",
   "scenes": [
     {
-      "id": "ch4_scene",
-      "bgLabel": "",
+      "id": "ch4_s1_platform",
+      "bgLabel": "scene1_train_station",
       "nodes": [
-        { "id": "ch4_intro", "type": "narration", "content": "列车向西北驶去，陌生人的盘问成为新的考验。", "nextNodeId": "ch4_choice" },
-        { "id": "ch4_choice", "type": "choice", "content": "面对试探，你如何应对？", "choices": [
-          { "text": "保持沉默并观察", "effects": [{ "stat": "insight", "change": 1 }], "nextNodeId": "ch4_end" },
-          { "text": "用服务团身份自然回答", "effects": [{ "stat": "trust_org", "change": 1 }], "nextNodeId": "ch4_end" }
-        ] },
-        { "id": "ch4_end", "type": "ending", "endingType": "chapter_complete", "endingDescription": "模板章节结束：西北征途将在后续版本展开。" }
+        {
+          "id": "ch4s1_open",
+          "type": "narration",
+          "content": "【1937年12月下旬·长沙火车站】成功报名加入服务团并接受了一个星期的讲习后，你跟随服务团从长沙乘火车去武昌。站台上人头攒动，有送别的亲人，有整装待发的士兵，有扛着器材的服务团成员。一面服务团的旗帜在风中飘动。",
+          "nextNodeId": "ch4s1_npc"
+        },
+        {
+          "id": "ch4s1_npc",
+          "type": "narration",
+          "content": "团员甲兴奋地说：听说我们要去西安！胡宗南的部队！团员乙担忧地说：不知道前线什么样。带队军官严肃地喊：都检查好行李！马上上车！",
+          "nextNodeId": "ch4s1_monologue_setup"
+        },
+        {
+          "id": "ch4s1_monologue_setup",
+          "type": "narration",
+          "content": "你提着简单的行李，随着队伍向绿皮火车走去。背后是长沙临时大学，是安稳的学生时光；前方是未知的西北，是陌生的服务团，是漫长的潜伏之路。",
+          "nextNodeId": "ch4s1_monologue_choice"
+        },
+        {
+          "id": "ch4s1_monologue_choice",
+          "type": "choice",
+          "content": "登车前最后一刻，你的内心独白是——",
+          "choices": [
+            {
+              "text": "为了这片土地，我愿走入黑暗。",
+              "effects": [{ "stat": "conviction", "change": 3 }],
+              "nextNodeId": "ch4s1_choose_a"
+            },
+            {
+              "text": "希望还能活着回来……",
+              "effects": [{ "stat": "conviction", "change": 1 }],
+              "nextNodeId": "ch4s1_choose_b"
+            },
+            {
+              "text": "总有一天，我会光明正大地回来。",
+              "effects": [{ "stat": "conviction", "change": 2 }],
+              "nextNodeId": "ch4s1_choose_c"
+            }
+          ]
+        },
+        {
+          "id": "ch4s1_choose_a",
+          "type": "narration",
+          "content": "你在心里默默立下誓言——愿为这片土地走入黑暗，做一颗无人知晓的棋子。",
+          "nextNodeId": "ch4s1_depart"
+        },
+        {
+          "id": "ch4s1_choose_b",
+          "type": "narration",
+          "content": "你承认自己也有恐惧——希望还能活着回来。你把这份恐惧压在心底。",
+          "nextNodeId": "ch4s1_depart"
+        },
+        {
+          "id": "ch4s1_choose_c",
+          "type": "narration",
+          "content": "你望着远去的长沙城，暗自立誓：总有一天，我会光明正大地回来。",
+          "nextNodeId": "ch4s1_depart"
+        },
+        {
+          "id": "ch4s1_depart",
+          "type": "narration",
+          "content": "火车缓缓启动，驶向北方。【系统字幕：列车穿越湖南平原，向武昌方向驶去。】",
+          "nextNodeId": "ch4s2_open"
+        }
+      ]
+    },
+    {
+      "id": "ch4_s2_train",
+      "bgLabel": "scene1_train_station",
+      "nodes": [
+        {
+          "id": "ch4s2_open",
+          "type": "narration",
+          "content": "列车上人声嘈杂。你坐在靠窗的位置，假装看书。对面坐着一个戴眼镜的女团员，主动搭话。",
+          "nextNodeId": "ch4s2_lf_intro"
+        },
+        {
+          "id": "ch4s2_lf_intro",
+          "type": "dialogue",
+          "speaker": "李芳兰（团员）",
+          "figure": { "id": "li_fanglan", "position": "center" },
+          "content": "你也是长沙临时大学的？我听你口音像。我叫李芳兰，社会学系的。",
+          "nextNodeId": "ch4s2_choice"
+        },
+        {
+          "id": "ch4s2_choice",
+          "type": "choice",
+          "content": "李芳兰主动接近你，你的反应是——",
+          "choices": [
+            {
+              "text": "友善回应：是，历史系。听说过你写的关于底层民众的文章，很有深度。",
+              "effects": [{ "stat": "trust_org", "change": 2 }],
+              "nextNodeId": "ch4s2_opt_a"
+            },
+            {
+              "text": "保持距离：嗯，你好。我不太会聊天，抱歉。",
+              "effects": [{ "stat": "insight", "change": 1 }],
+              "nextNodeId": "ch4s2_opt_b"
+            },
+            {
+              "text": "刻意回避：扭头望向窗外。",
+              "effects": [{ "stat": "suspicion", "change": 2 }],
+              "nextNodeId": "ch4s2_opt_c"
+            }
+          ]
+        },
+        {
+          "id": "ch4s2_opt_a",
+          "type": "narration",
+          "content": "【反客为主·安全】你镇定地反问：去第一军的服务团会有共产党？李芳兰愣了一下，随即压低声音说她和郭见恩是老相识。你断然否认并警告她不要乱说话。她走了，你手心全是汗——但至少这一关过了。",
+          "nextNodeId": "ch4s3_open"
+        },
+        {
+          "id": "ch4s2_opt_b",
+          "type": "narration",
+          "content": "【保持距离·安全】你冷漠的态度让李芳兰识趣地走开了。你暗自庆幸——在这种地方，少说话、少交友是最安全的生存策略。",
+          "nextNodeId": "ch4s3_open"
+        },
+        {
+          "id": "ch4s2_opt_c",
+          "type": "narration",
+          "content": "【刻意回避·疑心加重】你扭头望向窗外，避开这个话题。李芳兰看你刻意回避，目光在你脸上停留了很久。她没再说什么，但你感觉背上多了一双眼睛。",
+          "nextNodeId": "ch4s3_open"
+        }
+      ]
+    },
+    {
+      "id": "ch4_s3_hu",
+      "bgLabel": "scene1_room",
+      "nodes": [
+        {
+          "id": "ch4s3_open",
+          "type": "narration",
+          "content": "【1938年1月8日前后·武昌小朝街湖滨】第1军办事处二楼上。服务团分批接见胡宗南。你被安排在第二批。",
+          "nextNodeId": "ch4s3_hu_q1"
+        },
+        {
+          "id": "ch4s3_hu_q1",
+          "type": "dialogue",
+          "speaker": "胡宗南",
+          "figure": { "id": "hu_zongnan", "position": "center" },
+          "content": "贵庚？",
+          "nextNodeId": "ch4s3_player_age"
+        },
+        {
+          "id": "ch4s3_player_age",
+          "type": "dialogue",
+          "speaker": "你",
+          "figure": { "id": "player", "position": "center" },
+          "content": "十九岁。",
+          "nextNodeId": "ch4s3_hu_q2"
+        },
+        {
+          "id": "ch4s3_hu_q2",
+          "type": "dialogue",
+          "speaker": "胡宗南",
+          "figure": { "id": "hu_zongnan", "position": "center" },
+          "content": "（突然加快语气）对反革命怎么办？",
+          "nextNodeId": "ch4s3_player_kill"
+        },
+        {
+          "id": "ch4s3_player_kill",
+          "type": "narration",
+          "content": "你脱口而出：杀。胡宗南盯着你看了很久，然后低头，在你的名字旁画了——四个圈。当天傍晚唐西园来接你：胡先生约你去个别谈话。今天画了四个圈的，只有你一个。",
+          "nextNodeId": "ch4s3_private"
+        },
+        {
+          "id": "ch4s3_private",
+          "type": "narration",
+          "content": "【个别谈话】胡宗南详细询问你的家庭背景、读书经历、对北平学潮的看法、对共产党的认识等。你一一应对，态度不卑不亢。谈话结束时胡宗南说：明天中午我派唐副官坐车去府上，请令尊来便餐。最后他又说：你那句话说得痛快。但是记住了，在战场上，只有枪能回答这个问题。笔杆子再硬，也硬不过子弹。你回答：学生记住了。【解锁永久状态：四圈之才——胡宗南初见即破格赏识】",
+          "effects": [{ "stat": "conviction", "change": 3 }],
+          "inventoryChanges": { "add": ["status_four_circles"] },
+          "nextNodeId": "ch4s4_open"
+        }
+      ]
+    },
+    {
+      "id": "ch4_s4_baban",
+      "bgLabel": "scene1_nightroom",
+      "nodes": [
+        {
+          "id": "ch4s4_open",
+          "type": "narration",
+          "content": "【1938年1月上旬某夜·汉口旧日租界89号】八路军驻武汉办事处。你带上池际尚、许焕国（服务团内的秘密党员），乘渡轮过江来到汉口。值班人员说蒋南翔不在，由董必武接见。",
+          "nextNodeId": "ch4s4_dong_meet"
+        },
+        {
+          "id": "ch4s4_dong_meet",
+          "type": "dialogue",
+          "speaker": "董必武",
+          "figure": { "id": "dong_biwu", "position": "center" },
+          "content": "你的情况，南翔汇报过了。胡宗南接见你时，表现如何？",
+          "nextNodeId": "ch4s4_report"
+        },
+        {
+          "id": "ch4s4_report",
+          "type": "narration",
+          "content": "你汇报了胡宗南面试的经过——四个圈、个别谈话、那句名言。董必武露出满意的神色：这基本符合恩来同志的预想。他说，谈一次，要管几年。董必武取出一封周恩来写给胡宗南的亲笔信给你看：兄以剿共成名，私心则以兄尚未成民族英雄为憾。",
+          "nextNodeId": "ch4s4_dong_letter"
+        },
+        {
+          "id": "ch4s4_dong_letter",
+          "type": "dialogue",
+          "speaker": "董必武",
+          "figure": { "id": "dong_biwu", "position": "center" },
+          "content": "恩来说，这叫布闲棋，下冷子。你的任务，不是到胡宗南那里混口饭吃。你是去当一颗闲棋冷子——如果一直闲着冷着，于大局无损；如果不闲不冷，于大局有利。",
+          "nextNodeId": "ch4s4_dong_three"
+        },
+        {
+          "id": "ch4s4_dong_three",
+          "type": "dialogue",
+          "speaker": "董必武",
+          "figure": { "id": "dong_biwu", "position": "center" },
+          "content": "恩来要你特别注意三点——第一，不要急于找党，独立决定问题。第二，隐蔽党员身份，不发展党员，不参与服务团的领导工作。在国民党里，对人可以略骄，宁亢勿卑。第三，要适应环境，同流而不合污。记住八个字——不入虎穴，焉得虎子。",
+          "nextNodeId": "ch4s4_nod"
+        },
+        {
+          "id": "ch4s4_nod",
+          "type": "narration",
+          "content": "你郑重点头。【记忆档案解锁：周恩来三要点】【获得状态：八办秘密联络确认】从此，你既是湖南青年战地服务团的一员，也是一颗埋在胡宗南部队中的闲棋冷子。你起身告辞，走进汉口潮湿的冬夜。",
+          "effects": [{ "stat": "conviction", "change": 5 }],
+          "inventoryChanges": { "add": ["mem_zhou_three_points", "status_baban_confirmed"] },
+          "nextNodeId": "ch4s5_open"
+        }
+      ]
+    },
+    {
+      "id": "ch4_s5_final",
+      "bgLabel": "scene1_street",
+      "nodes": [
+        {
+          "id": "ch4s5_open",
+          "type": "narration",
+          "content": "【1938年1月下旬·西行列车】在武昌停留约一个月后，服务团接到通知，向西北进发。1月30日（除夕）抵达西安，随后前往凤翔。1937年冬，你以湖南青年战地服务团团员的身份，踏上前往西北的征程。此后的十二年里，你将在胡宗南的部队中，开始一段漫长而危险的潜伏生涯。没有人知道你的名字。但历史，终将记得那些在黑暗中守望光明的人。",
+          "nextNodeId": "ch4s5_settle"
+        },
+        {
+          "id": "ch4s5_settle",
+          "type": "narration",
+          "content": "【第一章完整结算】信念值 {conviction}｜洞察值 {insight}｜怀疑值 {suspicion}｜牵挂值 {worry}。已解锁称号：渡鸦。激活状态：闲棋冷子、四圈之才。当前身份：湖南青年战地服务团团员。",
+          "nextNodeId": "ch4s5_end"
+        },
+        {
+          "id": "ch4s5_end",
+          "type": "ending",
+          "endingType": "chapter_complete",
+          "endingDescription": "第一章：入局·潜伏之路 完。你已成功打入胡宗南麾下，成为一颗闲棋冷子。西北的暗流正在涌动，更长的征途即将展开。"
+        }
       ]
     }
   ]

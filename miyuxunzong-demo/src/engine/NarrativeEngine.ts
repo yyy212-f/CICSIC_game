@@ -104,7 +104,14 @@ export class NarrativeEngine {
   }
 
   private goToNode(nodeId: string) {
+    // 防御性：优先在当前章节内查找（避免跨章节重复 ID 跳错）
+    for (let si = 0; si < this.script.chapters[this.chapterIdx]?.scenes.length; si++) {
+      const ni = this.script.chapters[this.chapterIdx].scenes[si].nodes.findIndex(n => n.id === nodeId)
+      if (ni >= 0) { this.sceneIdx = si; this.nodeIdx = ni; return }
+    }
+    // 当前章节找不到，再全局搜索
     for (let ci = 0; ci < this.script.chapters.length; ci++) {
+      if (ci === this.chapterIdx) continue
       for (let si = 0; si < this.script.chapters[ci].scenes.length; si++) {
         const ni = this.script.chapters[ci].scenes[si].nodes.findIndex(n => n.id === nodeId)
         if (ni >= 0) {
