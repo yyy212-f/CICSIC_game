@@ -4,7 +4,7 @@
     "scenes":  [
                    {
                        "id":  "r2_s1_campus",
-                       "bgLabel":  "scene1_university_gate",
+                       "bgLabel":  "r2_s1_campus",
                        "nodes":  [
                                      {
                                          "id":  "r2s1_arrive",
@@ -86,7 +86,7 @@
                    },
                    {
                        "id":  "r2_s2_library",
-                       "bgLabel":  "scene1_nightroom",
+                       "bgLabel":  "r2_s2_library",
                        "nodes":  [
                                      {
                                          "id":  "r2s2_open",
@@ -198,7 +198,7 @@
                    },
                    {
                        "id":  "r2_s3_teahouse",
-                       "bgLabel":  "",
+                       "bgLabel":  "r2_s3_teahouse",
                        "nodes":  [
                                      {
                                          "id":  "r2s3_broadcast",
