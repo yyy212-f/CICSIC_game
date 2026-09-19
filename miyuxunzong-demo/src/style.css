@@ -16,6 +16,7 @@ input { min-height: 38px; padding: 8px 12px; border: 1px solid #b66a58; border-r
 .muted { color: #765b54; line-height: 1.65; }
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: clamp(24px, 4vh, 48px); }
 .topbar h1 { margin: 0; font-size: clamp(24px, 3vw, 42px); }
+.topbar button { white-space: nowrap; flex-shrink: 0; }
 .home { display: grid; min-height: 100vh; grid-template-columns: minmax(300px, .9fr) minmax(420px, 1.1fr); background: #f8eee6; }
 .home-visual { display: grid; place-items: center; align-content: center; gap: 14px; background: #b83a2d; color: #fff3df; }
 .home-eagle { display: block; width: min(26vw, 210px); height: min(26vw, 210px); object-fit: contain; border: 1px solid #f5c56b; border-radius: 50%; padding: 10px; background: #8f2922; }
@@ -94,6 +95,12 @@ input { min-height: 38px; padding: 8px 12px; border: 1px solid #b66a58; border-r
 .shop-desc { margin: 0; color: #d8c8b8; font-size: 13px; line-height: 1.6; }
 .shop-detail { margin: 0; padding: 10px 12px; border-left: 2px solid #6b5a48; background: rgba(0,0,0,.2); color: #b8a898; font-size: 13px; line-height: 1.7; font-style: italic; }
 .shop-buy { align-self: flex-end; margin-top: 4px; }
+/* 入口卡片（ProfilePage 两层导航） */
+.entry-card { cursor: pointer; text-align: left; transition: transform .15s, box-shadow .15s; border: 1px solid #3a2e22; }
+.entry-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,168,75,.15); border-color: #d4a84b; }
+.entry-icon { font-size: 36px; margin-bottom: 8px; }
+.entry-sub { margin-top: 4px; font-size: 13px; color: #b89f7a; }
+.detail-section { display: flex; flex-direction: column; gap: 16px; }
 /* 背包专用 */
 .bag-section h2 { margin-bottom: 14px; }
 .bag-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
