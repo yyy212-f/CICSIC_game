@@ -43,6 +43,9 @@ input { min-height: 38px; padding: 8px 12px; border: 1px solid #b66a58; border-r
 .map-pin b { display: grid; place-items: center; width: 36px; height: 36px; margin: auto; border: 2px solid #e4c55d; border-radius: 50%; background: rgba(26, 39, 32, .88); color: #e4c55d; backdrop-filter: blur(2px); box-shadow: 0 2px 8px rgba(0,0,0,.5); }
 .map-pin span { margin-top: 5px; padding: 3px 7px; background: rgba(13,22,17,.72); font-size: 12px; white-space: nowrap; border-radius: 3px; }
 .map-pin.done b { border-color: #8ad29b; color: #8ad29b; background: rgba(25, 55, 40, .88); }
+.map-pin.locked b { border-color: #6b6b6b; color: #9a9a9a; background: rgba(30, 30, 30, .88); opacity: .75; }
+.map-pin.locked span { color: #9a9a9a; opacity: .8; }
+.map-pin.locked { cursor: not-allowed; }
 .map-pin.target b { box-shadow: 0 0 0 7px rgba(237, 205, 89, .22), 0 2px 8px rgba(0,0,0,.5); }.trail-dot { position: absolute; z-index: 1; width: 5px; height: 5px; transform: translate(-50%, -50%); border-radius: 50%; background: rgba(238, 207, 98, .5); }.eagle-marker { position: absolute; z-index: 4; display: grid; place-items: center; gap: 2px; transform: translate(-50%, -50%); pointer-events: none; animation: eagle-float 1.8s ease-in-out infinite; }
 .eagle-icon { width: 36px; height: 36px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(245, 223, 118, .7)); }
 .eagle-marker span { font-size: 11px; color: #f5df76; text-shadow: 0 1px 3px rgba(0,0,0,.9); }

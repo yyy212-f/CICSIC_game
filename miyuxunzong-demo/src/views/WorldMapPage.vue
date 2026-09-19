@@ -6,8 +6,8 @@
     </header>
     <section ref="board" class="map-board" tabindex="0" aria-label="可探索地图" @click="moveByClick">
       <i v-for="(point, index) in trail" :key="index" class="trail-dot" :style="{ left: `${point.x}%`, top: `${point.y}%` }"></i>
-      <button v-for="poi in visiblePois" :key="poi.id" class="map-pin" :class="{ done: poi.chapter && store.completedChapters.includes(poi.chapter), target: poi.id === missionTarget?.id }" :style="{ left: `${poi.x}%`, top: `${poi.y}%` }" @click.stop="moveTo(poi)">
-        <b>{{ poi.icon }}</b><span>{{ poi.label }}</span>
+      <button v-for="poi in visiblePois" :key="poi.id" class="map-pin" :class="{ done: poi.chapter && store.completedChapters.includes(poi.chapter), target: poi.id === missionTarget?.id, locked: poi.kind === 'chapter' && poi.chapter && !chapterIsUnlocked(poi.chapter) }" :style="{ left: `${poi.x}%`, top: `${poi.y}%` }" @click.stop="moveTo(poi)">
+        <b>{{ (poi.kind === 'chapter' && poi.chapter && !chapterIsUnlocked(poi.chapter)) ? '🔒' : poi.icon }}</b><span>{{ poi.label }}</span>
       </button>
       <div class="eagle-marker" :style="{ left: `${eagle.x}%`, top: `${eagle.y}%` }"><img class="eagle-icon" src="/assets/eagle.png" alt="情报鹰" /><span>情报鹰</span></div>
       <aside v-if="nearbyPoi" class="poi-arrival"><strong>{{ nearbyPoi.label }}</strong><span>{{ nearbyPoi.description }}</span><button class="primary" @click.stop="enterPoi(nearbyPoi)">进入</button></aside>
@@ -40,10 +40,18 @@ let smoothingFrame = 0
 // 坐标根据 map_1.jpg 图片地标位置标定（百分比 left, top）
 // 工厂(14,22) 五星大楼(57,16) 红旗衙门(59,48) 商铺(57,72) 三人物(82,69)
 const chapterPositions = [[14,22],[57,16],[59,48],[39,52],[82,69]]
-const chapterPois: Poi[] = chapterLabels.map((chapter, index) => ({
+// 解锁顺序：只有前面的章节完成了，后面的才解锁
+const allChapterIds = chapterLabels.map(c => c.id)
+function chapterIsUnlocked(chapterId: string): boolean {
+  const idx = allChapterIds.indexOf(chapterId)
+  if (idx <= 0) return true
+  const prev = allChapterIds[idx - 1]
+  return store.completedChapters.includes(prev)
+}
+const chapterPois = computed<Poi[]>(() => chapterLabels.map((chapter, index) => ({
   id: `chapter:${chapter.id}`, label: chapter.title, description: '主线剧情任务', icon: String(index + 1), kind: 'chapter', chapter: chapter.id,
   x: chapterPositions[index]?.[0] ?? 50, y: chapterPositions[index]?.[1] ?? 50,
-}))
+})))
 // 只保留西城情报站（雷达塔位置 82,19），其余功能点对齐图片地标
 const utilities: Poi[] = [
   { id:'station:west', label:'西城情报站', description:'线索交接与密码验证', icon:'📡', kind:'station', x:82, y:19 },
@@ -51,8 +59,15 @@ const utilities: Poi[] = [
   { id:'fragment', label:'情报碎片', description:'查看英烈故事收集', icon:'🧩', kind:'fragment', x:25, y:44 },
   { id:'market', label:'虚拟市集', description:'兑换虚拟道具与装扮', icon:'🏪', kind:'market', x:57, y:72 },
 ]
-const missionTarget = computed(() => chapterPois.find(poi => poi.chapter && !store.completedChapters.includes(poi.chapter)) ?? null)
-const visiblePois = computed(() => mode.value === 'mission' && missionTarget.value ? [...utilities, missionTarget.value] : [...chapterPois, ...utilities])
+const missionTarget = computed(() => chapterPois.value.find(poi => poi.chapter && !store.completedChapters.includes(poi.chapter)) ?? null)
+// 自由模式也只显示已解锁的章节（加 unlockable 让玩家知道还有后续）
+const visiblePois = computed(() => {
+  if (mode.value === 'mission' && missionTarget.value) {
+    return [...utilities, missionTarget.value]
+  }
+  return [...chapterPois.value, ...utilities]
+})
+const unlockableChapters = computed(() => chapterPois.value.filter(p => p.chapter && chapterIsUnlocked(p.chapter)))
 const nearbyPoi = computed(() => {
   const candidates = visiblePois.value
   let closest: Poi | null = null
@@ -83,7 +98,13 @@ function smoothEagle() {
   smoothingFrame = requestAnimationFrame(smoothEagle)
 }
 function enterPoi(poi: Poi) {
-  if (poi.kind === 'chapter' && poi.chapter) router.push(`/narrative/${poi.chapter}`)
+  if (poi.kind === 'chapter' && poi.chapter) {
+    if (!chapterIsUnlocked(poi.chapter)) {
+      alert('请先完成上一章节后再进入本节剧情。')
+      return
+    }
+    router.push(`/narrative/${poi.chapter}`)
+  }
   else if (poi.kind === 'station') router.push('/station/tempered_1937/station_1')
   else if (poi.kind === 'quiz') router.push('/cinema/tempered_1937')
   else if (poi.kind === 'fragment') router.push('/fragments/tempered_1937')

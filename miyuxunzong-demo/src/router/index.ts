@@ -1,4 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { useGameStore } from '../stores/gameStore'
+import { temperedScript, chapterLabels } from '../data/gameData'
+
+// 判断某章节是否已解锁（前面的章节都完成了）
+function isChapterUnlocked(chapterId: string, completedChapters: string[]): { unlocked: boolean; needChapter?: string } {
+  const allChapters = temperedScript.chapters.map(c => c.id)
+  const idx = allChapters.indexOf(chapterId)
+  if (idx <= 0) return { unlocked: true }  // 第一章永远可用
+  const prev = allChapters[idx - 1]
+  if (completedChapters.includes(prev)) return { unlocked: true }
+  const label = chapterLabels.find(c => c.id === prev)?.title || prev
+  return { unlocked: false, needChapter: label }
+}
 
 const routes = [
   { path: '/',            name: 'home',     component: () => import('../views/HomePage.vue') },
@@ -13,4 +26,22 @@ const routes = [
   { path: '/profile',     name: 'profile',  component: () => import('../views/ProfilePage.vue') },
 ]
 
-export default createRouter({ history: createWebHashHistory(), routes })
+const router = createRouter({ history: createWebHashHistory(), routes })
+
+// 关卡解锁守卫：禁止通过 URL 直接访问未完成的章节
+router.beforeEach((to) => {
+  if (to.name !== 'narrative') return true
+  const targetChapter = String(to.params.chapterId || '')
+  if (!targetChapter) return true
+  try {
+    const store = useGameStore()
+    const { unlocked, needChapter } = isChapterUnlocked(targetChapter, store.completedChapters)
+    if (unlocked) return true
+    alert(`请先完成上一章节：${needChapter || '上一节剧情'}`)
+    return { path: '/map/tempered_1937' }
+  } catch {
+    return true
+  }
+})
+
+export default router

@@ -13,9 +13,9 @@
                 <div v-else-if="node.type === 'ending'" class="ending">{{ node.endingDescription }}</div>
                 <div class="panel-actions">
                     <button v-if="canAdvance" class="primary" @click="advance">继续 →</button>
-                    <button v-if="node.type === 'ending' && !node.failure" class="primary" @click="finish">{{ nextChapter ? '进入下一节' : '完成并返回地图' }}</button>
-                    <button v-if="node.type === 'ending' && node.failure" class="primary" @click="retryChapter">重新开始本章</button>
-                    <button v-if="node.type === 'ending' && node.failure && store.items.includes('revive_card')" @click="revive">使用原地复活卡</button>
+                    <button v-if="node.type === 'ending' && !isFailureEnding" class="primary" @click="finish">{{ nextChapter ? '进入下一节' : '完成并返回地图' }}</button>
+                    <button v-if="node.type === 'ending' && isFailureEnding" class="primary" @click="retryChapter">重新开始本章</button>
+                    <button v-if="node.type === 'ending' && isFailureEnding && store.items.includes('revive_card')" @click="revive">使用原地复活卡</button>
                     <button @click="router.push('/map/tempered_1937')">← 地图</button>
                 </div>
             </template>
@@ -83,6 +83,15 @@
 
     const availableChoices = computed(() => (node.value?.choices ?? []).filter(choice => !choice.condition || store.evaluateCondition(choice.condition)))
     const canAdvance = computed(() => ['dialogue', 'narration', 'action', 'condition'].includes(node.value?.type ?? ''))
+    // 失败结局判定：failure 字段显式标记，或 endingType 命中失败关键词（兜底剧本遗漏）
+    const isFailureEnding = computed(() => {
+        const n = node.value
+        if (!n || n.type !== 'ending') return false
+        if (n.failure) return true
+        const failTypes = ['caught', 'failure', 'chapter_fail', 'game_over']
+        const t = (n.endingType || '').toLowerCase()
+        return failTypes.includes(t)
+    })
 
     // 【关键1】路由参数变化时初始化 nodeId（页面加载时设置第一个剧情节点）
     watch(() => [route.params.chapterId, route.params.sceneId], params => {

@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "chapter3",
     "title":  "第三回·报名服务团·伪装身份",
     "scenes":  [
@@ -280,18 +280,21 @@
                                          "id":  "ch3_ending_caught",
                                          "type":  "ending",
                                          "endingType":  "caught",
+                                         "failure":  true,
                                          "endingDescription":  "出师未捷：言多必失，你在报名现场当场败露被捕，游戏结束。"
                                      },
                                      {
                                          "id":  "ch3_ending3_frivolous_fail",
                                          "type":  "ending",
                                          "endingType":  "chapter_fail",
+                                         "failure":  true,
                                          "endingDescription":  "初心虚浮·拒之局外：军官判定你动机轻浮。就算勉强通过报名，后续会被分配边缘杂务，无法接近核心情报圈，潜伏任务失败。"
                                      },
                                      {
                                          "id":  "ch3_ending_fail",
                                          "type":  "ending",
                                          "endingType":  "chapter_fail",
+                                         "failure":  true,
                                          "endingDescription":  "暗礁倾覆·疑重难容：你的累计怀疑值已经达到临界点。军官不予录用，移交清查，潜伏任务失败。"
                                      }
                                  ]

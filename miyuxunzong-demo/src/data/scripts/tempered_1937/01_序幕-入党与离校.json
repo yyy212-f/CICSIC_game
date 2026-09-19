@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "prologue",
     "title":  "序幕·入党与北平往事",
     "scenes":  [
@@ -1146,11 +1146,12 @@
                                                        }
                                      },
                                      {
-                                         "id":  "prologue_ch3_caught",
-                                         "type":  "ending",
-                                         "endingType":  "caught",
-                                         "endingDescription":  "【游戏结束：出师未捷】老孙站起来，拍了拍你的肩膀：\"不说话是吧？那就换个地方慢慢说。\"便衣示意两个军警上前，一左一右扣住你的胳膊：\"跟我们走一趟。\"你被带离队伍，箱子被拎走。月台上有人投来同情的目光，但没有人说话。"
-                                     },
+                                        "id":  "prologue_ch3_caught",
+                                        "type":  "ending",
+                                        "endingType":  "caught",
+                                        "failure":  true,
+                                        "endingDescription":  "【游戏结束：出师未捷】老孙站起来，拍了拍你的肩膀：\"不说话是吧？那就换个地方慢慢说。\"便衣示意两个军警上前，一左一右扣住你的胳膊：\"跟我们走一趟。\"你被带离队伍，箱子被拎走。月台上有人投来同情的目光，但没有人说话。"
+                                    },
                                      {
                                          "id":  "prologue_ch3_tracked",
                                          "type":  "narration",
