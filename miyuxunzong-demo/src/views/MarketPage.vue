@@ -2,7 +2,10 @@
   <main class="page feature-page market-page">
     <header class="topbar">
       <div><p class="eyebrow">虚拟市集</p><h1>羽毛兑换</h1></div>
-      <button @click="router.push(`/map/${route.params.worldId}`)">← 地图</button>
+      <div class="actions">
+        <button class="bag-btn" @click="router.push('/profile')">🎒 背包</button>
+        <button @click="router.push(`/map/${route.params.worldId}`)">← 地图</button>
+      </div>
     </header>
     <p class="notice">当前羽毛：{{ store.feathers }}</p>
     <section class="feature-grid">

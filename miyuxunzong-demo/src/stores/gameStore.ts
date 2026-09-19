@@ -31,8 +31,14 @@ export const useGameStore = defineStore('game', () => {
     })
   }
 
-  function addItem(id: string) { if (!items.value.includes(id)) items.value.push(id) }
-  function removeItem(id: string) { items.value = items.value.filter(i => i !== id) }
+  function addItem(id: string) { items.value.push(id) }
+  function removeItem(id: string) {
+    const idx = items.value.indexOf(id)
+    if (idx >= 0) items.value.splice(idx, 1)
+  }
+  function getQuantity(id: string): number {
+    return items.value.filter(i => i === id).length
+  }
   function addFeathers(n: number) { feathers.value += n }
   function addFragment(id: string) { if (!fragments.value.includes(id)) fragments.value.push(id) }
   function unlockEnding(type: string) { if (!endingsUnlocked.value.includes(type)) endingsUnlocked.value.push(type) }
@@ -121,7 +127,7 @@ export const useGameStore = defineStore('game', () => {
     stats, feathers, items, fragments, endingsUnlocked, completedChapters,
     currentChapter, currentScene, currentNode, currentNodeId, chapterCheckpoints, unlockedCharacters, dailyQuizDate, quizRecords, exploreUntil, retryNodeId,
     conviction, suspicion, hasExploreAccess,
-    applyEffects, addItem, removeItem, addFeathers, addFragment,
+    applyEffects, addItem, removeItem, addFeathers, addFragment, getQuantity,
     unlockEnding, completeChapter, unlockCharacter, setProgress, setChapterCheckpoint, setRetryNode, startExploreHour, useItem, evaluateCondition, toSaveData, loadSave, resetGame,
   }
 })

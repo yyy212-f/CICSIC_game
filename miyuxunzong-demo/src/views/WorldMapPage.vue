@@ -2,7 +2,7 @@
   <main class="map-page">
     <header class="topbar map-topbar">
       <div><p class="eyebrow">淬火 1937 · 北平情报网</p><h1>全域探索地图</h1></div>
-      <div class="actions"><button @click="toggleMode">{{ mode === 'free' ? '🗺 自由探索' : '🎯 任务探索' }}</button><button @click="router.push('/worlds')">← 世界</button><button @click="router.push('/profile')">👤</button></div>
+      <div class="actions"><button @click="toggleMode">{{ mode === 'free' ? '🗺 自由探索' : '🎯 任务探索' }}</button><button @click="router.push('/worlds')">← 世界</button><button class="bag-btn" @click="router.push('/profile')">🎒 背包</button></div>
     </header>
     <section ref="board" class="map-board" tabindex="0" aria-label="可探索地图" @click="moveByClick">
       <i v-for="(point, index) in trail" :key="index" class="trail-dot" :style="{ left: `${point.x}%`, top: `${point.y}%` }"></i>

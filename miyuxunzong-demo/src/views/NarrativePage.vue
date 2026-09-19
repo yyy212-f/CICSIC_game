@@ -1,5 +1,6 @@
 <template>
     <main class="narrative">
+        <button class="bag-btn bag-btn-floating" @click="router.push('/profile')">🎒 背包</button>
         <div v-if="resumePrompt" class="resume-overlay"><section class="resume-dialog"><h2>继续这段剧情？</h2><p>检测到本小节有未完成的进度。</p><div class="panel-actions"><button class="primary" @click="continueSaved">继续上次进度</button><button @click="restartFromBeginning">重新开始</button></div></section></div>
         <div v-if="characterCard" class="character-overlay"><section class="character-card"><button class="character-close" aria-label="关闭人物介绍" title="关闭" @click="characterCard = null">×</button><img v-if="characterPortrait" :src="characterPortrait" :alt="characterCard.name"><strong>{{ characterCard.name }}</strong><span>{{ characterCard.role }} · {{ characterCard.identity }}</span><p>{{ characterCard.summary }}</p></section></div>
         <section class="scene" :style="sceneStyle"><div class="scene-shade"></div><img v-if="sceneFigure" class="scene-figure" :class="`scene-figure--${sceneFigure.position}`" :src="sceneFigure.src" :alt="sceneFigure.name"><div class="scene-meta">{{ chapterTitle }}</div></section>
@@ -141,6 +142,12 @@
         }
     }
 
+    function applyInventoryChanges(changes?: Node['inventoryChanges']) {
+        if (!changes) return
+        changes.add?.forEach(id => store.addItem(id))
+        changes.remove?.forEach(id => store.removeItem(id))
+    }
+
     function advance() {
         const current = node.value
         if (!current) return
@@ -149,6 +156,7 @@
             moveToNode(store.evaluateCondition(current.condition) ? current.condition.passNodeId : current.condition.failNodeId)
         } else {
             applyEffects(current.effects)
+            applyInventoryChanges(current.inventoryChanges)
             moveToNode(current.nextNodeId)
         }
         selectedChoice.value = 0
@@ -158,6 +166,7 @@
     function selectChoice(choice: Choice) {
         store.setRetryNode(node.value?.id ?? '')
         applyEffects(choice.effects)
+        applyInventoryChanges(choice.inventoryChanges)
         moveToNode(choice.nextNodeId)
         selectedChoice.value = 0
         void autoSave()

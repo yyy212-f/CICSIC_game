@@ -94,6 +94,20 @@ input { min-height: 38px; padding: 8px 12px; border: 1px solid #b66a58; border-r
 .shop-desc { margin: 0; color: #d8c8b8; font-size: 13px; line-height: 1.6; }
 .shop-detail { margin: 0; padding: 10px 12px; border-left: 2px solid #6b5a48; background: rgba(0,0,0,.2); color: #b8a898; font-size: 13px; line-height: 1.7; font-style: italic; }
 .shop-buy { align-self: flex-end; margin-top: 4px; }
+/* 背包专用 */
+.bag-section h2 { margin-bottom: 14px; }
+.bag-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.bag-card { padding: 14px; background: rgba(255,255,255,.04); }
+.bag-card .shop-thumb { padding: 8px; }
+.bag-card .shop-thumb img { max-height: 140px; }
+.bag-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.bag-actions button { font-size: 12px; padding: 4px 10px; }
+/* 浮动背包入口按钮 */
+.bag-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid #d4a84b; border-radius: 6px; background: rgba(212,168,75,.12); color: #f5c56b; font-size: 14px; font-weight: 500; cursor: pointer; transition: background .15s; }
+.bag-btn:hover { background: rgba(212,168,75,.25); }
+.bag-btn .bag-badge { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: #c47a61; color: #fff; font-size: 11px; font-weight: 700; line-height: 1; }
+.bag-btn-floating { position: fixed; top: 16px; right: 16px; z-index: 50; }
+/* END 背包专用 */
 .fragment-page { min-height: 100vh; padding: 24px; background: #1a130d url("/assets/backgrounds/clue_background.png") center/cover no-repeat; background-attachment: fixed; }
 .fragment-page::before { content: ''; position: fixed; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(12,8,6,.5), rgba(12,8,6,.7)); pointer-events: none; }
 .fragment-page > * { position: relative; z-index: 1; }
