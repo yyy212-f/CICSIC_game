@@ -47,7 +47,7 @@ const router = useRouter()
 const route = useRoute()
 const store = useGameStore()
 const price = 10          // 英雄碎片价格
-const cluePrice = 8       // 身份线索默认价格
+const cluePrice = 2       // 身份线索默认价格
 
 // 进入页面时自动解锁所有免费案例的线索
 onMounted(() => {

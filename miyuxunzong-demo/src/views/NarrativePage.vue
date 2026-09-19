@@ -11,7 +11,6 @@
 
                 <div v-if="node.type === 'choice'" class="choice-list"><button v-for="(choice, index) in availableChoices" :key="choice.text" :class="{ selected: index === selectedChoice }" @click="selectChoice(choice)">{{ index === selectedChoice ? '▶ ' : '' }}{{ choice.text }}</button></div>
                 <div v-else-if="node.type === 'ending'" class="ending">{{ node.endingDescription }}</div>
-                <p v-if="effectMessage" class="stat-line">{{ effectMessage }}</p>
                 <div class="panel-actions">
                     <button v-if="canAdvance" class="primary" @click="advance">继续 →</button>
                     <button v-if="node.type === 'ending' && !node.failure" class="primary" @click="finish">{{ nextChapter ? '进入下一节' : '完成并返回地图' }}</button>
@@ -40,7 +39,7 @@
 
     const route = useRoute(); const router = useRouter(); const store = useGameStore()
     const engine = new NarrativeEngine(temperedScript)
-    const nodeId = ref(''); const effectMessage = ref(''); const selectedChoice = ref(0)
+    const nodeId = ref(''); const selectedChoice = ref(0)
     const characterCard = ref<typeof characterCards[number] | null>(null)
     const resumePrompt = ref(false)
     const pendingChapter = ref('')
@@ -102,7 +101,6 @@
             nodeId.value = requestedNode || first
             store.setProgress(id, nodeId.value)
         }
-        effectMessage.value = ''
         selectedChoice.value = 0
     }, { immediate: true })
 
@@ -118,14 +116,10 @@
         if (value) store.setProgress(chapterForNode(value.id, String(route.params.chapterId)) ?? String(route.params.chapterId), value.id)
     })
 
-    // 【关键2】applyEffects 函数（没有变化时清空提示）
+    // 应用效果（背后计算，不显示给用户）
     function applyEffects(effects?: Node['effects']) {
-        if (!effects?.length) {
-            effectMessage.value = ''
-            return
-        }
+        if (!effects?.length) return
         store.applyEffects(effects)
-        effectMessage.value = effects.map(item => `${item.stat} ${item.change >= 0 ? '+' : ''}${item.change}`).join(' · ')
     }
 
     // 跳转节点（condition 节点自动跳过，不显示空白页）
@@ -152,7 +146,6 @@
         const current = node.value
         if (!current) return
         if (current.type === 'condition' && current.condition) {
-            effectMessage.value = ''
             moveToNode(store.evaluateCondition(current.condition) ? current.condition.passNodeId : current.condition.failNodeId)
         } else {
             applyEffects(current.effects)

@@ -126,7 +126,7 @@ export const identityCases: IdentityCase[] = [
   },
   // ========== 后 4 个：需羽毛解锁 ==========
   {
-    id: 'li_wanqing', name: '李婉清', title: '在校学生身份档案', free: false, price: 8,
+    id: 'li_wanqing', name: '李婉清', title: '在校学生身份档案', free: false, price: 2,
     answer: '平民',
     explanation: '履历、身体特征、言谈举止完全统一，不存在特务、地下潜伏人员的伪装破绽。只是专心读书、心思单纯的普通学生。',
     clues: [
@@ -136,7 +136,7 @@ export const identityCases: IdentityCase[] = [
     ],
   },
   {
-    id: 'wu_cuilian', name: '吴翠莲', title: '宿舍保洁身份档案', free: false, price: 8,
+    id: 'wu_cuilian', name: '吴翠莲', title: '宿舍保洁身份档案', free: false, price: 2,
     answer: '国民党特务',
     explanation: '以宿舍保洁校工为掩护，利用自由进出宿舍的便利搜查进步书刊、截取书信、记录进步学生动向。三处核心破绽无法合理掩盖，与平民、我方潜伏人员有明显区分。',
     clues: [
@@ -146,7 +146,7 @@ export const identityCases: IdentityCase[] = [
     ],
   },
   {
-    id: 'chen_xiuzhen', name: '陈秀珍', title: '逃难妇人身份档案', free: false, price: 8,
+    id: 'chen_xiuzhen', name: '陈秀珍', title: '逃难妇人身份档案', free: false, price: 2,
     answer: '我方潜伏人员',
     explanation: '真实身份为地下党潜伏交通员，利用妇女、孩童的弱势外表降低防备，借逃难掩护传递情报。三处疑点虽有破绽，但都能依靠逃难妇人的伪装临时圆场，没有国民党特务那种逻辑完全崩塌的硬漏洞。',
     clues: [
@@ -156,7 +156,7 @@ export const identityCases: IdentityCase[] = [
     ],
   },
   {
-    id: 'gu_yongchang', name: '顾永昌', title: '杂货商人身份档案', free: false, price: 8,
+    id: 'gu_yongchang', name: '顾永昌', title: '杂货商人身份档案', free: false, price: 2,
     answer: '国民党特务',
     explanation: '以南北杂货商人为掩护身份，真实是国民党外勤特务，借经商流动便利在车站市井监视搜集爱国学生与地下活动线索。三处难以圆谎的核心漏洞，和无异常平民、仅有少量可解释疑点的我方潜伏人员有明显区分。',
     clues: [
@@ -168,22 +168,22 @@ export const identityCases: IdentityCase[] = [
 ]
 
 export const quizBank: Quiz[] = [
-  { id:'q1', sourceType:'knowledge', type:'single', question:'国家秘密载体应当如何管理？', options:['随身公开携带','严格保密并按规定流转','拍照上传网络','交给陌生人保管'], answer:'严格保密并按规定流转', explanation:'国家秘密载体必须依法依规管理。', rewards:{feathers:3} },
-  { id:'q2', sourceType:'knowledge', type:'single', question:'发现危害国家安全的可疑线索，正确做法是？', options:['自行调查并传播','依法向有关机关举报','置之不理','发布到社交平台'], answer:'依法向有关机关举报', explanation:'应通过合法渠道报告线索。', rewards:{feathers:3} },
-  { id:'q3', sourceType:'knowledge', type:'single', question:'以下哪项属于保密纪律？', options:['不在公共场所谈论秘密','把密码写在明处','借用他人账号传递文件','使用未授权设备存储'], answer:'不在公共场所谈论秘密', explanation:'保密工作首先要避免无关人员接触秘密。', rewards:{feathers:4} },
+  { id:'q1', sourceType:'knowledge', type:'single', question:'国家秘密载体应当如何管理？', options:['随身公开携带','严格保密并按规定流转','拍照上传网络','交给陌生人保管'], answer:'严格保密并按规定流转', explanation:'国家秘密载体必须依法依规管理。', rewards:{feathers:5} },
+  { id:'q2', sourceType:'knowledge', type:'single', question:'发现危害国家安全的可疑线索，正确做法是？', options:['自行调查并传播','依法向有关机关举报','置之不理','发布到社交平台'], answer:'依法向有关机关举报', explanation:'应通过合法渠道报告线索。', rewards:{feathers:5} },
+  { id:'q3', sourceType:'knowledge', type:'single', question:'以下哪项属于保密纪律？', options:['不在公共场所谈论秘密','把密码写在明处','借用他人账号传递文件','使用未授权设备存储'], answer:'不在公共场所谈论秘密', explanation:'保密工作首先要避免无关人员接触秘密。', rewards:{feathers:5} },
 ]
 
 export const morseChallenges: MorseChallenge[] = [
-  { id:'morse_sos', level:'初级', text:'SOS', answer:'... --- ...', seconds:15, reward:4 },
-  { id:'morse_hq', level:'初级', text:'HQ', answer:'.... --.-', seconds:15, reward:4 },
-  { id:'morse_ck', level:'初级', text:'CK', answer:'-.-. -.-', seconds:15, reward:4 },
-  { id:'morse_v', level:'初级', text:'V', answer:'...-', seconds:15, reward:4 },
-  { id:'morse_rt', level:'中级', text:'RT', answer:'.-. -', seconds:20, reward:6 },
-  { id:'morse_x', level:'中级', text:'X', answer:'-..-', seconds:20, reward:6 },
-  { id:'morse_kc', level:'中级', text:'KC', answer:'-.- -.-.', seconds:20, reward:6 },
-  { id:'morse_73', level:'中级', text:'73', answer:'--... ...--', seconds:20, reward:6 },
-  { id:'morse_wait', level:'高级', text:'WAIT', answer:'.-- .- .. -', seconds:30, reward:10 },
-  { id:'morse_copy', level:'高级', text:'COPY', answer:'-.-. --- .--. -.--', seconds:30, reward:10 },
-  { id:'morse_sh', level:'高级', text:'SH', answer:'... ....', seconds:30, reward:10 },
-  { id:'morse_abort', level:'高级', text:'ABORT', answer:'.- -... --- .-. -', seconds:30, reward:15 },
+  { id:'morse_sos', level:'初级', text:'SOS', answer:'... --- ...', seconds:15, reward:8 },
+  { id:'morse_hq', level:'初级', text:'HQ', answer:'.... --.-', seconds:15, reward:8 },
+  { id:'morse_ck', level:'初级', text:'CK', answer:'-.-. -.-', seconds:15, reward:8 },
+  { id:'morse_v', level:'初级', text:'V', answer:'...-', seconds:15, reward:8 },
+  { id:'morse_rt', level:'中级', text:'RT', answer:'.-. -', seconds:20, reward:12 },
+  { id:'morse_x', level:'中级', text:'X', answer:'-..-', seconds:20, reward:12 },
+  { id:'morse_kc', level:'中级', text:'KC', answer:'-.- -.-.', seconds:20, reward:12 },
+  { id:'morse_73', level:'中级', text:'73', answer:'--... ...--', seconds:20, reward:12 },
+  { id:'morse_wait', level:'高级', text:'WAIT', answer:'.-- .- .. -', seconds:30, reward:20 },
+  { id:'morse_copy', level:'高级', text:'COPY', answer:'-.-. --- .--. -.--', seconds:30, reward:20 },
+  { id:'morse_sh', level:'高级', text:'SH', answer:'... ....', seconds:30, reward:20 },
+  { id:'morse_abort', level:'高级', text:'ABORT', answer:'.- -... --- .-. -', seconds:30, reward:30 },
 ]
