@@ -1,15 +1,16 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { useGameStore } from '../stores/gameStore'
-import { temperedScript, chapterLabels } from '../data/gameData'
+import manifest from '../data/scripts/tempered_1937/manifest.json'
 
 // 判断某章节是否已解锁（前面的章节都完成了）
+// 用 manifest 的 chapters 来判断，因为它是元数据不会被剧本 BOM 问题影响
 function isChapterUnlocked(chapterId: string, completedChapters: string[]): { unlocked: boolean; needChapter?: string } {
-  const allChapters = temperedScript.chapters.map(c => c.id)
-  const idx = allChapters.indexOf(chapterId)
+  const allIds = manifest.chapters.map(c => c.id)
+  const idx = allIds.indexOf(chapterId)
   if (idx <= 0) return { unlocked: true }  // 第一章永远可用
-  const prev = allChapters[idx - 1]
+  const prev = allIds[idx - 1]
   if (completedChapters.includes(prev)) return { unlocked: true }
-  const label = chapterLabels.find(c => c.id === prev)?.title || prev
+  const label = manifest.chapters.find(c => c.id === prev)?.title || prev
   return { unlocked: false, needChapter: label }
 }
 

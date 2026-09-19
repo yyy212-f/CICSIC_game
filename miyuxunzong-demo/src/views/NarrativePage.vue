@@ -83,14 +83,22 @@
 
     const availableChoices = computed(() => (node.value?.choices ?? []).filter(choice => !choice.condition || store.evaluateCondition(choice.condition)))
     const canAdvance = computed(() => ['dialogue', 'narration', 'action', 'condition'].includes(node.value?.type ?? ''))
-    // 失败结局判定：failure 字段显式标记，或 endingType 命中失败关键词（兜底剧本遗漏）
+    // 失败结局判定（用最直白的方式避免误判）
+    // 规则：
+    //   1. 不是 ending 类型 → 不是结局 → 返回 false
+    //   2. failure 字段显式 true → 失败
+    //   3. endingType 包含失败关键词 → 失败
+    //   4. endingType 包含 complete → 通关（白名单兜底）
+    //   5. 其余 → 默认通关
     const isFailureEnding = computed(() => {
         const n = node.value
         if (!n || n.type !== 'ending') return false
-        if (n.failure) return true
-        const failTypes = ['caught', 'failure', 'chapter_fail', 'game_over']
+        if (n.failure === true) return true
         const t = (n.endingType || '').toLowerCase()
-        return failTypes.includes(t)
+        // 失败关键词
+        const failKws = ['caught', 'failure', 'chapter_fail', 'game_over', 'fail_']
+        for (const kw of failKws) if (t.includes(kw)) return true
+        return false
     })
 
     // 【关键1】路由参数变化时初始化 nodeId（页面加载时设置第一个剧情节点）
@@ -176,10 +184,22 @@
 
     function finish() {
         const chapter = chapterForNode(nodeId.value, String(route.params.chapterId))
-        if (chapter) store.completeChapter(chapter)
-        void autoSave()
-        if (nextChapter.value) router.push(`/narrative/${nextChapter.value.id}`)
-        else router.push('/map/tempered_1937')
+        if (chapter) {
+            store.completeChapter(chapter)
+            // 直接从 manifest 顺序找下一章，不依赖 computed
+            const allIds = temperedScript.chapters.map(c => c.id)
+            const currentIdx = allIds.indexOf(chapter)
+            const nextId = currentIdx >= 0 ? allIds[currentIdx + 1] : undefined
+            void autoSave()
+            // 延迟一帧确保 store 状态同步后守卫能读到新值
+            setTimeout(() => {
+                if (nextId) router.push(`/narrative/${nextId}`)
+                else router.push('/map/tempered_1937')
+            }, 30)
+        } else {
+            void autoSave()
+            router.push('/map/tempered_1937')
+        }
     }
 
     function retryChapter() {
@@ -217,12 +237,24 @@
 
     function onKeydown(event: KeyboardEvent) {
         const choices = availableChoices.value
+        const isConfirm = event.key === 'Enter' || event.key === 'ArrowRight'
         if (node.value?.type === 'choice' && choices.length) {
+            // choice 节点：右箭头用于切换选项（保留原有行为），Enter 确认选择
             if (event.key === 'ArrowDown' || event.key === 'ArrowRight') { event.preventDefault(); selectedChoice.value = (selectedChoice.value + 1) % choices.length }
             else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') { event.preventDefault(); selectedChoice.value = (selectedChoice.value - 1 + choices.length) % choices.length }
             else if (event.key === 'Enter') { event.preventDefault(); selectChoice(choices[selectedChoice.value]) }
-        } else if (event.key === 'Enter' && canAdvance.value) { event.preventDefault(); advance() }
-        else if (event.key === 'Escape') router.push('/map/tempered_1937')
+        } else if (event.key === 'Escape') {
+            router.push('/map/tempered_1937')
+        } else if (isConfirm) {
+            event.preventDefault()
+            const n = node.value
+            if (!n) return
+            if (canAdvance.value) advance()
+            else if (n.type === 'ending') {
+                if (!isFailureEnding.value) finish()
+                else retryChapter()
+            }
+        }
     }
 
     onMounted(() => window.addEventListener('keydown', onKeydown))
