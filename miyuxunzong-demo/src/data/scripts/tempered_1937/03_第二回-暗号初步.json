@@ -136,7 +136,7 @@
                                                         "position":  "center"
                                                     },
                                          "content":  "（走到操场边缘无人的树荫下，她停住脚步，转过身来）蒋南翔同志已经撤出北平，目前行踪不定。目前由我负责联系你。听说……你想北上？",
-                                         "nextNodeId":  "r2s2_player2"
+                                         "nextNodeId":  "r2s2_player2_setup"
                                      },
                                      {
                                          "id":  "r2s2_player2_setup",
@@ -200,7 +200,7 @@
                                          "id":  "r2s2_end",
                                          "type":  "narration",
                                          "content":  "【接头成功】\n你提出了去延安的请求。\n【组织尚未给出最终答复。你只能等待。】",
-                                         "nextNodeId":  "r2s3_broadcast"
+                                         "nextNodeId":  "r2s3_broadcast_setup"
                                      }
                                  ]
                    },
@@ -247,8 +247,8 @@
                                                            "stat":  "suspicion",
                                                            "operator":  "\u003c=",
                                                            "value":  10,
-                                                           "passNodeId":  "r2s3_peace_intro",
-                                                           "failNodeId":  "r2s3_tail_intro"
+                                                           "passNodeId":  "r2s3_peace_intro_setup",
+                                                           "failNodeId":  "r2s3_tail_intro_setup"
                                                        }
                                      },
                                      {
@@ -304,21 +304,21 @@
                                                                                  "change":  -1
                                                                              }
                                                                          ],
-                                                             "nextNodeId":  "r2s3_tailA"
+                                                             "nextNodeId":  "r2s3_tailA_setup1"
                                                          },
                                                          {
                                                              "text":  "在楼梯口突然停步，转身走向厕所，翻窗而出。",
                                                              "effects":  [
 
                                                                          ],
-                                                             "nextNodeId":  "r2s3_tailB1"
+                                                             "nextNodeId":  "r2s3_tailB1_setup"
                                                          },
                                                          {
-                                                             "text":  "微微一笑：“二楼靠窗，一壶龙井。”迈步上楼，不回头。",
+                                                             "text":  "微微一笑：\"二楼靠窗，一壶龙井。\"迈步上楼，不回头。",
                                                              "effects":  [
 
                                                                          ],
-                                                             "nextNodeId":  "r2s3_tailC1"
+                                                             "nextNodeId":  "r2s3_tailC1_setup1"
                                                          },
                                                          {
                                                              "text":  "“算了，换一家。”你转身出门，离开茶馆。",
@@ -444,7 +444,7 @@
                                          "id":  "r2s3_tailD",
                                          "type":  "narration",
                                          "content":  "你在门口站了一秒。铜铃还在晃，尾巴离你大约二十步。你转身，推开门，走了出去。\n街对面，尾巴看见你出来了，脚步顿了一下。你往左拐，钻进一条巷子，七拐八绕，确认身后无人后，才停下来喘了口气。\n那天晚上，你回到住处。枕头底下压着一张纸条，只有四个字：“明日听雨轩茶馆·备用联络点。”",
-                                         "nextNodeId":  "r2s3_tailD2"
+                                         "nextNodeId":  "r2s3_tailD2_setup"
                                      },
                                      {
                                         "id":  "r2s3_tailD2_setup",

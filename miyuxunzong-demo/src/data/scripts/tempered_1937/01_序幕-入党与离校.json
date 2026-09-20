@@ -282,11 +282,16 @@
                                          "type":  "choice",
                                          "content":  "物品2：一封进步同学来信（内容有\"希望我们都能为理想奋斗\"等模糊话语）",
                                          "choices":  [
-                                                         {
-                                                             "text":  "撕碎扔掉",
-                                                             "nextNodeId":  "prologue_ch1_item3"
-                                                         },
-                                                         {
+                                                        {
+                                                            "text":  "撕碎扔掉",
+                                                            "inventoryChanges":  {
+                                                                                    "remove":  [
+                                                                                                "letter"
+                                                                                            ]
+                                                                                },
+                                                            "nextNodeId":  "prologue_ch1_item3"
+                                                        },                                                         
+                                                        {
                                                              "text":  "保留作为纪念",
                                                              "effects":  [
                                                                              {
@@ -308,14 +313,25 @@
                                          "type":  "choice",
                                          "content":  "物品3：《大众哲学》——艾思奇著（封面普通，但内容进步，在宿舍内被室友见过）",
                                          "choices":  [
-                                                         {
-                                                             "text":  "烧掉",
-                                                             "nextNodeId":  "prologue_ch1_burn_night"
-                                                         },
-                                                         {
-                                                             "text":  "送给室友张同学",
-                                                             "nextNodeId":  "prologue_ch1_givebook_setup"
-                                                         },
+                                                        {
+                                                            "text":  "烧掉",
+                                                            "inventoryChanges":  {
+                                                                                    "remove":  [
+                                                                                                "大众哲学"
+                                                                                            ]
+                                                                                },
+                                                            "nextNodeId":  "prologue_ch1_burn_night"
+                                                            
+                                                        },                                                         
+                                                        {
+                                                            "text":  "送给室友张同学",
+                                                            "inventoryChanges":  {
+                                                                                    "remove":  [
+                                                                                                "大众哲学"
+                                                                                            ]
+                                                                                },
+                                                            "nextNodeId":  "prologue_ch1_givebook_setup"
+                                                        },
                                                         {
                                                             "text":  "撕掉封面夹在普通课本中",
                                                             "effects":  [
@@ -464,11 +480,6 @@
                                                              "change":  2
                                                          }
                                                      ],
-                                         "inventoryChanges":  {
-                                                                  "add":  [
-                                                                              "tag_burned_book"
-                                                                          ]
-                                                              },
                                          "nextNodeId":  "prologue_ch1_settlement"
                                      },
                                      {
@@ -631,7 +642,6 @@
                                                  ],
                                          "inventoryChanges":  {
                                                                   "add":  [
-                                                                              "tag_gave_book",
                                                                               "wuchang_contact_note"
                                                                           ]
                                                               },
@@ -740,11 +750,6 @@
                                          "id":  "prologue_ch1_end",
                                          "type":  "narration",
                                          "content":  "你合上皮箱，系紧带子。窗外天色已亮，离校的时刻到了。",
-                                         "inventoryChanges":  {
-                                                                  "add":  [
-                                                                              "tag_rewrapped_book"
-                                                                          ]
-                                                              },
                                          "nextNodeId":  "prologue_ch1_settlement"
                                      },
                                      {

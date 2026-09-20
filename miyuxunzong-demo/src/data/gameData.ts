@@ -60,3 +60,25 @@ export function sceneForNode(nodeId: string, hintChapterId?: string) {
   }
   return null
 }
+
+/**
+ * 每章的"运行时道具"清单 —— 进入新章节时自动清掉
+ * 不在清单里的道具默认为"里程碑道具"，永久保留
+ *
+ * 判定标准：
+ *   ✓ 玩家在本章两条互斥分支各能得到的道具（避免 explore 时两套都堆）
+ *   ✓ 只在从本章到下一章之前有意义的临时状态
+ *   ✗ 角色身份/剧情锚点、后续章节要引用的（当里程碑保留）
+ */
+export const chapterRuntimeItems: Record<string, string[]> = {
+  prologue: [
+    'letter', '大众哲学',
+  ],
+  chapter1: [
+    'silver_10', 'silver_8',
+    'dryfood_2', 'dryfood_3', 'dryfood_4', 'dryfood_5',
+    'item_medicine_gold', 'item_medicine_quinine',
+    'item_talisman', 'item_safe_pouch',
+    'item_wang_address',
+  ],
+}

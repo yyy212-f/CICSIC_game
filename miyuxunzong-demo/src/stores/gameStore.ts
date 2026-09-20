@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { PlayerStats, SaveData, Node } from '../types'
+import { chapterRuntimeItems } from '../data/gameData'
 
 export const useGameStore = defineStore('game', () => {
   const stats = ref<PlayerStats>({ suspicion:0, insight:3, conviction:5, trust_father:0, trust_org:0, worry:0 })
@@ -31,17 +32,14 @@ export const useGameStore = defineStore('game', () => {
     })
   }
 
-  function addItem(id: string) { items.value.push(id) }
+  function addItem(id: string) { if (!items.value.includes(id)) items.value.push(id) }
   function removeItem(id: string) {
     const idx = items.value.indexOf(id)
     if (idx >= 0) items.value.splice(idx, 1)
   }
 
-  const CHAPTER_RUNTIME_ITEMS: Record<string, string[]> = {
-    prologue: ['letter', '大众哲学', 'wuchang_contact_note', 'tag_burned_book', 'tag_gave_book', 'tag_rewrapped_book', 'tag_tracked'],
-  }
   function clearChapterRuntimeItems(chapterId: string) {
-    const list = CHAPTER_RUNTIME_ITEMS[chapterId]
+    const list = chapterRuntimeItems[chapterId]
     if (list) items.value = items.value.filter(i => !list.includes(i))
   }
   function getQuantity(id: string): number {

@@ -219,7 +219,7 @@
         {
           "id": "ch4s3_hu_turn",
           "type": "narration",
-          "content": "轮到你了。胡宗南瞪眼看你。周围空气一凝。",
+          "content": "轮到你了。",
           "nextNodeId": "ch4s3_hu_turn1"
         },
         {
@@ -360,7 +360,7 @@
           "speaker": "唐西园",
           "figure": { "id": "tang_xiyuan", "position": "center" },
           "content": "胡先生约你去个别谈话。今天画了四个圈的，只有你一个。",
-          "nextNodeId": "ch4s3_private"
+          "nextNodeId": "ch4s3_private_setup"
         },
 
         {
@@ -430,7 +430,7 @@
           "speaker": "董必武",
           "figure": { "id": "dong_biwu", "position": "center" },
           "content": "（52岁，头发花白，目光如炬，声音沉稳。让池际尚、许焕国在楼下等，单独将你叫上楼。示意你坐下，打量你片刻）你的情况，南翔汇报过了。胡宗南接见你时，表现如何？",
-          "nextNodeId": "ch4s4_report"
+          "nextNodeId": "ch4s4_report_setup"
         },
         {
           "id": "ch4s4_report_setup",
