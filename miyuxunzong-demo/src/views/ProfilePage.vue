@@ -164,12 +164,27 @@ const totalItemCount = computed(() => uniqueItems.value.reduce((sum, item) => su
 const unlockedCharacters = computed(() => characterCards.filter(c => store.unlockedCharacters.includes(c.id)))
 
 const selectedPortrait = computed(() => {
-  const file = selectedCard.value?.id === 'jiang_nanxiang' ? '蒋南翔.jpg'
-    : selectedCard.value?.id === 'wu_cuilian' ? '校工老吴.jpg'
-    : selectedCard.value?.id === 'su_wenbin' ? '张同学.jpg'
-    : selectedCard.value?.id === 'zhang_shoutian' ? '门卫.jpg'
-    : ''
-  return file ? `${import.meta.env.BASE_URL}assets/figure/${encodeURIComponent(file)}` : ''
+  // 与 NarrativePage.vue 的 cardMap 保持同步
+  const cardMap: Record<string, string> = {
+    // 序幕已确定有 card 图的角色
+    'jiang_nanxiang': 'jiangnanxiang.png',
+    'zhang_shoutian': 'menwei.png',
+    'su_wenbin': 'xiaomenkoubianyi.png',
+    'zhang_huiru': 'zhangtongxue.png',
+    'li_wanqing': 'litongxue.png',
+    'chen_xiuzhen': 'funv.png',
+    'wu_cuilian': 'xiaogonglaowu.png',
+    'laosun_bianyi': 'laosun.png',
+    'recruit_officer': 'junjing.png',
+    'nv_xuesheng': 'nvxuesheng.png',
+    'player': 'player.png',
+    // 第二回角色后续补充 card 图
+    // 'guo_jianen': 'xxx.png',
+    // 'teahouse_waiter': 'xxx.png',
+    // 'tail_man': 'xxx.png',
+  }
+  const file = selectedCard.value ? cardMap[selectedCard.value.id] : ''
+  return file ? `${import.meta.env.BASE_URL}assets/card/${encodeURIComponent(file)}` : ''
 })
 
 async function save() { await saveGame(); message.value = '存档完成' }

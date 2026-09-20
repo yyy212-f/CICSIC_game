@@ -49,9 +49,27 @@
     const node = computed(() => nodeId.value ? findNode(nodeId.value) : null)
 
     const characterPortrait = computed(() => {
-        const nameMap: Record<string, string> = { 'jiang_nanxiang': '蒋南翔.jpg', 'zhang_shoutian': '门卫.jpg', 'su_wenbin': '校门口便衣.jpg', 'zhang_huiru': '张同学.jpg', 'li_wanqing': '室友李同学.jpg', 'chen_xiuzhen': '带孩子的妇女.jpg', 'wu_cuilian': '校工老吴.jpg' }
-        const file = characterCard.value ? nameMap[characterCard.value.id] : ''
-        return file ? `${import.meta.env.BASE_URL}assets/figure/${encodeURIComponent(file)}` : ''
+        // card 文件夹图片映射（仅序幕角色有专属 card 图，第二回角色后续补充）
+        const cardMap: Record<string, string> = {
+            // 序幕已确定有 card 图的角色
+            'jiang_nanxiang': 'jiangnanxiang.png',
+            'zhang_shoutian': 'menwei.png',
+            'su_wenbin': 'xiaomenkoubianyi.png',
+            'zhang_huiru': 'zhangtongxue.png',
+            'li_wanqing': 'litongxue.png',
+            'chen_xiuzhen': 'funv.png',
+            'wu_cuilian': 'xiaogonglaowu.png',
+            'laosun_bianyi': 'laosun.png',
+            'recruit_officer': 'junjing.png',
+            'nv_xuesheng': 'nvxuesheng.png',
+            'player': 'player.png',
+            // 第二回角色后续补充 card 图
+            // 'guo_jianen': 'xxx.png',
+            // 'teahouse_waiter': 'xxx.png',
+            // 'tail_man': 'xxx.png',
+        }
+        const file = characterCard.value ? cardMap[characterCard.value.id] : ''
+        return file ? `${import.meta.env.BASE_URL}assets/card/${encodeURIComponent(file)}` : ''
     })
 
     const sceneFigure = computed(() => {
@@ -84,7 +102,7 @@
     })
 
     const availableChoices = computed(() => (node.value?.choices ?? []).filter(choice => !choice.condition || store.evaluateCondition(choice.condition)))
-    const canAdvance = computed(() => ['dialogue', 'narration', 'action', 'condition'].includes(node.value?.type ?? ''))
+    const canAdvance = computed(() => !characterCard.value && ['dialogue', 'narration', 'action', 'condition'].includes(node.value?.type ?? ''))
     // 失败结局判定（用最直白的方式避免误判）
     // 规则：
     //   1. 不是 ending 类型 → 不是结局 → 返回 false
@@ -126,12 +144,33 @@
 
     // 节点变化时：人物卡片、进度保存、condition 自动跳转 
     watch(node, value => {
-        const speakerMap: Record<string, string> = { '蒋南翔': 'jiang_nanxiang', '老吴（校工）': 'wu_cuilian', '老吴': 'wu_cuilian', '张同学': 'zhang_huiru', '室友李': 'li_wanqing' }
-        const characterId = value?.characterId || (value?.speaker ? speakerMap[value.speaker] : '')
-        if (characterId && !seenCharacters.has(characterId)) {
+        const speakerMap: Record<string, string> = {
+            // 序幕角色
+            '蒋南翔': 'jiang_nanxiang',
+            '校工老吴': 'wu_cuilian', '老吴（校工）': 'wu_cuilian', '老吴': 'wu_cuilian',
+            '张同学': 'zhang_huiru',
+            '室友李': 'li_wanqing',
+            '门卫': 'zhang_shoutian',
+            '带孩子的妇女': 'chen_xiuzhen',
+            '老孙（便衣特务）': 'laosun_bianyi',
+            '军警': 'recruit_officer',
+            '女学生': 'nv_xuesheng',
+            // 第二回角色
+            '郭见恩': 'guo_jianen',
+            '店小二': 'teahouse_waiter',
+            '戴礼帽的男人': 'tail_man',
+        }
+        // 匹配来源：node.characterId > speaker 映射 > figure.id
+        const fromSpeaker = value?.speaker ? speakerMap[value.speaker] : ''
+        const fromFigure = value?.figure?.id || ''
+        const characterId = value?.characterId || fromSpeaker || fromFigure
+        // 去重：既要跳过内存中已见过的，也要跳过存档中已解锁的（防止 explore 重复弹出）
+        if (characterId && !seenCharacters.has(characterId) && !store.unlockedCharacters.includes(characterId)) {
             seenCharacters.add(characterId)
             store.unlockCharacter(characterId)
             characterCard.value = characterCards.find(card => card.id === characterId) ?? null
+        } else if (characterId) {
+            seenCharacters.add(characterId) // 即使存档里有，也标记本次已见过
         }
         if (value) store.setProgress(chapterForNode(value.id, String(route.params.chapterId)) ?? String(route.params.chapterId), value.id)
     })
@@ -163,6 +202,8 @@
     }
 
     function advance() {
+        // 人物卡片弹出时禁止继续，必须先关掉
+        if (characterCard.value) return
         const current = node.value
         if (!current) return
         if (current.type === 'condition' && current.condition) {
@@ -239,6 +280,11 @@
     }
 
     function onKeydown(event: KeyboardEvent) {
+        // 人物卡片弹出时屏蔽所有剧情推进按键，Esc 关闭卡片
+        if (characterCard.value) {
+            if (event.key === 'Escape') characterCard.value = null
+            return
+        }
         const choices = availableChoices.value
         const isConfirm = event.key === 'Enter' || event.key === 'ArrowRight'
         if (node.value?.type === 'choice' && choices.length) {

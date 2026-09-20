@@ -83,6 +83,14 @@ export const characterCards: CharacterCard[] = [
   { id: 'li_wanqing', name: '李婉清', role: '清华在校学生', age: '19 岁', origin: '江苏苏州', identity: '平民', summary: '专心课业的普通学生，没有特殊任务。', clues: ['苏州口音与籍贯匹配', '只有读写形成的薄茧', '不监视、不试探他人'] },
   { id: 'wu_cuilian', name: '吴翠莲', role: '清华宿舍保洁女工', age: '43 岁', origin: '河北农村', identity: '国民党特务', summary: '利用自由进出宿舍的便利截取书信和进步书刊。', clues: ['情急时流露四川方言', '声称不识字却收集纸条', '指尖残留密写药水'] },
   { id: 'chen_xiuzhen', name: '陈秀珍', role: '逃难带娃的妇人', age: '34 岁', origin: '河南周口', identity: '我方潜伏人员', summary: '借逃难身份传递情报、观察沿途哨卡。', clues: ['口音偶有江南腔', '指尖有药水残留', '频繁打探交通和盘查规则'] },
+  // ========== 序幕补充角色（有 card 图） ==========
+  { id: 'laosun_bianyi', name: '老孙', role: '火车站便衣特务', age: '30 多岁', origin: '—', identity: '国民党特务', summary: '在火车站盘查旅客的外勤特务，对地下党潜伏者持抓捕态度。', clues: ['在火车站盘查旅客', '语气生硬', '亮证件抓人'] },
+  { id: 'recruit_officer', name: '军警招募官', role: '国民党军警', age: '30 多岁', origin: '—', identity: '国民党', summary: '负责在火车站招兵盘查的军官，态度粗暴，对可疑人员严加审问。', clues: ['火车站站岗', '态度粗暴', '要求搜身检查'] },
+  { id: 'nv_xuesheng', name: '女学生', role: '流亡学生', age: '20 岁上下', origin: '—', identity: '平民', summary: '和你同乘火车的流亡女学生，普通乘客，无特殊身份。', clues: ['普通学生打扮', '关心时局', '无特殊可疑行为'] },
+  // ========== 第二回角色（暂无专属 card 图，后续补充） ==========
+  { id: 'guo_jianen', name: '郭见恩', role: '地下党联络员', age: '青年', origin: '—', identity: '我方潜伏人员', summary: '蒋南翔同志撤出北平后，由她负责单线联系。穿旧蓝布棉袍，掩护身份是长沙临时大学学生。', clues: ['以学生身份为掩护', '说话简短、不寒暄', '接头地点选在老渡口茶馆二楼'] },
+  { id: 'teahouse_waiter', name: '茶馆店小二', role: '老渡口茶馆伙计', age: '—', origin: '—', identity: '平民', summary: '茶馆里擦白瓷茶杯的普通伙计，对后门通道了如指掌。', clues: ['满脸职业笑容', '对茶馆地形熟悉', '不知接头内情'] },
+  { id: 'tail_man', name: '戴礼帽的男人', role: '国民党便衣', age: '—', origin: '—', identity: '国民党特务', summary: '奉命跟踪、抓捕地下党潜伏者的外勤特务，在老渡口茶馆出现。', clues: ['街对面看报纸伪装', '后颈抵针尖技术专业', '接头时亮证件抓人'] },
 ]
 
 // 身份鉴别案例：free=true 的前 3 个案例线索直接给出无需付费；free=false 的案例每条线索需羽毛解锁
