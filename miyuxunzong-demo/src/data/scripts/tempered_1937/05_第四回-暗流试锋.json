@@ -14,20 +14,26 @@
         },
         {
           "id": "ch4s1_npc",
-          "type": "narration",
-          "content": "团员甲（兴奋）\n听说我们要去西安！胡宗南的部队！",
+          "type": "dialogue",
+          "speaker": "团员甲",
+          "figure": { "id": "service_npc_a", "position": "center" },
+          "content": "（兴奋）听说我们要去西安！胡宗南的部队！",
           "nextNodeId": "ch4s1_npc1"
         },
         {
           "id": "ch4s1_npc1",
-          "type": "narration",
-          "content": "团员乙（担忧）\n不知道前线什么样……你怕不怕？",
+          "type": "dialogue",
+          "speaker": "团员乙",
+          "figure": { "id": "service_npc_b", "position": "center" },
+          "content": "（担忧）不知道前线什么样……你怕不怕？",
           "nextNodeId": "ch4s1_npc2"
         },
         {
           "id": "ch4s1_npc2",
-          "type": "narration",
-          "content": "带队军官（严肃）\n都检查好自己的行李！马上上车！",
+          "type": "dialogue",
+          "speaker": "带队军官",
+          "figure": { "id": "recruit_officer", "position": "center" },
+          "content": "（严肃）都检查好自己的行李！马上上车！",
           "nextNodeId": "ch4s1_monologue_setup"
         },
         {
@@ -141,7 +147,13 @@
           "type": "dialogue",
           "speaker": "你",
           "figure": { "id": "player", "position": "center" },
-          "content": "（镇定地反问）去第一军的服务团会有共产党？」\n李芳兰愣了一下，随即压低声音：「你不要瞒我。我和郭见恩是老相识。昨晚我和她谈了大半夜，她让我找你。」\n你断然道：「你要参加共产党，来找我？我马上告诉陈指导员，请他查清楚。」\n李芳兰慌了：「不要！千万不要！」\n你望着她离去的背影，手心里全是汗。你知道，她并没有完全相信你。但至少这一关，你过了。",
+          "content": "（镇定地反问）去第一军的服务团会有共产党？",
+          "nextNodeId": "ch4s2_opt_a_setup"
+        },
+        {
+          "id": "ch4s2_opt_a_setup",
+          "type": "narration",
+          "content": "李芳兰愣了一下，随即压低声音——",
           "nextNodeId": "ch4s2_opt_a1"
         },
         {
@@ -352,9 +364,45 @@
         },
 
         {
-          "id": "ch4s3_private",
+          "id": "ch4s3_private_setup",
           "type": "narration",
-          "content": "【个别谈话】\n胡宗南详细询问你的家庭背景、读书经历、对北平「学潮」的看法、对共产党的认识等。你一一应对，态度不卑不亢。\n谈话结束后，胡宗南与你握手。末了说了一句：\n「明天中午，我派唐副官坐车去府上，专程请令尊来便餐。」\n\n你刚走出门口，胡宗南又叫住你：\n「你那句话——『对反革命怎么办？杀。』——说得痛快。但是记住了，在战场上，只有枪能回答这个问题。笔杆子再硬，也硬不过子弹。」\n\n你站定，转身：「学生记住了。」\n\n【解锁永久状态：四圈之才——胡宗南初见即破格赏识】",
+          "content": "【个别谈话】\n胡宗南详细询问你的家庭背景、读书经历、对北平「学潮」的看法、对共产党的认识等。你一一应对，态度不卑不亢。谈话结束后，胡宗南与你握手。末了说了一句：",
+          "nextNodeId": "ch4s3_private_hu1"
+        },
+        {
+          "id": "ch4s3_private_hu1",
+          "type": "dialogue",
+          "speaker": "胡宗南",
+          "figure": { "id": "hu_zongnan", "position": "center" },
+          "content": "明天中午，我派唐副官坐车去府上，专程请令尊来便餐。",
+          "nextNodeId": "ch4s3_private_setup2"
+        },
+        {
+          "id": "ch4s3_private_setup2",
+          "type": "narration",
+          "content": "你刚走出门口，胡宗南又叫住你：",
+          "nextNodeId": "ch4s3_private_hu2"
+        },
+        {
+          "id": "ch4s3_private_hu2",
+          "type": "dialogue",
+          "speaker": "胡宗南",
+          "figure": { "id": "hu_zongnan", "position": "center" },
+          "content": "（叫住你）你那句话——『对反革命怎么办？杀。』——说得痛快。但是记住了，在战场上，只有枪能回答这个问题。笔杆子再硬，也硬不过子弹。",
+          "nextNodeId": "ch4s3_private_player"
+        },
+        {
+          "id": "ch4s3_private_player",
+          "type": "dialogue",
+          "speaker": "你",
+          "figure": { "id": "player", "position": "center" },
+          "content": "（站定转身）学生记住了。",
+          "nextNodeId": "ch4s3_private_end"
+        },
+        {
+          "id": "ch4s3_private_end",
+          "type": "narration",
+          "content": "【解锁永久状态：四圈之才——胡宗南初见即破格赏识】",
           "effects": [{ "stat": "conviction", "change": 3 }],
           "inventoryChanges": { "add": ["status_four_circles"] },
           "nextNodeId": "ch4s4_open"
@@ -385,9 +433,23 @@
           "nextNodeId": "ch4s4_report"
         },
         {
-          "id": "ch4s4_report",
+          "id": "ch4s4_report_setup",
           "type": "narration",
-          "content": "你汇报了胡宗南面试的经过——四个圈、个别谈话、那句名言。\n\n董必武露出满意的神色：「这基本符合恩来同志的预想。他说，谈一次，要管几年。」\n\n董必武从抽屉里取出一封信，不是递给你，只是展开给你看——周恩来写给胡宗南的亲笔信，信上说「兄以剿共成名，私心则以兄尚未成民族英雄为憾」。",
+          "content": "你汇报了胡宗南面试的经过——四个圈、个别谈话、那句名言。",
+          "nextNodeId": "ch4s4_report_dong"
+        },
+        {
+          "id": "ch4s4_report_dong",
+          "type": "dialogue",
+          "speaker": "董必武",
+          "figure": { "id": "dong_biwu", "position": "center" },
+          "content": "（露出满意的神色）这基本符合恩来同志的预想。他说，谈一次，要管几年。",
+          "nextNodeId": "ch4s4_report_end"
+        },
+        {
+          "id": "ch4s4_report_end",
+          "type": "narration",
+          "content": "董必武从抽屉里取出一封信，不是递给你，只是展开给你看——周恩来写给胡宗南的亲笔信，信上说「兄以剿共成名，私心则以兄尚未成民族英雄为憾」。",
           "nextNodeId": "ch4s4_dong_letter"
         },
         {

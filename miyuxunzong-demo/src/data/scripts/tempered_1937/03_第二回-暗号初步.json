@@ -139,9 +139,17 @@
                                          "nextNodeId":  "r2s2_player2"
                                      },
                                      {
-                                         "id":  "r2s2_player2",
+                                         "id":  "r2s2_player2_setup",
                                          "type":  "narration",
-                                         "content":  "你心跳漏了一拍。沉默两秒，你压低声音回答——\n“是的。”",
+                                         "content":  "你心跳漏了一拍。沉默两秒，你压低声音回答——",
+                                         "nextNodeId":  "r2s2_player2_dialogue"
+                                     },
+                                     {
+                                         "id":  "r2s2_player2_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "是的。",
                                          "nextNodeId":  "r2s2_guo2"
                                      },
                                      {
@@ -201,9 +209,23 @@
                        "bgLabel":  "r2_s3_teahouse",
                        "nodes":  [
                                      {
-                                         "id":  "r2s3_broadcast",
+                                         "id":  "r2s3_broadcast_setup",
                                          "type":  "narration",
-                                         "content":  "【1937年12月13日】\n南京陷落。广播里传来播音员哽咽的声音：“国军……撤退……日军入城……”街头巷尾，有人痛哭，有人沉默，有人低声咒骂。你站在人群里，攥紧了口袋里的纸条。",
+                                         "content":  "【1937年12月13日】\n南京陷落。广播里传来播音员哽咽的声音——",
+                                         "nextNodeId":  "r2s3_broadcast_dialogue"
+                                     },
+                                     {
+                                         "id":  "r2s3_broadcast_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "播音员",
+                                         "figure":  { "id": "broadcast_voice", "position": "center" },
+                                         "content":  "（哽咽）国军……撤退……日军入城……",
+                                         "nextNodeId":  "r2s3_broadcast_end"
+                                     },
+                                     {
+                                         "id":  "r2s3_broadcast_end",
+                                         "type":  "narration",
+                                         "content":  "街头巷尾，有人痛哭，有人沉默，有人低声咒骂。你站在人群里，攥紧了口袋里的纸条。",
                                          "nextNodeId":  "r2s3_note"
                                      },
                                      {
@@ -230,15 +252,43 @@
                                                        }
                                      },
                                      {
-                                         "id":  "r2s3_peace_intro",
+                                         "id":  "r2s3_peace_intro_setup",
                                          "type":  "narration",
-                                         "content":  "你目光迅速扫过全店——没有人注意你。店小二迎上来：“先生几位？楼上雅座，临街看景——”\n【系统提示：你没有被跟踪。】",
+                                         "content":  "你目光迅速扫过全店——没有人注意你。店小二迎上来，满脸堆笑——",
+                                         "nextNodeId":  "r2s3_peace_intro_dialogue"
+                                     },
+                                     {
+                                         "id":  "r2s3_peace_intro_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "店小二",
+                                         "figure":  { "id": "teahouse_waiter", "position": "center" },
+                                         "content":  "先生几位？楼上雅座，临街看景——",
+                                         "nextNodeId":  "r2s3_peace_intro_end"
+                                     },
+                                     {
+                                         "id":  "r2s3_peace_intro_end",
+                                         "type":  "narration",
+                                         "content":  "【系统提示：你没有被跟踪。】",
                                          "nextNodeId":  "r2s3_upstairs"
                                      },
                                      {
-                                         "id":  "r2s3_tail_intro",
+                                         "id":  "r2s3_tail_intro_setup",
                                          "type":  "narration",
-                                         "content":  "【系统警告：你被跟踪了！】\n你余光瞥见——街对面那个戴礼帽的男人，在你进门后合上了手中的报纸，站起来，朝这边走来。\n店小二抬起头，笑脸迎上来：“先生几位？楼上雅座，临街看景——”\n他话音未落，你已经感觉到后颈一阵发紧，像有人用针尖抵住。你还有大约15-20秒的时间决定：上楼见郭见恩，还是先解决这个尾巴？",
+                                         "content":  "【系统警告：你被跟踪了！】\n你余光瞥见——街对面那个戴礼帽的男人，在你进门后合上了手中的报纸，站起来，朝这边走来。\n店小二抬起头，笑脸迎上来——",
+                                         "nextNodeId":  "r2s3_tail_intro_dialogue"
+                                     },
+                                     {
+                                         "id":  "r2s3_tail_intro_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "店小二",
+                                         "figure":  { "id": "teahouse_waiter", "position": "center" },
+                                         "content":  "先生几位？楼上雅座，临街看景——",
+                                         "nextNodeId":  "r2s3_tail_intro_end"
+                                     },
+                                     {
+                                         "id":  "r2s3_tail_intro_end",
+                                         "type":  "narration",
+                                         "content":  "他话音未落，你已经感觉到后颈一阵发紧，像有人用针尖抵住。你还有大约15-20秒的时间决定：上楼见郭见恩，还是先解决这个尾巴？",
                                          "nextNodeId":  "r2s3_tail_choice"
                                      },
                                      {
@@ -287,15 +337,51 @@
                                                      ]
                                      },
                                      {
-                                         "id":  "r2s3_tailA",
+                                         "id":  "r2s3_tailA_setup1",
                                          "type":  "narration",
-                                         "content":  "你压低声音，对店小二说：“有后门吗？我约了人，不想从正门进。”\n店小二愣了一下，目光在你脸上停了一瞬，随即恢复了职业笑容：“有，先生。后巷通着隔壁街，清净。”他朝柜台后面努了努嘴。\n你快步绕进柜台后的窄廊，穿过堆满茶叶篓子的过道，推开一扇吱呀作响的木门，贴着墙根走了十几步，从巷口拐出，绕到茶馆侧面——那里有一扇通往二楼的铁梯。\n（你从后巷离开时，余光瞥见那个戴礼帽的男人正站在茶馆门口张望。他没有看见你。）\n【系统提示：你已成功甩开便衣跟踪】",
+                                         "content":  "你压低声音，对店小二说——",
+                                         "nextNodeId":  "r2s3_tailA_player"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailA_player",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "有后门吗？我约了人，不想从正门进。",
+                                         "nextNodeId":  "r2s3_tailA_setup2"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailA_setup2",
+                                         "type":  "narration",
+                                         "content":  "店小二愣了一下，目光在你脸上停了一瞬，随即恢复了职业笑容——",
+                                         "nextNodeId":  "r2s3_tailA_waiter"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailA_waiter",
+                                         "type":  "dialogue",
+                                         "speaker":  "店小二",
+                                         "figure":  { "id": "teahouse_waiter", "position": "center" },
+                                         "content":  "有，先生。后巷通着隔壁街，清净。",
+                                         "nextNodeId":  "r2s3_tailA_end"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailA_end",
+                                         "type":  "narration",
+                                         "content":  "他朝柜台后面努了努嘴。\n你快步绕进柜台后的窄廊，穿过堆满茶叶篓子的过道，推开一扇吱呀作响的木门，贴着墙根走了十几步，从巷口拐出，绕到茶馆侧面——那里有一扇通往二楼的铁梯。\n（你从后巷离开时，余光瞥见那个戴礼帽的男人正站在茶馆门口张望。他没有看见你。）\n【系统提示：你已成功甩开便衣跟踪】",
                                          "nextNodeId":  "r2s3_upstairs"
                                      },
                                      {
-                                         "id":  "r2s3_tailB1",
+                                         "id":  "r2s3_tailB1_setup",
                                          "type":  "narration",
-                                         "content":  "你踩着马桶盖攀上窗台，用力一推——窗户纹丝不动。漆太厚，卡死了。你跳下来，还没站稳，厕所门已经被推开。\n戴礼帽的男人站在门口，目光从你脸上移到马桶盖上，又移回来，笑了笑：“先生，这厕所……风景不错？”",
+                                         "content":  "你踩着马桶盖攀上窗台，用力一推——窗户纹丝不动。漆太厚，卡死了。你跳下来，还没站稳，厕所门已经被推开。\n戴礼帽的男人站在门口，目光从你脸上移到马桶盖上，又移回来，笑了笑——",
+                                         "nextNodeId":  "r2s3_tailB1_dialogue"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailB1_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "戴礼帽的男人",
+                                         "figure":  { "id": "tail_man", "position": "center" },
+                                         "content":  "先生，这厕所……风景不错？",
                                          "nextNodeId":  "r2s3_tailB_end"
                                      },
                                      {
@@ -306,9 +392,45 @@
                                          "endingDescription":  "【结局：小楼失足】\n你被他们押着走出茶馆。外面正在下雨，戴礼帽的男人跟在你身后，手搭在你胳膊上，不紧不松，刚好让你无法挣脱。街对面的黑色轿车还停在那里，你回头看了看茶馆二楼——郭见恩坐在窗边，端着茶杯，目光望着窗外，像在等人。她没有看你。\n你被推进轿车后座时，听见其中一个人对司机说：“回局里。跟郭小姐的人继续盯，别断。”\n你在长沙失去的，不只是自由。那是你第一次真正意识到：在这个时代，一次回头，就可能是一生。"
                                      },
                                      {
-                                         "id":  "r2s3_tailC1",
+                                         "id":  "r2s3_tailC1_setup1",
                                          "type":  "narration",
-                                         "content":  "你微微一笑，对店小二说：“二楼靠窗，一壶龙井。”\n你迈步上楼，脚步不急不缓。木楼梯在你脚下吱呀作响。二楼靠窗的位置，郭见恩已经等在那里，面前摊着一本书。尾随者在隔壁桌坐下，要了一壶茶，翻开一张报纸。\n你端起茶杯，抿了一口。茶是凉的。郭见恩说：“南京的事，你都知道了……”\n话刚出口，隔壁桌站起来一个人。戴礼帽的男人走到你们桌边，从兜里掏出一张证件，展开：“两位，劳驾，跟我走一趟。”",
+                                         "content":  "你微微一笑，对店小二说——",
+                                         "nextNodeId":  "r2s3_tailC1_player"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailC1_player",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "二楼靠窗，一壶龙井。",
+                                         "nextNodeId":  "r2s3_tailC1_setup2"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailC1_setup2",
+                                         "type":  "narration",
+                                         "content":  "你迈步上楼，脚步不急不缓。木楼梯在你脚下吱呀作响。二楼靠窗的位置，郭见恩已经等在那里，面前摊着一本书。尾随者在隔壁桌坐下，要了一壶茶，翻开一张报纸。\n你端起茶杯，抿了一口。茶是凉的。郭见恩开口——",
+                                         "nextNodeId":  "r2s3_tailC1_guo"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailC1_guo",
+                                         "type":  "dialogue",
+                                         "speaker":  "郭见恩",
+                                         "figure":  { "id": "guo_jianen", "position": "center" },
+                                         "content":  "南京的事，你都知道了……",
+                                         "nextNodeId":  "r2s3_tailC1_setup3"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailC1_setup3",
+                                         "type":  "narration",
+                                         "content":  "话刚出口，隔壁桌站起来一个人。戴礼帽的男人走到你们桌边，从兜里掏出一张证件，展开——",
+                                         "nextNodeId":  "r2s3_tailC1_tail"
+                                     },
+                                     {
+                                         "id":  "r2s3_tailC1_tail",
+                                         "type":  "dialogue",
+                                         "speaker":  "戴礼帽的男人",
+                                         "figure":  { "id": "tail_man", "position": "center" },
+                                         "content":  "两位，劳驾，跟我走一趟。",
                                          "nextNodeId":  "r2s3_tailC_end"
                                      },
                                      {
@@ -325,16 +447,30 @@
                                          "nextNodeId":  "r2s3_tailD2"
                                      },
                                      {
-                                         "id":  "r2s3_tailD2",
-                                         "type":  "narration",
-                                         "content":  "次日，你在听雨轩见到了郭见恩。\n“你放弃了那次接头，也放弃了茶馆里可能存在的风险。你安全了。但有些信息，你晚了一整天才拿到。”\n【获取状态：听雨轩备用联络点已激活】\n你花了3点洞察值买了一个教训——也买了一个更安全的备选项。在长沙，你知道有两扇门可以敲了。",
-                                         "nextNodeId":  "r2s3_upstairs",
-                                         "inventoryChanges":  {
-                                                                  "add":  [
-                                                                              "item_backup_teahouse"
-                                                                          ]
-                                                              }
-                                     },
+                                        "id":  "r2s3_tailD2_setup",
+                                        "type":  "narration",
+                                        "content":  "次日，你在听雨轩见到了郭见恩。她开口说——",
+                                        "nextNodeId":  "r2s3_tailD2_dialogue"
+                                    },
+                                    {
+                                        "id":  "r2s3_tailD2_dialogue",
+                                        "type":  "dialogue",
+                                        "speaker":  "郭见恩",
+                                        "figure":  { "id": "guo_jianen", "position": "center" },
+                                        "content":  "你放弃了那次接头，也放弃了茶馆里可能存在的风险。你安全了。但有些信息，你晚了一整天才拿到。",
+                                        "nextNodeId":  "r2s3_tailD2_end"
+                                    },
+                                    {
+                                        "id":  "r2s3_tailD2_end",
+                                        "type":  "narration",
+                                        "content":  "【获取状态：听雨轩备用联络点已激活】\n你花了3点洞察值买了一个教训——也买了一个更安全的备选项。在长沙，你知道有两扇门可以敲了。",
+                                        "nextNodeId":  "r2s3_upstairs",
+                                        "inventoryChanges":  {
+                                                                 "add":  [
+                                                                             "item_backup_teahouse"
+                                                                         ]
+                                                             }
+                                    },
                                      {
                                          "id":  "r2s3_upstairs",
                                          "type":  "narration",

@@ -25,7 +25,12 @@
                                      },
                                      {
                                          "id":  "prologue_s1_player_enter",
-                                         "type":  "narration",
+                                        "type":  "dialogue",
+                                        "speaker":  "你",
+                                        "figure":  {
+                                                       "id":  "player",
+                                                        "position":  "center"
+                                                    },
                                          "content":  "（你侧着身快速进入）",
                                          "nextNodeId":  "prologue_s1_table"
                                      },
@@ -48,7 +53,12 @@
                                      },
                                      {
                                          "id":  "prologue_s1_nod",
-                                         "type":  "narration",
+                                        "type":  "dialogue",
+                                        "speaker":  "你",
+                                        "figure":  {
+                                                       "id":  "player",
+                                                        "position":  "center"
+                                                    },
                                          "content":  "（你坚定地点头）",
                                          "nextNodeId":  "prologue_s1_oath_lead"
                                      },
@@ -71,7 +81,12 @@
                                      },
                                      {
                                          "id":  "prologue_s1_follow",
-                                         "type":  "narration",
+                                        "type":  "dialogue",
+                                        "speaker":  "你",
+                                        "figure":  {
+                                                       "id":  "player",
+                                                        "position":  "center"
+                                                    },
                                          "content":  "（你跟着举起拳头，一字一句跟读。）",
                                          "nextNodeId":  "prologue_s1_done"
                                      },
@@ -94,7 +109,12 @@
                                      },
                                      {
                                          "id":  "prologue_s1_eyecontact",
-                                         "type":  "narration",
+                                        "type":  "dialogue",
+                                        "speaker":  "你",
+                                        "figure":  {
+                                                       "id":  "player",
+                                                        "position":  "center"
+                                                    },
                                          "content":  "（你感受肩上传来的重量，抬起头，与他相视一笑）",
                                          "nextNodeId":  "prologue_s1_burn"
                                      },
@@ -118,7 +138,7 @@
                                      {
                                          "id":  "prologue_s1_lastword_narration",
                                          "type":  "narration",
-                                         "content":  "【冷风从屋外灌进来。你走出几步后，听到他在身后轻轻说了一句】",
+                                         "content":  "冷风从屋外灌进来。你走出几步后，听到他在身后轻轻说了一句",
                                          "nextNodeId":  "prologue_s1_lastword"
                                      },
                                      {
@@ -159,7 +179,7 @@
                                      {
                                          "id":  "prologue_s2_intro",
                                          "type":  "narration",
-                                         "content":  "【场景】清华园气象台地下室，仍是那盏煤油灯，灯芯短了一截，光线更暗了。墙上的马克思画像边角翘起，空气里多了一丝夏天的闷热。蒋南翔比半年前更瘦了，颧骨突出来，但眼神反而更沉、更稳。",
+                                         "content":  "清华园气象台地下室，仍是那盏煤油灯，灯芯短了一截，光线更暗了。墙上的马克思画像边角翘起，空气里多了一丝夏天的闷热。蒋南翔比半年前更瘦了，颧骨突出来，但眼神反而更沉、更稳。",
                                          "nextNodeId":  "prologue_s2_sit"
                                      },
                                      {
@@ -182,7 +202,7 @@
                                      {
                                          "id":  "prologue_s2_handshake",
                                          "type":  "narration",
-                                         "content":  "【这次的握手比半年前更沉。过了好一会儿，他松开手，转身看向窗外，目光掠过远处北平城的轮廓，眼底翻涌着担忧。指尖无意识地摩挲着裤缝，想起城内近况，语气重得像压了千斤石】",
+                                         "content":  "这次的握手比半年前更沉。过了好一会儿，他松开手，转身看向窗外，目光掠过远处北平城的轮廓，眼底翻涌着担忧。指尖无意识地摩挲着裤缝，想起城内近况，语气重得像压了千斤石",
                                          "nextNodeId":  "prologue_s2_news"
                                      },
                                      {
@@ -199,7 +219,7 @@
                                      {
                                          "id":  "prologue_s2_atmosphere",
                                          "type":  "narration",
-                                         "content":  "【煤油灯的火苗晃了晃，映得他眼底的光忽明忽暗。地下室的寂静里，只剩两人沉重的呼吸，和窗外隐约传来的、远处街头的零星叫卖声——那是北平最后的喧嚣。】",
+                                         "content":  "煤油灯的火苗晃了晃，映得他眼底的光忽明忽暗。地下室的寂静里，只剩两人沉重的呼吸，和窗外隐约传来的、远处街头的零星叫卖声——那是北平最后的喧嚣。",
                                          "nextNodeId":  "prologue_s2_return"
                                      },
                                      {
@@ -294,30 +314,34 @@
                                                          },
                                                          {
                                                              "text":  "送给室友张同学",
-                                                             "nextNodeId":  "prologue_ch1_givebook"
+                                                             "nextNodeId":  "prologue_ch1_givebook_setup"
                                                          },
-                                                         {
-                                                             "text":  "撕掉封面夹在普通课本中",
-                                                             "effects":  [
-                                                                             {
-                                                                                 "stat":  "insight",
-                                                                                 "change":  2
-                                                                             }
-                                                                         ],
-                                                             "nextNodeId":  "prologue_ch1_roommate"
-                                                         }
+                                                        {
+                                                            "text":  "撕掉封面夹在普通课本中",
+                                                            "effects":  [
+                                                                            {
+                                                                                "stat":  "insight",
+                                                                                "change":  2
+                                                                            }
+                                                                        ],
+                                                            "inventoryChanges": {
+                                                                "add": ["大众哲学"]
+                                                            },
+                                                            "nextNodeId":  "prologue_ch1_roommate"
+                                                        }
                                                      ]
                                      },
                                      {
                                          "id":  "prologue_ch1_burn_night",
                                          "type":  "narration",
-                                         "content":  "【三更梆子响过。室友呼吸均匀，你从床上坐起，赤脚落地，小心翼翼地从床底拖出皮箱，找出《大众哲学》，用火柴点燃。火苗舔上书角，纸页卷曲、发黑，\"哲学\"二字扭曲变形。你捏着书脊，看火焰向内蔓延在铜盆中燃烧，直至全部成灰。最后，你把灰烬倒入马桶，冲了两遍。铜盆归位，皮箱锁好。空气中的焦糊味还在。于是，你推开窗缝，让夜风灌入。做完这一切，你躺回床上，心跳未平，以为事情过去了。】",
+                                         "content":  "三更梆子响过。室友呼吸均匀，你从床上坐起，赤脚落地，小心翼翼地从床底拖出皮箱，找出《大众哲学》，用火柴点燃。火苗舔上书角，纸页卷曲、发黑，\"哲学\"二字扭曲变形。你捏着书脊，看火焰向内蔓延在铜盆中燃烧，直至全部成灰。最后，你把灰烬倒入马桶，冲了两遍。铜盆归位，皮箱锁好。空气中的焦糊味还在。于是，你推开窗缝，让夜风灌入。做完这一切，你躺回床上，心跳未平，以为事情过去了。",
                                          "nextNodeId":  "prologue_ch1_burn_knock"
                                      },
                                      {
                                          "id":  "prologue_ch1_burn_knock",
                                          "type":  "dialogue",
-                                         "speaker":  "老吴（校工）",
+                                         "speaker":  "校工老吴",
+                                         "figure":  { "id": "wu_cuilian", "position": "center" },
                                          "content":  "（提着油灯站在门口，目光越过你扫向房间，吸了吸鼻子）同学，开门。查房。这么晚还没睡？刚才看见你窗户有火光。",
                                          "nextNodeId":  "prologue_ch1_burn_choice"
                                      },
@@ -365,7 +389,8 @@
                                      {
                                          "id":  "prologue_ch1_burn_q",
                                          "type":  "dialogue",
-                                         "speaker":  "老吴",
+                                         "speaker":  "校工老吴",
+                                         "figure":  { "id": "wu_cuilian", "position": "center" },
                                          "content":  "看的什么书？",
                                          "nextNodeId":  "prologue_ch1_burn_a"
                                      },
@@ -373,37 +398,66 @@
                                          "id":  "prologue_ch1_burn_a",
                                          "type":  "dialogue",
                                          "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
                                          "content":  "《水浒》。换换脑子。",
                                          "nextNodeId":  "prologue_ch1_burn_pass"
                                      },
                                      {
-                                         "id":  "prologue_ch1_burn_pass",
-                                         "type":  "narration",
-                                         "content":  "老吴看了你几秒，退后半步：\"早点睡。往后夜里别点火。\"他走了。你关上门，手心全是汗。",
-                                         "nextNodeId":  "prologue_ch1_burn_settle"
-                                     },
+                                        "id":  "prologue_ch1_burn_pass",
+                                        "type":  "dialogue",
+                                        "speaker":  "校工老吴",
+                                        "figure":  { "id": "wu_cuilian", "position": "center" },
+                                        "content":  "（看了你几秒，退后半步）早点睡。往后夜里别点火。（转身走了）",
+                                        "nextNodeId":  "prologue_ch1_burn_settle_setup"
+                                    },
                                      {
-                                         "id":  "prologue_ch1_burn_deny",
-                                         "type":  "narration",
-                                         "content":  "老吴沉默。又吸了吸鼻子：\"是吗。那我可能看岔了。\"（走时回头看了你一眼）",
-                                         "nextNodeId":  "prologue_ch1_burn_settle"
-                                     },
+                                        "id":  "prologue_ch1_burn_deny",
+                                        "type":  "dialogue",
+                                        "speaker":  "校工老吴",
+                                        "figure":  { "id": "wu_cuilian", "position": "center" },
+                                        "content":  "（沉默，又吸了吸鼻子）是吗。那我可能看岔了。（走时回头看了你一眼）",
+                                        "nextNodeId":  "prologue_ch1_burn_settle_setup"
+                                    },
                                      {
-                                         "id":  "prologue_ch1_burn_money",
-                                         "type":  "narration",
-                                         "content":  "老吴没接，把你的手按回去：\"收起来。我巡夜是分内的事。\"他走了。你攥着钱站在门口。",
-                                         "nextNodeId":  "prologue_ch1_burn_settle"
-                                     },
+                                        "id":  "prologue_ch1_burn_money",
+                                        "type":  "dialogue",
+                                        "speaker":  "校工老吴",
+                                        "figure":  { "id": "wu_cuilian", "position": "center" },
+                                        "content":  "（没接，把你的手按回去）收起来。我巡夜是分内的事。（转身走了）",
+                                        "nextNodeId":  "prologue_ch1_burn_settle_setup"
+                                    },
                                      {
                                          "id":  "prologue_ch1_burn_noanswer",
                                          "type":  "narration",
                                          "content":  "你没动，闭上眼睛。敲门声响了三轮，停了。脚步声远去。第二天出门，老吴正在扫地。他抬头看你一眼，没说话。",
-                                         "nextNodeId":  "prologue_ch1_burn_settle"
+                                         "nextNodeId":  "prologue_ch1_burn_settle_setup"
                                      },
                                      {
-                                         "id":  "prologue_ch1_burn_settle",
+                                         "id":  "prologue_ch1_burn_settle_setup",
                                          "type":  "narration",
-                                         "content":  "【烧书完成】\n离校当天，你提着皮箱走出宿舍楼。老吴直起腰：\"走了？\"你回答：\"走了。\"走出几步回头——他已弯腰扫地，像什么都没发生过。",
+                                         "content":  "离校当天，你提着皮箱走出宿舍楼。老吴直起腰，看了你一眼。",
+                                         "nextNodeId":  "prologue_ch1_burn_settle_wu"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_burn_settle_wu",
+                                         "type":  "dialogue",
+                                         "speaker":  "校工老吴",
+                                         "figure":  { "id": "wu_cuilian", "position": "center" },
+                                         "content":  "走了？",
+                                         "nextNodeId":  "prologue_ch1_burn_settle_player"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_burn_settle_player",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "走了。",
+                                         "nextNodeId":  "prologue_ch1_burn_settle_end"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_burn_settle_end",
+                                         "type":  "narration",
+                                         "content":  "走出几步回头——他已弯腰扫地，像什么都没发生过。",
                                          "effects":  [
                                                          {
                                                              "stat":  "conviction",
@@ -418,15 +472,24 @@
                                          "nextNodeId":  "prologue_ch1_settlement"
                                      },
                                      {
-                                         "id":  "prologue_ch1_givebook",
+                                         "id":  "prologue_ch1_givebook_setup",
                                          "type":  "narration",
-                                         "content":  "【你从箱底翻出《大众哲学》，在手里停了停。张同学正靠在床边系鞋带，抬头瞥了一眼，动作微微一顿。你把书递过去：\"这本给你。\"张接过，没翻，指尖在封面上轻轻叩了两下，低声问】",
+                                         "content":  "【你从箱底翻出《大众哲学》，在手里停了停。张同学正靠在床边系鞋带，抬头瞥了一眼，动作微微一顿。你把书递过去。】",
+                                         "nextNodeId":  "prologue_ch1_givebook_player"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_givebook_player",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "这本给你。",
                                          "nextNodeId":  "prologue_ch1_givebook_ask"
                                      },
                                      {
                                          "id":  "prologue_ch1_givebook_ask",
                                          "type":  "dialogue",
                                          "speaker":  "张同学",
+                                         "figure":  { "id": "zhang_huiru", "position": "center" },
                                          "content":  "你确定？",
                                          "nextNodeId":  "prologue_ch1_givebook_choice"
                                      },
@@ -447,7 +510,7 @@
                                                                                  "change":  -2
                                                                              }
                                                                          ],
-                                                             "nextNodeId":  "prologue_ch1_givebook_eve"
+                                                             "nextNodeId":  "prologue_ch1_givebook_eve_setup"
                                                          },
                                                          {
                                                              "text":  "路上解闷，别想多了。",
@@ -457,7 +520,7 @@
                                                                                  "change":  1
                                                                              }
                                                                          ],
-                                                             "nextNodeId":  "prologue_ch1_givebook_eve"
+                                                             "nextNodeId":  "prologue_ch1_givebook_eve_setup"
                                                          },
                                                          {
                                                              "text":  "（不说话，只是把书往前递了递）",
@@ -471,16 +534,33 @@
                                                                                  "change":  1
                                                                              }
                                                                          ],
-                                                             "nextNodeId":  "prologue_ch1_givebook_eve"
+                                                             "nextNodeId":  "prologue_ch1_givebook_eve_setup"
                                                          }
                                                      ]
                                      },
-                                     {
-                                         "id":  "prologue_ch1_givebook_eve",
-                                         "type":  "narration",
-                                         "content":  "【离校前一天·傍晚】宿舍只剩你二人收拾行李。张把包袱系紧，忽然低声说：\"我回广东后，可能不会再回来。\"他顿了顿：\"那本书，我会带到需要的地方去。\"",
-                                         "nextNodeId":  "prologue_ch1_givebook_eve_choice"
-                                     },
+                                    {
+                                        "id":  "prologue_ch1_givebook_eve_setup",
+                                        "type":  "narration",
+                                        "content":  "【离校前一天·傍晚】宿舍只剩你二人收拾行李。",
+                                        "nextNodeId":  "prologue_ch1_givebook_eve_d1"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_givebook_eve_d1",
+                                        "type":  "dialogue",
+                                        "speaker":  "张同学",
+                                        "figure":  { "id": "zhang_huiru", "position": "center" },
+                                        "content":  "（把包袱系紧，忽然低声说）我回广东后，可能不会再回来。",
+                                        "nextNodeId":  "prologue_ch1_givebook_eve_d2"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_givebook_eve_d2",
+                                        "type":  "dialogue",
+                                        "speaker":  "张同学",
+                                        "figure":  { "id": "zhang_huiru", "position": "center" },
+                                        "content":  "（顿了顿）那本书，我会带到需要的地方去。",
+                                        "nextNodeId":  "prologue_ch1_givebook_eve_choice"
+                                    },
+
                                      {
                                          "id":  "prologue_ch1_givebook_eve_choice",
                                          "type":  "choice",
@@ -499,7 +579,7 @@
                                                                                                   "wuchang_contact_note"
                                                                                               ]
                                                                                   },
-                                                             "nextNodeId":  "prologue_ch1_givebook_depart"
+                                                             "nextNodeId":  "prologue_ch1_givebook_depart_setup"
                                                          },
                                                          {
                                                              "text":  "你那边...有人接应？",
@@ -509,24 +589,46 @@
                                                                                  "change":  2
                                                                              }
                                                                          ],
-                                                             "nextNodeId":  "prologue_ch1_givebook_depart"
+                                                             "nextNodeId":  "prologue_ch1_givebook_depart_setup"
                                                          },
                                                          {
                                                              "text":  "书你留着，别冒险带太多东西。",
-                                                             "nextNodeId":  "prologue_ch1_givebook_depart"
+                                                             "nextNodeId":  "prologue_ch1_givebook_depart_setup"
                                                          }
                                                      ]
                                      },
                                      {
-                                         "id":  "prologue_ch1_givebook_depart",
+                                         "id":  "prologue_ch1_givebook_depart_setup",
                                          "type":  "narration",
-                                         "content":  "【赠书完成】\n离校当天。你提着皮箱走出宿舍楼。张已经在校门口等着，手里提着包袱，那本书贴身放着。擦肩时他放慢脚步，极轻地说了一句：\"后会有期。\"你没回头，低声回：\"后会有期。\"两人各奔南北。晨光里，他的背影混入人流，很快看不见了。\n【后续若触发联络，可解锁\"粤北—武昌\"地下交通线剧情】",
+                                         "content":  "离校当天。你提着皮箱走出宿舍楼。张已经在校门口等着，手里提着包袱，那本书贴身放着。",
+                                         "nextNodeId":  "prologue_ch1_givebook_depart_z"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_givebook_depart_z",
+                                         "type":  "dialogue",
+                                         "speaker":  "张同学",
+                                         "figure":  { "id": "zhang_huiru", "position": "center" },
+                                         "content":  "（擦肩时他放慢脚步，极轻地说了一句）后会有期。",
+                                         "nextNodeId":  "prologue_ch1_givebook_depart_p"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_givebook_depart_p",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "（低声）后会有期。",
+                                         "nextNodeId":  "prologue_ch1_givebook_depart_end"
+                                     },
+                                     {
+                                         "id":  "prologue_ch1_givebook_depart_end",
+                                         "type":  "narration",
+                                         "content":  "两人各奔南北。晨光里，他的背影混入人流，很快看不见了。",
                                          "effects":  [
-                                                         {
-                                                             "stat":  "conviction",
-                                                             "change":  3
-                                                         }
-                                                     ],
+                                                     {
+                                                         "stat":  "conviction",
+                                                         "change":  3
+                                                     }
+                                                 ],
                                          "inventoryChanges":  {
                                                                   "add":  [
                                                                               "tag_gave_book",
@@ -539,6 +641,7 @@
                                          "id":  "prologue_ch1_roommate",
                                          "type":  "dialogue",
                                          "speaker":  "室友李",
+                                         "figure":  { "id": "li_wanqing", "position": "center" },
                                          "content":  "（推门而入，看你正在收拾，凑过来）嘿，你也要走了？暑假回武昌是吧？带这么多书啊？",
                                          "nextNodeId":  "prologue_ch1_roommate_choice"
                                      },
@@ -573,24 +676,66 @@
                                                          }
                                                      ]
                                      },
-                                     {
-                                         "id":  "prologue_ch1_roommate_a",
-                                         "type":  "narration",
-                                         "content":  "李把包甩到床上，笑道：\"我也回，苏州。你倒好，轻装简行还带这么多，我就不行了，两件换洗衣服搞定。\"他随口聊起天气和暑假安排，未再留意你的箱子。话题自然转移。",
-                                         "nextNodeId":  "prologue_ch1_end"
-                                     },
-                                     {
-                                         "id":  "prologue_ch1_roommate_b",
-                                         "type":  "narration",
-                                         "content":  "李动作顿了一下，目光在你合箱的手上停了一秒，随即收回视线，语气仍带笑意：\"你紧张啥呀，我又不抢你的。\"但笑容淡了些，转身去整理自己的床铺。之后他借口打水出了门，回来后话比平时少，偶尔多看你一眼，但没再追问。",
-                                         "nextNodeId":  "prologue_ch1_end"
-                                     },
-                                     {
-                                         "id":  "prologue_ch1_roommate_c",
-                                         "type":  "narration",
-                                         "content":  "李见你没接话，耸耸肩：\"行吧，忙你的。\"自顾自坐到床边整理背包，哼了两句苏州小调。出门前随口说了句\"我明早的车，走的时候不喊你了啊\"，语气如常，但比平时少了几分热络。",
-                                         "nextNodeId":  "prologue_ch1_end"
-                                     },
+                                    
+                                    {
+                                        "id":  "prologue_ch1_roommate_a",
+                                        "type":  "dialogue",
+                                        "speaker":  "室友李",
+                                        "figure":  { "id": "li_wanqing", "position": "center" },
+                                        "content":  "（把包甩到床上，笑道）我也回，苏州。你倒好，轻装简行还带这么多，我就不行了，两件换洗衣服搞定。",
+                                        "nextNodeId":  "prologue_ch1_roommate_a_end"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_roommate_a_end",
+                                        "type":  "narration",
+                                        "content":  "他随口聊起天气和暑假安排，未再留意你的箱子。话题自然转移。",
+                                        "nextNodeId":  "prologue_ch1_end"
+                                    },
+
+                                    {
+                                        "id":  "prologue_ch1_roommate_b",
+                                        "type":  "dialogue",
+                                        "speaker":  "室友李",
+                                        "figure":  { "id": "li_wanqing", "position": "center" },
+                                        "content":  "（动作顿了一下，目光在你合箱的手上停了一秒，随即收回视线，语气仍带笑意）你紧张啥呀，我又不抢你的。",
+                                        "nextNodeId":  "prologue_ch1_roommate_b_end"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_roommate_b_end",
+                                        "type":  "narration",
+                                        "content":  "但笑容淡了些，转身去整理自己的床铺。之后他借口打水出了门，回来后话比平时少，偶尔多看你一眼，但没再追问。",
+                                        "nextNodeId":  "prologue_ch1_end"
+                                    },
+
+                                    {
+                                        "id":  "prologue_ch1_roommate_c",
+                                        "type":  "dialogue",
+                                        "speaker":  "室友李",
+                                        "figure":  { "id": "li_wanqing", "position": "center" },
+                                        "content":  "（见你没接话，耸耸肩）行吧，忙你的。",
+                                        "nextNodeId":  "prologue_ch1_roommate_c_mid"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_roommate_c_mid",
+                                        "type":  "narration",
+                                        "content":  "自顾自坐到床边整理背包，哼了两句苏州小调。出门前随口说了句——",
+                                        "nextNodeId":  "prologue_ch1_roommate_c_d2"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_roommate_c_d2",
+                                        "type":  "dialogue",
+                                        "speaker":  "室友李",
+                                        "figure":  { "id": "li_wanqing", "position": "center" },
+                                        "content":  "（随口）我明早的车，走的时候不喊你了啊。",
+                                        "nextNodeId":  "prologue_ch1_roommate_c_end"
+                                    },
+                                    {
+                                        "id":  "prologue_ch1_roommate_c_end",
+                                        "type":  "narration",
+                                        "content":  "语气如常，但比平时少了几分热络。",
+                                        "nextNodeId":  "prologue_ch1_end"
+                                    },
+
                                      {
                                          "id":  "prologue_ch1_end",
                                          "type":  "narration",
@@ -634,13 +779,21 @@
                                      {
                                          "id":  "prologue_ch2_find",
                                          "type":  "narration",
-                                         "content":  "【可选观察·洞察≥3自动触发】你发现他报纸拿倒了，但他浑然不觉，眼睛一直盯着学生队伍。你记住这张脸。\n【记忆档案解锁：西门便衣相貌记忆】",
-                                         "nextNodeId":  "prologue_ch2_choice"
+                                         "content":  "你发现他报纸拿倒了，但他浑然不觉，眼睛一直盯着学生队伍。你记住这张脸。",
+                                         "nextNodeId":  "prologue_ch2_find1"
                                      },
+                                     {
+                                        "id":  "prologue_ch2_find1",
+                                        "type":  "dialogue",
+                                        "speaker":  "门卫",
+                                        "figure":  { "id": "menwei", "position": "center" },
+                                        "content":  "（接过学生证扫了一眼，递还给你，随口问了一句）回家啊？",
+                                        "nextNodeId":  "prologue_ch2_choice"
+                                    },
                                      {
                                          "id":  "prologue_ch2_choice",
                                          "type":  "choice",
-                                         "content":  "门卫（接过学生证扫了一眼，递还给你，随口问了一句）：\"回家啊？\"",
+                                         "content":  "你要如何回答",
                                          "choices":  [
                                                          {
                                                              "text":  "是，放暑假了。",
@@ -680,16 +833,26 @@
                                          "content":  "你没说话，只是短促地点了下头，攥着学生证的指节微微泛白，脚步不自觉加快了些。门卫挑了挑眉，把到嘴边的话又咽了回去。树下的便衣忽然放下报纸，目光追着你的背影。",
                                          "nextNodeId":  "prologue_ch2_end"
                                      },
-                                     {
-                                         "id":  "prologue_ch2_end_d",
-                                         "type":  "narration",
-                                         "content":  "你皱了下眉，语气里带着几分警惕：\"怎么了？\"门卫愣了一下，似乎没料到你会反问，下意识地往后靠了靠门框。树下的便衣猛地抬起头，报纸被他捏得皱起一角，目光像探照灯一样扫过你的脸和皮箱，过了两秒才缓缓低下头。",
-                                         "nextNodeId":  "prologue_ch2_end"
-                                     },
+                                     
+                                    {
+                                        "id":  "prologue_ch2_end_d",
+                                        "type":  "dialogue",
+                                        "speaker":  "你",
+                                        "figure":  { "id": "player", "position": "center" },
+                                        "content":  "（皱了下眉，语气里带着几分警惕）怎么了？",
+                                        "nextNodeId":  "prologue_ch2_end_d_end"
+                                    },
+                                    {
+                                        "id":  "prologue_ch2_end_d_end",
+                                        "type":  "narration",
+                                        "content":  "门卫愣了一下，似乎没料到你会反问，下意识地往后靠了靠门框。树下的便衣猛地抬起头，报纸被他捏得皱起一角，目光像探照灯一样扫过你的脸和皮箱，过了两秒才缓缓低下头。",
+                                        "nextNodeId":  "prologue_ch2_end"
+                                    },
+
                                      {
                                          "id":  "prologue_ch2_end",
                                          "type":  "narration",
-                                         "content":  "【顺利出校】你提着箱子，踏出清华西门。回头望了一眼，校园安静如常。没有人追出来，没有人喊你的名字。但是你知道，真正的考验，才刚刚开始。",
+                                         "content":  "你提着箱子，踏出清华西门。回头望了一眼，校园安静如常。没有人追出来，没有人喊你的名字。但是你知道，真正的考验，才刚刚开始。",
                                          "nextNodeId":  "prologue_ch3_intro"
                                      }
                                  ]
@@ -718,7 +881,7 @@
                                      {
                                          "id":  "prologue_ch3_observe",
                                          "type":  "narration",
-                                         "content":  "【环境观察·洞察≥5自动触发】你注意到检票口附近有三个\"异常\"：①一个穿中山装的中年人并不排队，只是站在柱子旁扫视人群；②检票口左侧的军警比其他口多一人；③一个卖烟的小贩位置太靠近队伍，不像真做生意。\n【记忆档案解锁：火车站三处可疑人员】",
+                                         "content":  "你注意到检票口附近有三个\"异常\"：①一个穿中山装的中年人并不排队，只是站在柱子旁扫视人群；②检票口左侧的军警比其他口多一人；③一个卖烟的小贩位置太靠近队伍，不像真做生意。\n【记忆档案解锁：火车站三处可疑人员】",
                                          "nextNodeId":  "prologue_ch3_queue"
                                      },
                                      {
@@ -772,6 +935,7 @@
                                          "id":  "prologue_ch3_gossip_1",
                                          "type":  "dialogue",
                                          "speaker":  "女学生",
+                                         "figure":  { "id": "nv_xuesheng", "position": "center" },
                                          "content":  "（穿一件洗得发白的蓝布旗袍，手里攥着藤编书箱，书箱角贴着\"北师大\"标签）回湖南老家。听说北平这边，连报纸都查得紧了。昨天有人带了一份《救国时报》想上车，被当众扣了，人也被带走了。",
                                          "effects":  [
                                                          {
@@ -783,13 +947,28 @@
                                                              "change":  1
                                                          }
                                                      ],
-                                         "nextNodeId":  "prologue_ch3_gossip_2"
+                                         "nextNodeId":  "prologue_ch3_gossip_2_setup"
                                      },
                                      {
-                                         "id":  "prologue_ch3_gossip_2",
+                                         "id":  "prologue_ch3_gossip_2_setup",
+                                         "type":  "narration",
+                                         "content":  "队伍后方蹲着一个四十来岁的汉子，灰布短衫打满补丁，脚边搁着扁担和绳子，正捧着粗瓷碗喝水。旁边有人嫌他挡路，他连忙赔着不是往后挪，正好挪到你旁边。你低声问了一句——",
+                                         "nextNodeId":  "prologue_ch3_gossip_2_p"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_2_p",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "（低声）这边怎么这么多人？",
+                                         "nextNodeId":  "prologue_ch3_gossip_2_j"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_2_j",
                                          "type":  "dialogue",
                                          "speaker":  "脚夫",
-                                         "content":  "队伍后方蹲着一个四十来岁的汉子，灰布短衫打满补丁，脚边搁着扁担和绳子，正捧着粗瓷碗喝水。旁边有人嫌他挡路，他连忙赔着不是往后挪，正好挪到你旁边。你低声问了一句：\"这边怎么这么多人？\"他擦擦嘴，压着嗓子说：\"查得紧呗。昨儿个帮东家送一包袱货，到了卡子上，人家翻出来几本簿子，说\u0027上海印的，不行\u0027，当场撕了。东家骂了我半宿，说我没长眼。\"他啐了一口，\"我哪知道什么上海不上海？那纸上的字我又不认得。\"你点了点头，没再多问。",
+                                         "figure":  { "id": "jiaofu", "position": "center" },
+                                         "content":  "（擦擦嘴，压着嗓子说）查得紧呗。昨儿个帮东家送一包袱货，到了卡子上，人家翻出来几本簿子，说'上海印的，不行'，当场撕了。东家骂了我半宿，说我没长眼。（啐了一口）我哪知道什么上海不上海？那纸上的字我又不认得。",
                                          "effects":  [
                                                          {
                                                              "stat":  "insight",
@@ -800,13 +979,44 @@
                                                              "change":  1
                                                          }
                                                      ],
-                                         "nextNodeId":  "prologue_ch3_gossip_3"
+                                         "nextNodeId":  "prologue_ch3_gossip_2_end"
                                      },
                                      {
-                                         "id":  "prologue_ch3_gossip_3",
+                                         "id":  "prologue_ch3_gossip_2_end",
+                                         "type":  "narration",
+                                         "content":  "你点了点头，没再多问。",
+                                         "nextNodeId":  "prologue_ch3_gossip_3_setup"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_3_setup",
                                          "type":  "dialogue",
                                          "speaker":  "带孩子的妇女",
-                                         "content":  "一个三十出头的妇人，怀里抱着一个三四岁的孩子，背上还背着一个布包袱。孩子正睡得沉。她一手吃力地托着孩子，身体微微前倾，像是站了很久。你侧身让了让，问了一句：\"大姐，要不要帮你拿一下包袱？\"她连连摇头，警惕地看了你一眼。但见你面善，又穿着学生装，迟疑了一下，声音压得极低：\"我弟弟上个月被抓了……他给同学写了封信，信里说\u0027国难当头，青年当奋起\u0027——就这一句，被翻出来，人被带走，到现在都没音信。\"她说完立刻低下头，像后悔说了这些话。孩子在她怀里动了一下，她轻声哄了哄，不再看你。",
+                                         "figure":  { "id": "chen_xiuzhen", "position": "center" },
+                                         "content":  "一个三十出头的妇人，怀里抱着一个三四岁的孩子，背上还背着一个布包袱。孩子正睡得沉。她一手吃力地托着孩子，身体微微前倾，像是站了很久。",
+                                         "nextNodeId":  "prologue_ch3_gossip_3_p"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_3_p",
+                                         "type":  "dialogue",
+                                         "speaker":  "你",
+                                         "figure":  { "id": "player", "position": "center" },
+                                         "content":  "大姐，要不要帮你拿一下包袱？",
+                                         "nextNodeId":  "prologue_ch3_gossip_3_f_setup"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_3_f_setup",
+                                         "type":  "dialogue",
+                                         "speaker":  "带孩子的妇女",
+                                         "figure":  { "id": "chen_xiuzhen", "position": "center" },
+                                         "content":  "她连连摇头，警惕地看了你一眼。但见你面善，又穿着学生装，迟疑了一下。",
+                                         "nextNodeId":  "prologue_ch3_gossip_3_f"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_3_f",
+                                         "type":  "dialogue",
+                                         "speaker":  "带孩子的妇女",
+                                         "figure":  { "id": "chen_xiuzhen", "position": "center" },
+                                         "content":  "（声音压得极低）我弟弟上个月被抓了……他给同学写了封信，信里说'国难当头，青年当奋起'——就这一句，被翻出来，人被带走，到现在都没音信。",
                                          "effects":  [
                                                          {
                                                              "stat":  "insight",
@@ -817,12 +1027,20 @@
                                                              "change":  1
                                                          }
                                                      ],
+                                         "nextNodeId":  "prologue_ch3_gossip_3_end"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_gossip_3_end",
+                                         "type":  "dialogue",
+                                         "speaker":  "带孩子的妇女",
+                                         "figure":  { "id": "chen_xiuzhen", "position": "center" },
+                                         "content":  "她说完立刻低下头，像后悔说了这些话。孩子在她怀里动了一下，她轻声哄了哄，不再看你。",
                                          "nextNodeId":  "prologue_ch3_gossip_end"
                                      },
                                      {
                                          "id":  "prologue_ch3_gossip_end",
                                          "type":  "narration",
-                                         "content":  "【系统提示】你选择了主动交谈，得到了多条有价值的情报，但也因此引起了周围便衣的注意。\n【记忆档案解锁：报纸风险】进步报刊是查扣重点，携带者可能被直接带走。\n【记忆档案更新：印刷品风险】上海来源的印刷品是重点查扣对象。\n【记忆档案解锁：信件风险】私人信件也会被拆检，字句稍有不慎即易惹祸。",
+                                         "content":  "【系统提示】你选择了主动交谈，得到了多条有价值的情报，但也因此引起了周围便衣的注意。",
                                          "nextNodeId":  "prologue_ch3_arrest"
                                      },
                                      {
@@ -901,24 +1119,51 @@
                                      {
                                          "id":  "prologue_ch3_luggage",
                                          "type":  "narration",
-                                         "content":  "轮到你了。军警示意你打开箱子。你放下皮箱，打开搭扣。军警开始翻检你的箱子：\"这么多书？学生就是书多。\"",
+                                         "content":  "轮到你了。军警示意你打开箱子。你放下皮箱，打开搭扣。军警开始翻检。",
+                                         "nextNodeId":  "prologue_ch3_luggage_dialogue"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_luggage_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "这么多书？学生就是书多。",
                                          "nextNodeId":  "prologue_ch3_luggage_branch"
                                      },
                                      {
-                                         "id":  "prologue_ch3_luggage_branch",
-                                         "type":  "condition",
-                                         "condition":  {
-                                                           "stat":  "inspection_level",
-                                                           "operator":  "\u003e=",
-                                                           "value":  1,
-                                                           "passNodeId":  "prologue_ch3_luggage_has_letter",
-                                                           "failNodeId":  "prologue_ch3_luggage_safe"
-                                                       }
+                                        "id":  "prologue_ch3_luggage_branch",
+                                        "type":  "condition",
+                                        "condition":  {
+                                                        "stat":  "inv:大众哲学",
+                                                        "operator":  ">=",
+                                                        "value":  1,
+                                                        "passNodeId":  "prologue_ch3_luggage_has_letter",
+                                                        "failNodeId":  "prologue_ch3_luggage_check_letter"
+                                                    }
+                                    },
+                                    {
+                                        "id":  "prologue_ch3_luggage_check_letter",
+                                        "type":  "condition",
+                                        "condition":  {
+                                                        "stat":  "inv:letter",
+                                                        "operator":  ">=",
+                                                        "value":  1,
+                                                        "passNodeId":  "prologue_ch3_luggage_letter_setup",
+                                                        "failNodeId":  "prologue_ch3_luggage_safe_setup"
+                                                    }
+                                    },
+                                     {
+                                         "id":  "prologue_ch3_luggage_safe_setup",
+                                         "type":  "narration",
+                                         "content":  "【你已安全处理敏感物品】军警翻了几下，看到几本课本和小说。",
+                                         "nextNodeId":  "prologue_ch3_luggage_safe_dialogue"
                                      },
                                      {
-                                         "id":  "prologue_ch3_luggage_safe",
-                                         "type":  "narration",
-                                         "content":  "【你已安全处理敏感物品】军警翻了几下，看到几本课本和小说，抬起头：\"就这些？没别的了？\"",
+                                         "id":  "prologue_ch3_luggage_safe_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（抬起头）就这些？没别的了？",
                                          "nextNodeId":  "prologue_ch3_luggage_safe_choice"
                                      },
                                      {
@@ -948,37 +1193,72 @@
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_after",
-                                         "type":  "narration",
-                                         "content":  "军警赞赏地看了你一眼：\"倒是老实。\"翻完，合上箱子：\"行了。走吧。下一位！\"",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（赞赏地看了你一眼）倒是老实。",
+                                         "nextNodeId":  "prologue_ch3_luggage_after_d2"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_luggage_after_d2",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（翻完，合上箱子）行了。走吧。下一位！",
                                          "nextNodeId":  "prologue_ch3_luggage_result"
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_confiscated",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（军警脸色一变）你这是什么意思？想收买我？",
+                                         "nextNodeId":  "prologue_ch3_luggage_confiscated_setup2"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_luggage_confiscated_setup2",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（把几本书抽出来，扔进旁边的筐里）这些书不能带。你可以走了。",
+                                         "nextNodeId":  "prologue_ch3_luggage_confiscated_end"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_luggage_confiscated_end",
                                          "type":  "narration",
-                                         "content":  "【被扣留行李】军警脸色一变：\"你这是什么意思？想收买我？\"他把几本书抽出来，扔进旁边的筐里：\"这些书不能带。你可以走了。\"你看着那些被扣下的书，咬了咬牙，转身离开。\n【系统提示：玩家损失部分书籍，对应道具已收缴销毁】",
+                                         "content":  "你看着那些被扣下的书，咬了咬牙，转身离开。\n【系统提示：玩家损失部分书籍，对应道具已收缴销毁】",
                                          "effects":  [
-                                                         {
-                                                             "stat":  "suspicion",
-                                                             "change":  3
-                                                         }
-                                                     ],
+                                                        {
+                                                            "stat":  "suspicion",
+                                                            "change":  3
+                                                        }
+                                                    ],
                                          "nextNodeId":  "prologue_ch3_luggage_result"
                                      },
+                                         
                                      {
                                          "id":  "prologue_ch3_luggage_has_letter",
                                          "type":  "condition",
                                          "condition":  {
-                                                           "stat":  "has_letter",
+                                                           "stat":  "inv:letter",
                                                            "operator":  "\u003e=",
                                                            "value":  1,
-                                                           "passNodeId":  "prologue_ch3_luggage_letter",
+                                                           "passNodeId":  "prologue_ch3_luggage_letter_setup",
                                                            "failNodeId":  "prologue_ch3_luggage_book"
                                                        }
                                      },
                                      {
-                                         "id":  "prologue_ch3_luggage_letter",
+                                         "id":  "prologue_ch3_luggage_letter_setup",
                                          "type":  "narration",
-                                         "content":  "【敏感物品未安全处理】军警抽出笔记本，抖出一封信件，眯眼打量：\"这是什么？\u0027为理想而奋斗\u0027？哪个理想？说清楚。\"",
+                                         "content":  "【敏感物品未安全处理】军警抽出笔记本，抖出一封信件。",
+                                         "nextNodeId":  "prologue_ch3_luggage_letter_dialogue"
+                                     },
+                                     {
+                                         "id":  "prologue_ch3_luggage_letter_dialogue",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（眯眼打量）这是什么？'为理想而奋斗'？哪个理想？说清楚。",
                                          "nextNodeId":  "prologue_ch3_luggage_letter_choice"
                                      },
                                      {
@@ -1004,7 +1284,7 @@
                                                                                  "change":  6
                                                                              }
                                                                          ],
-                                                             "nextNodeId":  "prologue_ch3_luggage_letter_after_b"
+                                                             "nextNodeId":  "prologue_ch3_luggage_letter_after_b_setup"
                                                          }
                                                      ]
                                      },
@@ -1012,18 +1292,39 @@
                                          "id":  "prologue_ch3_luggage_letter_after_a",
                                          "type":  "narration",
                                          "content":  "军警半信半疑，盯着你看了许久，把信扔回箱子，继续翻检。",
-                                         "nextNodeId":  "prologue_ch3_luggage_book"
+                                         "nextNodeId":  "prologue_ch3_luggage_after_letter_check_book"
                                      },
                                      {
-                                         "id":  "prologue_ch3_luggage_letter_after_b",
-                                         "type":  "narration",
-                                         "content":  "军警嗤笑一声，将信扔回给你：\"没看过你随身带着？\"他在本子上记了一笔，继续翻检。",
-                                         "nextNodeId":  "prologue_ch3_luggage_book"
+                                         "id":  "prologue_ch3_luggage_letter_after_b_setup",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（嗤笑）没看过你随身带着？",
+                                         "nextNodeId":  "prologue_ch3_luggage_letter_after_b_end"
                                      },
+                                     {
+                                         "id":  "prologue_ch3_luggage_letter_after_b_end",
+                                         "type":  "narration",
+                                         "content":  "军警嗤笑一声，将信扔回给你。他在本子上记了一笔，继续翻检。",
+                                         "nextNodeId":  "prologue_ch3_luggage_after_letter_check_book"
+                                     },
+                                     {
+                                        "id":  "prologue_ch3_luggage_after_letter_check_book",
+                                        "type":  "condition",
+                                        "condition":  {
+                                                        "stat":  "inv:大众哲学",
+                                                        "operator":  ">=",
+                                                        "value":  1,
+                                                        "passNodeId":  "prologue_ch3_luggage_book",
+                                                        "failNodeId":  "prologue_ch3_luggage_result"
+                                                    }
+                                    },
                                      {
                                          "id":  "prologue_ch3_luggage_book",
-                                         "type":  "narration",
-                                         "content":  "军警翻出一本书，封面是《应用数学》，但翻了两页，顿了一下：\"这书……看着不像数学啊？\"",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（翻出一本书，封面是《应用数学》，但翻了两页，顿了一下）这书……看着不像数学啊？",
                                          "nextNodeId":  "prologue_ch3_luggage_book_choice"
                                      },
                                      {
@@ -1059,20 +1360,25 @@
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_book_after_a",
-                                         "type":  "narration",
-                                         "content":  "军警狐疑地翻看，看你态度自然，没再多问，把书扔回箱子：\"走吧。下一位！\"",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（狐疑地翻看，看你态度自然，没再多问，把书扔回箱子）走吧。下一位！",
                                          "nextNodeId":  "prologue_ch3_luggage_result"
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_book_after_b",
-                                         "type":  "narration",
-                                         "content":  "军警瞥了你一眼，哼了一声：\"年纪不大，心眼不少。\"把书扔回箱子，挥了挥手。",
+                                         "type":  "dialogue",
+                                         "speaker":  "军警",
+                                         "figure":  { "id": "recruit_officer", "position": "center" },
+                                         "content":  "（瞥了你一眼，哼了一声）年纪不大，心眼不少。（把书扔回箱子，挥了挥手）",
                                          "nextNodeId":  "prologue_ch3_luggage_result"
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_laosun",
                                          "type":  "dialogue",
                                          "speaker":  "老孙（便衣特务）",
+                                         "figure":  { "id": "laosun_bianyi", "position": "center" },
                                          "content":  "（走过来，拿起那本书，翻开内页，拇指摩挲着纸张，忽然笑了）《大众哲学》，撕了课本皮，塞在行李里头。（一边翻一边自言自语）你是觉得自己聪明，还是觉得我们蠢？同学，我再问你一次。这书谁给你的？你们学校还有谁在看这种书？",
                                          "nextNodeId":  "prologue_ch3_luggage_laosun_choice"
                                      },
@@ -1113,14 +1419,18 @@
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_laosun_after_a",
-                                         "type":  "narration",
-                                         "content":  "老孙眯起眼睛，盯着你看了很久。最后他扣下了那本书，挥了挥手：\"走吧。\"你提起箱子，快步离开。",
+                                         "type":  "dialogue",
+                                         "speaker":  "老孙（便衣特务）",
+                                         "figure":  { "id": "laosun_bianyi", "position": "center" },
+                                         "content":  "（眯起眼睛，盯着你看了很久。最后他扣下了那本书，挥了挥手）走吧。你提起箱子，快步离开",
                                          "nextNodeId":  "prologue_ch3_luggage_result"
                                      },
                                      {
                                          "id":  "prologue_ch3_luggage_laosun_after_b",
-                                         "type":  "narration",
-                                         "content":  "老孙冷笑：\"不知道内容你撕封面？\"你回答不上来。他扣下了你的书，记下了你的姓名和学校，挥了挥手。",
+                                         "type":  "dialogue",
+                                         "speaker":  "老孙（便衣特务）",
+                                         "figure":  { "id": "laosun_bianyi", "position": "center" },
+                                         "content":  "不知道内容你撕封面？（你回答不上来。他扣下了你的书，记下了你的姓名和学校，挥了挥手）",
                                          "nextNodeId":  "prologue_ch3_luggage_result"
                                      },
                                      {

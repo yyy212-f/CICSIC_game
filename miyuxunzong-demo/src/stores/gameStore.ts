@@ -36,6 +36,14 @@ export const useGameStore = defineStore('game', () => {
     const idx = items.value.indexOf(id)
     if (idx >= 0) items.value.splice(idx, 1)
   }
+
+  const CHAPTER_RUNTIME_ITEMS: Record<string, string[]> = {
+    prologue: ['letter', '大众哲学', 'wuchang_contact_note', 'tag_burned_book', 'tag_gave_book', 'tag_rewrapped_book', 'tag_tracked'],
+  }
+  function clearChapterRuntimeItems(chapterId: string) {
+    const list = CHAPTER_RUNTIME_ITEMS[chapterId]
+    if (list) items.value = items.value.filter(i => !list.includes(i))
+  }
   function getQuantity(id: string): number {
     return items.value.filter(i => i === id).length
   }
@@ -64,7 +72,12 @@ export const useGameStore = defineStore('game', () => {
   }
 
   function evaluateCondition(cond: { stat:string; operator:string; value:number }): boolean {
-    const val = (stats.value as any)[cond.stat] ?? 0
+    let val: number
+    if (cond.stat.startsWith('inv:')) {
+      val = items.value.includes(cond.stat.slice(4)) ? 1 : 0
+    } else {
+      val = (stats.value as any)[cond.stat] ?? 0
+    }
     switch (cond.operator) {
       case '>=': return val >= cond.value
       case '<=': return val <= cond.value
@@ -128,6 +141,6 @@ export const useGameStore = defineStore('game', () => {
     currentChapter, currentScene, currentNode, currentNodeId, chapterCheckpoints, unlockedCharacters, dailyQuizDate, quizRecords, exploreUntil, retryNodeId,
     conviction, suspicion, hasExploreAccess,
     applyEffects, addItem, removeItem, addFeathers, addFragment, getQuantity,
-    unlockEnding, completeChapter, unlockCharacter, setProgress, setChapterCheckpoint, setRetryNode, startExploreHour, useItem, evaluateCondition, toSaveData, loadSave, resetGame,
+    unlockEnding, completeChapter, unlockCharacter, setProgress, setChapterCheckpoint, setRetryNode, startExploreHour, useItem, evaluateCondition, toSaveData, loadSave, resetGame, clearChapterRuntimeItems,
   }
 })

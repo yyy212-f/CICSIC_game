@@ -56,8 +56,10 @@
 
     const sceneFigure = computed(() => {
         const figure = node.value?.figure
-        if (!figure || figure.id !== 'jiang_nanxiang') return null
-        return { name: '蒋南翔', position: figure.position ?? 'center', src: `${import.meta.env.BASE_URL}assets/figure/${encodeURIComponent('蒋南翔_透明.png')}` }
+        if (!figure) return null
+        const file = `${figure.id}.png`
+        const src = `${import.meta.env.BASE_URL}assets/figure/${encodeURIComponent(file)}`
+        return { name: figure.id, position: 'right', src }
     })
 
     const chapterTitle = computed(() => temperedScript.chapters.find(c => c.id === chapterForNode(nodeId.value, String(route.params.chapterId)))?.title ?? '淬火 1937')
@@ -115,6 +117,7 @@
             nodeId.value = first
             resumePrompt.value = true
         } else {
+            store.clearChapterRuntimeItems(id)
             nodeId.value = requestedNode || first
             store.setProgress(id, nodeId.value)
         }
