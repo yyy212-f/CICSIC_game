@@ -1,5 +1,7 @@
 <template>
   <div class="app-shell">
+    <!-- 隐形平铺水印：全屏覆盖，防截图盗用，不影响任何交互 -->
+    <WatermarkOverlay />
     <Transition name="splash-fade">
       <div v-if="showSplash" class="splash-overlay">
         <div class="splash-card">
@@ -41,6 +43,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { loadGame } from './engine/SaveManager'
+import WatermarkOverlay from './components/WatermarkOverlay.vue'
 
 const showSplash = ref(true)
 
